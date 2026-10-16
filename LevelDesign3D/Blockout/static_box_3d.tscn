@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dsu4q0hn65f0h"]
+
+[ext_resource type="Script" uid="uid://cs15v3udfuqxt" path="res://LevelDesign3D/Blockout/static_box_3d.gd" id="1_uyk6e"]
+[ext_resource type="Material" uid="uid://jlujwui0enxl" path="res://LevelDesign3D/Blockout/Materials/graybox_material.tres" id="2_mesb1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x8sow"]
+resource_local_to_scene = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_tlho1"]
+resource_local_to_scene = true
+material = ExtResource("2_mesb1")
+
+[node name="StaticBox3D" type="StaticBody3D" unique_id=534773087]
+collision_mask = 0
+script = ExtResource("1_uyk6e")
+size = Vector3(1, 1, 1)
+color = Color(1, 1, 1, 1)
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1430632997]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_x8sow")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=530484547]
+unique_name_in_owner = true
+mesh = SubResource("BoxMesh_tlho1")

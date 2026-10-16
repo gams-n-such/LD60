@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bposkrfwo5wsd"]
+
+[ext_resource type="Script" uid="uid://cix2qfa6jxhoe" path="res://Player3D/player_spawner_3d.gd" id="1_qaw2v"]
+
+[node name="PlayerSpawner3D" type="Node3D" unique_id=3755359]
+script = ExtResource("1_qaw2v")
+
+[node name="Cooldown" type="Timer" parent="." unique_id=1543847450]
+unique_name_in_owner = true
+one_shot = true

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://q022o76q0rw5"]
+
+[ext_resource type="Material" uid="uid://d38f7bvc6enmu" path="res://Gameplay3D/Triggers/dev_trigger_material.tres" id="1_02hpe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_73gjn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_r4dpd"]
+material = ExtResource("1_02hpe")
+
+[node name="PlayerTriggerCube" type="Area3D" unique_id=1803791410]
+collision_layer = 4
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1341272472]
+shape = SubResource("BoxShape3D_73gjn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1000458749]
+layers = 524288
+mesh = SubResource("BoxMesh_r4dpd")

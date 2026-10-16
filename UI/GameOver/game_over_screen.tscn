@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://mbpwhjgv7obw"]
+
+[ext_resource type="Script" uid="uid://dpiug3vcqj0mf" path="res://UI/GameOver/game_over_screen.gd" id="1_xixk0"]
+[ext_resource type="Script" uid="uid://ce3qsmnhwei1y" path="res://UI/web_helper_button.gd" id="2_g1glf"]
+
+[node name="GameOver" type="Control" unique_id=2127473529]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xixk0")
+
+[node name="BG" type="PanelContainer" parent="." unique_id=1065690763]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="BG" unique_id=361884279]
+layout_mode = 2
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="BG/CenterContainer" unique_id=723976466]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="BG/CenterContainer/ButtonsVBox" unique_id=1676492337]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Restart"
+
+[node name="TitleButton" type="Button" parent="BG/CenterContainer/ButtonsVBox" unique_id=1179927656]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit to Title"
+
+[node name="QuitButton" type="Button" parent="BG/CenterContainer/ButtonsVBox" unique_id=393799228]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit to Desktop"
+script = ExtResource("2_g1glf")
+hide_in_web_build = true
+
+[node name="WinText" type="Label" parent="." unique_id=1649415750]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_top = 100.0
+offset_right = 640.0
+offset_bottom = 167.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 48
+text = "You Win"
+horizontal_alignment = 1
+
+[node name="LooseText" type="Label" parent="." unique_id=105757018]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_top = 100.0
+offset_right = 640.0
+offset_bottom = 167.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 48
+text = "You Loose"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="BG/CenterContainer/ButtonsVBox/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="BG/CenterContainer/ButtonsVBox/TitleButton" to="." method="_on_title_button_pressed"]
+[connection signal="pressed" from="BG/CenterContainer/ButtonsVBox/QuitButton" to="." method="_on_quit_button_pressed"]

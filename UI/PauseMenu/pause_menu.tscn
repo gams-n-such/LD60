@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://uij46cficj03"]
+
+[ext_resource type="Script" uid="uid://kx5ljt6n2eab" path="res://UI/PauseMenu/pause_menu.gd" id="1_t3iro"]
+[ext_resource type="Script" uid="uid://ce3qsmnhwei1y" path="res://UI/web_helper_button.gd" id="2_w5vkt"]
+
+[node name="PauseMenu" type="Control" unique_id=2127473529]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t3iro")
+
+[node name="BG" type="PanelContainer" parent="." unique_id=1065690763]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="BG" unique_id=361884279]
+layout_mode = 2
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="BG/CenterContainer" unique_id=723976466]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="BG/CenterContainer/ButtonsVBox" unique_id=1676492337]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="BG/CenterContainer/ButtonsVBox" unique_id=610002319]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Settings"
+
+[node name="TitleButton" type="Button" parent="BG/CenterContainer/ButtonsVBox" unique_id=1179927656]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit to Title"
+
+[node name="QuitButton" type="Button" parent="BG/CenterContainer/ButtonsVBox" unique_id=393799228]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit to Desktop"
+script = ExtResource("2_w5vkt")
+hide_in_web_build = true
+
+[connection signal="pressed" from="BG/CenterContainer/ButtonsVBox/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="BG/CenterContainer/ButtonsVBox/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="BG/CenterContainer/ButtonsVBox/TitleButton" to="." method="_on_title_button_pressed"]
+[connection signal="pressed" from="BG/CenterContainer/ButtonsVBox/QuitButton" to="." method="_on_quit_button_pressed"]

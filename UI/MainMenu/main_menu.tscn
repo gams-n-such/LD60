@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dpoay026t1lnn"]
+
+[ext_resource type="Script" uid="uid://c6v81rd7nylrq" path="res://UI/MainMenu/main_menu.gd" id="1_jld46"]
+[ext_resource type="Script" uid="uid://mhbgol2lxq6b" path="res://UI/Dev/dev_load_scene_button.gd" id="2_h8rmy"]
+[ext_resource type="PackedScene" uid="uid://g8x4b47cjbv2" path="res://TestScenes3D/test_gym_3d.tscn" id="2_t17p2"]
+[ext_resource type="PackedScene" uid="uid://b6ljrakpbtk2o" path="res://TestScenes2D/test_gym_2d.tscn" id="3_3jj5y"]
+[ext_resource type="Script" uid="uid://ce3qsmnhwei1y" path="res://UI/web_helper_button.gd" id="5_iyy2y"]
+
+[node name="MainMenu" type="Control" unique_id=362125495]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jld46")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=487912128]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="CenterContainer" unique_id=212692656]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="CenterContainer/ButtonsVBox" unique_id=839759193]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Play"
+
+[node name="Gym3DButton" type="Button" parent="CenterContainer/ButtonsVBox" unique_id=1125152303]
+layout_mode = 2
+text = "3D Gym"
+script = ExtResource("2_h8rmy")
+scene_to_load = ExtResource("2_t17p2")
+
+[node name="Gym2DButton" type="Button" parent="CenterContainer/ButtonsVBox" unique_id=743152867]
+layout_mode = 2
+text = "2D Gym"
+script = ExtResource("2_h8rmy")
+scene_to_load = ExtResource("3_3jj5y")
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/ButtonsVBox" unique_id=1066668781]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="CenterContainer/ButtonsVBox" unique_id=2017876094]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/ButtonsVBox" unique_id=785415804]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+script = ExtResource("5_iyy2y")
+hide_in_web_build = true
+
+[connection signal="pressed" from="CenterContainer/ButtonsVBox/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/ButtonsVBox/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CenterContainer/ButtonsVBox/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CenterContainer/ButtonsVBox/QuitButton" to="." method="_on_quit_button_pressed"]

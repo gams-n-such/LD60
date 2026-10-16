@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dk44gxldxeolf"]
+
+[ext_resource type="Script" uid="uid://cbuuu24hj8qnl" path="res://Gameplay3D/Door/door_leaf_3d.gd" id="1_ssaka"]
+
+[node name="DoorLeaf3D" type="Node3D" unique_id=1396794813]
+script = ExtResource("1_ssaka")

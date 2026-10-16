@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ef1lk8cytdej"]
+
+[ext_resource type="Script" uid="uid://5gb7w4mvukfv" path="res://LevelDesign2D/static_box_2d.gd" id="1_e1ean"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1evlc"]
+size = Vector2(100, 100)
+
+[node name="StaticBox2D" type="StaticBody2D" unique_id=1246526892]
+modulate = Color(0.8782205, 0.8782205, 0.8782205, 1)
+collision_mask = 0
+script = ExtResource("1_e1ean")
+size = Vector2(100, 100)
+color = Color(0.8782205, 0.8782205, 0.8782205, 1)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1723566542]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_1evlc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=157822052]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)

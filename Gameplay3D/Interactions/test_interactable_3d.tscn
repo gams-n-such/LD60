@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dv7jl7xhxqf5h"]
+
+[ext_resource type="Script" uid="uid://dhgwhedq6lrqf" path="res://Gameplay3D/Interactions/test_interactable_3d.gd" id="1_b3rj3"]
+[ext_resource type="PackedScene" uid="uid://36xg5f28nyps" path="res://Gameplay/Interactions/activatable.tscn" id="2_ewht0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flj86"]
+resource_local_to_scene = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_mav8y"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_flj86")
+
+[node name="TestInteractable3D" type="Node3D" unique_id=445491241 groups=["Interactable"]]
+script = ExtResource("1_b3rj3")
+
+[node name="Logic" parent="." unique_id=1068704179 instance=ExtResource("2_ewht0")]
+unique_name_in_owner = true
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=695092018]
+mesh = SubResource("SphereMesh_mav8y")
+
+[connection signal="activation_complete" from="Logic" to="." method="_on_logic_activation_complete"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ih3ih8cletjd"]
+
+[ext_resource type="Script" uid="uid://ldleajyf28mf" path="res://Gameplay3D/Interactions/Detectors/interact_detection_ray_3d.gd" id="1_s8xwr"]
+
+[node name="InteractionRay3D" type="RayCast3D" unique_id=1578424873]
+target_position = Vector3(0, 0, -5)
+collision_mask = 8
+hit_from_inside = true
+collide_with_areas = true
+script = ExtResource("1_s8xwr")

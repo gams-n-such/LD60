@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bquqhso58svxi"]
+
+[ext_resource type="Script" uid="uid://dw5fy1cb01uj3" path="res://Gameplay3D/Interactions/interaction_volume_3d.gd" id="1_7j8ed"]
+
+[node name="InteractionVolume3D" type="Area3D" unique_id=1303982047 groups=["Interactable"]]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_7j8ed")

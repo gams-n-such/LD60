@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d2l25wotvmh1x"]
+
+[ext_resource type="Script" uid="uid://c56yiiaqgpkir" path="res://Gameplay/Interactions/interaction_target.gd" id="1_wwagb"]
+[ext_resource type="PackedScene" uid="uid://r6c06hppabrt" path="res://Gameplay/Doors/door.tscn" id="2_gljmw"]
+[ext_resource type="PackedScene" uid="uid://36xg5f28nyps" path="res://Gameplay/Interactions/activatable.tscn" id="3_gljmw"]
+[ext_resource type="PackedScene" uid="uid://dk44gxldxeolf" path="res://Gameplay3D/Door/door_leaf_3d.tscn" id="4_mbyl4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tp06f"]
+size = Vector3(1.5, 2, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tp06f"]
+size = Vector3(1.5, 2, 0.2)
+
+[node name="Door3D" type="Node3D" unique_id=956573035 node_paths=PackedStringArray("activatable", "door_logic") groups=["Interactable"]]
+script = ExtResource("1_wwagb")
+activatable = NodePath("Activatable")
+door_logic = NodePath("DoorLogic")
+
+[node name="DoorLogic" parent="." unique_id=668994403 instance=ExtResource("2_gljmw")]
+
+[node name="Activatable" parent="." unique_id=1068704179 instance=ExtResource("3_gljmw")]
+activation_period = 0.0
+cooldown_period = 1.0
+
+[node name="DoorLeaf3D" parent="." unique_id=1396794813 node_paths=PackedStringArray("logic", "door_leaf", "open", "closed") instance=ExtResource("4_mbyl4")]
+logic = NodePath("../DoorLogic")
+door_leaf = NodePath("Leaf")
+open = NodePath("Open")
+closed = NodePath("Closed")
+
+[node name="Leaf" type="Node3D" parent="DoorLeaf3D" unique_id=1838462677]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="DoorLeaf3D/Leaf" unique_id=1352937996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 1, 0)
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLeaf3D/Leaf/AnimatableBody3D" unique_id=643628545]
+shape = SubResource("BoxShape3D_tp06f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorLeaf3D/Leaf/AnimatableBody3D" unique_id=1605855035]
+mesh = SubResource("BoxMesh_tp06f")
+
+[node name="Open" type="Node3D" parent="DoorLeaf3D" unique_id=916285980]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Closed" type="Node3D" parent="DoorLeaf3D" unique_id=1270718164]
+
+[connection signal="activation_complete" from="Activatable" to="DoorLogic" method="toggle_state" unbinds=2]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://36xg5f28nyps"]
+
+[ext_resource type="Script" uid="uid://c23k3y3vmknwc" path="res://Gameplay/Interactions/activatable.gd" id="1_3q3jk"]
+
+[node name="Activatable" type="Node" unique_id=1068704179]
+script = ExtResource("1_3q3jk")

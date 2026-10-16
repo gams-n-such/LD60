@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://g8x4b47cjbv2"]
+
+[ext_resource type="PackedScene" uid="uid://c1o3vaktoi5tm" path="res://LevelDesign3D/Blockout/floor_3d.tscn" id="1_3tx6o"]
+[ext_resource type="Script" uid="uid://1pi61wiwf2lr" path="res://TestScenes3D/test_gym_3d.gd" id="1_hv080"]
+[ext_resource type="PackedScene" uid="uid://dsu4q0hn65f0h" path="res://LevelDesign3D/Blockout/static_box_3d.tscn" id="2_3hv1k"]
+[ext_resource type="PackedScene" uid="uid://dyh2h8fiesbc2" path="res://Player3D/floating_player_character_3d.tscn" id="3_fktsr"]
+[ext_resource type="PackedScene" uid="uid://bposkrfwo5wsd" path="res://Player3D/player_spawner_3d.tscn" id="5_6sg15"]
+[ext_resource type="PackedScene" uid="uid://dh2u7lrm15ac3" path="res://Player3D/platforming_character_3d.tscn" id="6_qyj61"]
+[ext_resource type="PackedScene" uid="uid://bc7t0l0n2v1lu" path="res://Gameplay3D/Triggers/player_trigger_sphere.tscn" id="7_4ksgo"]
+[ext_resource type="PackedScene" uid="uid://vfhedaqupk13" path="res://Gameplay3D/Labels/node_name_3d.tscn" id="8_4ksgo"]
+[ext_resource type="PackedScene" uid="uid://dv7jl7xhxqf5h" path="res://Gameplay3D/Interactions/test_interactable_3d.tscn" id="9_tphcg"]
+[ext_resource type="PackedScene" uid="uid://ca3h660m4iob6" path="res://Gameplay3D/Interactions/interaction_sphere.tscn" id="10_y2tcx"]
+[ext_resource type="PackedScene" uid="uid://d2l25wotvmh1x" path="res://Gameplay3D/Door/test_door_3d.tscn" id="11_7eh12"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fktsr"]
+sky_top_color = Color(0.23538089, 0.5855123, 0.7892152, 1)
+sky_horizon_color = Color(0.56112, 0.56948954, 0.58623457, 1)
+ground_horizon_color = Color(0, 0.35418084, 0.08339094, 1)
+
+[sub_resource type="Sky" id="Sky_hv080"]
+sky_material = SubResource("ProceduralSkyMaterial_fktsr")
+
+[sub_resource type="Environment" id="Environment_6sg15"]
+background_mode = 2
+sky = SubResource("Sky_hv080")
+reflected_light_source = 2
+
+[node name="TestGym3D" type="Node3D" unique_id=637359171]
+script = ExtResource("1_hv080")
+
+[node name="FloatingPlayerCharacter3D" parent="." unique_id=428254066 instance=ExtResource("3_fktsr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1069202, 1.6637688, -0.052998066)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=542194049]
+transform = Transform3D(0.70710677, -0.61237246, 0.35355335, 0, 0.49999997, 0.86602545, -0.70710677, -0.61237246, 0.35355335, 0, 12, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=713173023]
+environment = SubResource("Environment_6sg15")
+
+[node name="BlockoutRoot" type="Node3D" parent="." unique_id=663273249]
+
+[node name="Floor3D" parent="BlockoutRoot" unique_id=784561339 instance=ExtResource("1_3tx6o")]
+
+[node name="StaticBox3D" parent="BlockoutRoot" unique_id=534773087 instance=ExtResource("2_3hv1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -10)
+size = Vector3(20, 3, 1)
+
+[node name="StaticBox3D2" parent="BlockoutRoot" unique_id=524054555 instance=ExtResource("2_3hv1k")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 1.5, 20)
+size = Vector3(20, 3, 1)
+
+[node name="StaticBox3D3" parent="BlockoutRoot" unique_id=129847680 instance=ExtResource("2_3hv1k")]
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, -10, 1.5, 0)
+size = Vector3(20, 3, 1)
+
+[node name="StaticBox3D4" parent="BlockoutRoot" unique_id=1528274516 instance=ExtResource("2_3hv1k")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 1.5, 0)
+size = Vector3(20, 3, 1)
+
+[node name="PlatformingPlayerSpawner" parent="." unique_id=3755359 instance=ExtResource("5_6sg15")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.7688355, 0, -6.1156273)
+player_scene = ExtResource("6_qyj61")
+
+[node name="PlayerTriggerSphere" parent="PlatformingPlayerSpawner" unique_id=1803791410 instance=ExtResource("7_4ksgo")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+
+[node name="NodeName3D" parent="PlatformingPlayerSpawner" unique_id=1164896097 instance=ExtResource("8_4ksgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3564985, 0)
+text = "PlatformingPlayerSpawner"
+
+[node name="FloatingPlayerSpawner" parent="." unique_id=1411470238 instance=ExtResource("5_6sg15")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.083663, 0, -6.1156273)
+player_scene = ExtResource("3_fktsr")
+
+[node name="PlayerTriggerSphere" parent="FloatingPlayerSpawner" unique_id=717506866 instance=ExtResource("7_4ksgo")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+
+[node name="NodeName3D" parent="FloatingPlayerSpawner" unique_id=1646948914 instance=ExtResource("8_4ksgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3564985, 0)
+text = "FloatingPlayerSpawner"
+
+[node name="PlayerTriggerTest" parent="." unique_id=445491241 instance=ExtResource("9_tphcg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7698026, 1.752475, 19.004707)
+
+[node name="PlayerTriggerSphere" parent="PlayerTriggerTest" unique_id=1564753347 instance=ExtResource("7_4ksgo")]
+transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, 0.32126522, -0.75247455, -2.446436)
+
+[node name="NodeName3D" parent="PlayerTriggerTest" unique_id=1350550239 instance=ExtResource("8_4ksgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8889847, -0.4694233)
+text = "PlayerTriggerTest"
+
+[node name="InteractionTest" parent="." unique_id=737240556 instance=ExtResource("9_tphcg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2953386, 1.752475, 19.004707)
+
+[node name="InteractionSphere" parent="InteractionTest" unique_id=1303982047 node_paths=PackedStringArray("target") instance=ExtResource("10_y2tcx")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+target = NodePath("..")
+
+[node name="NodeName3D" parent="InteractionTest" unique_id=676748775 instance=ExtResource("8_4ksgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8889847, -0.4694233)
+text = "InteractionTest"
+
+[node name="Door3D" parent="." unique_id=956573035 instance=ExtResource("11_7eh12")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 10.290176, 0, 15.9102745)
+
+[node name="InteractionSphere" parent="Door3D" unique_id=262911453 node_paths=PackedStringArray("target") instance=ExtResource("10_y2tcx")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.7595558, 0.9203663, 0)
+target = NodePath("..")
+
+[node name="NodeName3D" parent="Door3D" unique_id=2045051945 instance=ExtResource("8_4ksgo")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 2.6250095, 2.6414597, 13.585515)
+text = "InteractionTest"
+
+[connection signal="body_entered" from="PlatformingPlayerSpawner/PlayerTriggerSphere" to="PlatformingPlayerSpawner" method="respawn_player" unbinds=1]
+[connection signal="body_entered" from="FloatingPlayerSpawner/PlayerTriggerSphere" to="FloatingPlayerSpawner" method="respawn_player" unbinds=1]
+[connection signal="body_entered" from="PlayerTriggerTest/PlayerTriggerSphere" to="PlayerTriggerTest" method="test" unbinds=1]

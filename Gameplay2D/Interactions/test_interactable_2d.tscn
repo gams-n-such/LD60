@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://da0o0nq8hquxk"]
+
+[ext_resource type="Script" uid="uid://dmna0c5akucry" path="res://Gameplay2D/Interactions/test_interactable_2d.gd" id="1_wqpyx"]
+[ext_resource type="PackedScene" uid="uid://36xg5f28nyps" path="res://Gameplay/Interactions/activatable.tscn" id="2_5fmvw"]
+[ext_resource type="Texture2D" uid="uid://b2k6m7xba6ul4" path="res://icon.svg" id="2_wqpyx"]
+
+[node name="TestInteractable2D" type="Node2D" unique_id=80512295 groups=["Interactable"]]
+script = ExtResource("1_wqpyx")
+
+[node name="Logic" parent="." unique_id=1068704179 instance=ExtResource("2_5fmvw")]
+unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458433522]
+texture = ExtResource("2_wqpyx")
+
+[connection signal="activation_complete" from="Logic" to="." method="_on_logic_activation_complete"]

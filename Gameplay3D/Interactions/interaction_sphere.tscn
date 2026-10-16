@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ca3h660m4iob6"]
+
+[ext_resource type="Script" uid="uid://dw5fy1cb01uj3" path="res://Gameplay3D/Interactions/interaction_volume_3d.gd" id="1_ocqjw"]
+[ext_resource type="Material" uid="uid://ja4aorford4a" path="res://Gameplay3D/Interactions/dev_interaction_material.tres" id="2_kumkv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wtup5"]
+resource_local_to_scene = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_nb4cp"]
+material = ExtResource("2_kumkv")
+
+[node name="InteractionSphere" type="Area3D" unique_id=1303982047 groups=["Interactable"]]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_ocqjw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1928117270]
+shape = SubResource("SphereShape3D_wtup5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1589599995]
+layers = 524288
+mesh = SubResource("SphereMesh_nb4cp")

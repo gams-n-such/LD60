@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cs34d64dgwg7p"]
+
+[ext_resource type="Script" uid="uid://0ap3o5uyhhv" path="res://Core/game.gd" id="1_t3eon"]
+[ext_resource type="PackedScene" uid="uid://dmx8q6tej75td" path="res://TitleScene/title_scene.tscn" id="2_htkch"]
+[ext_resource type="PackedScene" uid="uid://be8iqphg5okyn" path="res://UI/CanvasManager/canvas_manager.tscn" id="2_xt2r0"]
+[ext_resource type="PackedScene" uid="uid://uij46cficj03" path="res://UI/PauseMenu/pause_menu.tscn" id="3_52drc"]
+[ext_resource type="PackedScene" uid="uid://mbpwhjgv7obw" path="res://UI/GameOver/game_over_screen.tscn" id="4_jcax3"]
+
+[node name="Game" type="Node" unique_id=736238743]
+process_mode = 3
+script = ExtResource("1_t3eon")
+default_camera_layers = 1
+editor_camera_layers = 524288
+title_scene = ExtResource("2_htkch")
+pause_menu_scene = ExtResource("3_52drc")
+game_over_scene = ExtResource("4_jcax3")
+
+[node name="CanvasManager" parent="." unique_id=2009050083 instance=ExtResource("2_xt2r0")]
+
+[node name="HUD" type="CanvasLayer" parent="CanvasManager" unique_id=994595691]
+layer = 55
+
+[node name="PostProcess" type="CanvasLayer" parent="CanvasManager" unique_id=417566969]
+layer = 65
+
+[node name="Info" type="CanvasLayer" parent="CanvasManager" unique_id=874993984]
+layer = 90
+
+[node name="Menu" type="CanvasLayer" parent="CanvasManager" unique_id=254975533]
+layer = 100

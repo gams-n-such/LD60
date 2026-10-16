@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c1o3vaktoi5tm"]
+
+[ext_resource type="Material" uid="uid://bwnndyh14l8s2" path="res://LevelDesign3D/Blockout/Materials/graybox_floor_material.tres" id="1_snyoo"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gxeq6"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xyybk"]
+material = ExtResource("1_snyoo")
+size = Vector2(100, 100)
+
+[node name="Floor3D" type="StaticBody3D" unique_id=784561339]
+collision_mask = 16777215
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1201626652]
+shape = SubResource("WorldBoundaryShape3D_gxeq6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=545085157]
+mesh = SubResource("PlaneMesh_xyybk")

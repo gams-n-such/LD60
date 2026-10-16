@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://colpnyefp6dpj"]
+
+[ext_resource type="Script" uid="uid://dvg7w5r7q1hy3" path="res://Gameplay2D/Interactions/interaction_volume_2d.gd" id="1_h0jb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0jb4"]
+size = Vector2(100, 100)
+
+[node name="InteractionBox" type="Area2D" unique_id=2049525072]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_h0jb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784012603]
+shape = SubResource("RectangleShape2D_h0jb4")

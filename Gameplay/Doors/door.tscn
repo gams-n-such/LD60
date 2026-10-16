@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://r6c06hppabrt"]
+
+[ext_resource type="Script" uid="uid://b81wnjt8ojuqk" path="res://Gameplay/Doors/door.gd" id="1_qhij8"]
+
+[sub_resource type="Animation" id="Animation_qhij8"]
+resource_name = "default"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:open_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 1),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:state")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e6ily"]
+_data = {
+&"default": SubResource("Animation_qhij8")
+}
+
+[node name="Door" type="Node" unique_id=668994403]
+script = ExtResource("1_qhij8")
+metadata/_custom_type_script = "uid://c23k3y3vmknwc"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1276188145]
+unique_name_in_owner = true
+callback_mode_process = 0
+libraries/ = SubResource("AnimationLibrary_e6ily")

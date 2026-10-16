@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dyh2h8fiesbc2"]
+
+[ext_resource type="Script" uid="uid://4yfrq08yselh" path="res://Player3D/floating_player_character_3d.gd" id="1_2tprb"]
+[ext_resource type="PackedScene" uid="uid://c6uqpxfa40845" path="res://UI/HUD/hud.tscn" id="2_24otk"]
+[ext_resource type="Material" uid="uid://b3dtgg8ikkf3j" path="res://Player3D/dev_player_material.tres" id="2_wn7dt"]
+[ext_resource type="PackedScene" uid="uid://ih3ih8cletjd" path="res://Gameplay3D/Interactions/Detectors/interact_detection_ray_3d.tscn" id="3_u1jfl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2tprb"]
+radius = 0.4
+
+[sub_resource type="SphereMesh" id="SphereMesh_2tprb"]
+material = ExtResource("2_wn7dt")
+
+[sub_resource type="PrismMesh" id="PrismMesh_u1jfl"]
+size = Vector3(0.8, 0.8, 0.2)
+
+[node name="FloatingPlayerCharacter3D" type="CharacterBody3D" unique_id=428254066 groups=["Player"]]
+collision_layer = 2
+collision_mask = 49
+motion_mode = 1
+script = ExtResource("1_2tprb")
+hud_scene = ExtResource("2_24otk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1222924928]
+shape = SubResource("SphereShape3D_2tprb")
+
+[node name="CameraController" type="Node3D" parent="." unique_id=364485047]
+unique_name_in_owner = true
+
+[node name="Camera" type="Camera3D" parent="CameraController" unique_id=1165753810]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1.751955, 1.6525111)
+cull_mask = 524287
+current = true
+
+[node name="InteractionRay" parent="CameraController" unique_id=1578424873 node_paths=PackedStringArray("owning_actor") instance=ExtResource("3_u1jfl")]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -3)
+collision_mask = 255
+owning_actor = NodePath("../..")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1175823595]
+mesh = SubResource("SphereMesh_2tprb")
+
+[node name="FrontArrow" type="MeshInstance3D" parent="." unique_id=1783401251]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.42826986, -0.12872458)
+mesh = SubResource("PrismMesh_u1jfl")

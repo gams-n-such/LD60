@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b6ljrakpbtk2o"]
+
+[ext_resource type="Script" uid="uid://dsouv37caprh2" path="res://TestScenes2D/test_gym_2d.gd" id="1_mo7ny"]
+[ext_resource type="PackedScene" uid="uid://ef1lk8cytdej" path="res://LevelDesign2D/static_box_2d.tscn" id="2_mm5ou"]
+[ext_resource type="PackedScene" uid="uid://ck4btderdhdv" path="res://Player2D/platforming_character_2d.tscn" id="3_5lqkn"]
+[ext_resource type="PackedScene" uid="uid://diofqb317o0tb" path="res://Gameplay2D/Interactions/interaction_circle.tscn" id="4_vnma8"]
+[ext_resource type="PackedScene" uid="uid://da0o0nq8hquxk" path="res://Gameplay2D/Interactions/test_interactable_2d.tscn" id="5_q645c"]
+[ext_resource type="PackedScene" uid="uid://duuqoo53jdua1" path="res://Gameplay2D/Labels/node_name_2d.tscn" id="6_q645c"]
+
+[node name="TestGym2D" type="Node2D" unique_id=1325749612]
+script = ExtResource("1_mo7ny")
+
+[node name="StaticBox2D" parent="." unique_id=1246526892 instance=ExtResource("2_mm5ou")]
+position = Vector2(642, 443)
+size = Vector2(839.99994, 100)
+
+[node name="PlatformingCharacter2D" parent="." unique_id=978459321 instance=ExtResource("3_5lqkn")]
+position = Vector2(637, 306)
+
+[node name="TestInteractable" parent="." unique_id=80512295 instance=ExtResource("5_q645c")]
+position = Vector2(340, 133)
+
+[node name="InteractionCircle" parent="TestInteractable" unique_id=2049525072 node_paths=PackedStringArray("target") instance=ExtResource("4_vnma8")]
+position = Vector2(5, 229)
+target = NodePath("..")
+
+[node name="NodeName2D" parent="TestInteractable" unique_id=1487552236 instance=ExtResource("6_q645c")]
+offset_left = -59.0
+offset_top = 111.0
+offset_right = 68.0
+offset_bottom = 134.0
+text = "TestInteractable"

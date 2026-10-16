@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dh2u7lrm15ac3"]
+
+[ext_resource type="Script" uid="uid://dw568vynwpfvq" path="res://Player3D/platforming_character_3d.gd" id="1_d27nr"]
+[ext_resource type="PackedScene" uid="uid://c6uqpxfa40845" path="res://UI/HUD/hud.tscn" id="2_3kwwo"]
+[ext_resource type="Material" uid="uid://b3dtgg8ikkf3j" path="res://Player3D/dev_player_material.tres" id="2_ym21q"]
+[ext_resource type="PackedScene" uid="uid://ih3ih8cletjd" path="res://Gameplay3D/Interactions/Detectors/interact_detection_ray_3d.tscn" id="3_knw3s"]
+[ext_resource type="PackedScene" uid="uid://c00po80vxeiax" path="res://Gameplay3D/Interactions/Detectors/interact_detection_area_3d.tscn" id="5_4km6n"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d27nr"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3kwwo"]
+material = ExtResource("2_ym21q")
+
+[sub_resource type="PrismMesh" id="PrismMesh_knw3s"]
+size = Vector3(0.8, 0.8, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f62rq"]
+size = Vector3(1, 1.7832031, 1)
+
+[node name="PlatformingCharacter3D" type="CharacterBody3D" unique_id=1945718915 groups=["Player"]]
+collision_layer = 2
+collision_mask = 49
+script = ExtResource("1_d27nr")
+hud_scene = ExtResource("2_3kwwo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1613465108]
+shape = SubResource("CapsuleShape3D_d27nr")
+
+[node name="CameraController" type="Node3D" parent="." unique_id=1857227979]
+unique_name_in_owner = true
+
+[node name="Camera" type="Camera3D" parent="CameraController" unique_id=302261655]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1.751955, 1.6525111)
+cull_mask = 524287
+current = true
+
+[node name="InteractionRay" parent="CameraController" unique_id=1578424873 node_paths=PackedStringArray("owning_actor") instance=ExtResource("3_knw3s")]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -3)
+collision_mask = 255
+owning_actor = NodePath("../..")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=335864060]
+mesh = SubResource("CapsuleMesh_3kwwo")
+
+[node name="FrontArrow" type="MeshInstance3D" parent="." unique_id=1877251385]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.9138038, -0.12872458)
+mesh = SubResource("PrismMesh_knw3s")
+
+[node name="InteractionArea" parent="." unique_id=1318266972 node_paths=PackedStringArray("owning_actor") instance=ExtResource("5_4km6n")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0010923)
+owning_actor = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1964531142]
+shape = SubResource("BoxShape3D_f62rq")

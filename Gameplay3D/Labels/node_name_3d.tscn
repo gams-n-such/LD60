@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://vfhedaqupk13"]
+
+[ext_resource type="Script" uid="uid://dakx7byr5w2jl" path="res://Gameplay3D/Labels/node_name_3d.gd" id="1_nm4qv"]
+
+[node name="NodeName3D" type="Label3D" unique_id=1164896097]
+editor_description = "Label3D that automatically sets it's text to match the name of the parent node"
+layers = 524288
+visibility_range_end = 20.0
+billboard = 1
+double_sided = false
+text = "@SubViewport@9108"
+font_size = 48
+script = ExtResource("1_nm4qv")
+metadata/_custom_type_script = "uid://dakx7byr5w2jl"

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://duuqoo53jdua1"]
+
+[ext_resource type="Script" uid="uid://22fpk0vg36ym" path="res://Gameplay2D/Labels/node_name_2d.gd" id="1_i5ov4"]
+
+[node name="NodeName2D" type="Label" unique_id=1487552236]
+light_mask = 0
+visibility_layer = 524288
+script = ExtResource("1_i5ov4")

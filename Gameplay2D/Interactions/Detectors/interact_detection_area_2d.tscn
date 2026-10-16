@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://by0sf4a67k8bn"]
+
+[ext_resource type="Script" uid="uid://bd484sqow6u5y" path="res://Gameplay2D/Interactions/Detectors/interact_detection_area_2d.gd" id="1_c7bfw"]
+
+[node name="InteractDetectionArea2D" type="Area2D" unique_id=1711871682]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+script = ExtResource("1_c7bfw")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
