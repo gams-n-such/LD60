@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 Game="*uid://cs34d64dgwg7p"
 AudioManager="*uid://dwtkc13xm1mmw"
+PhantomCameraManager="*uid://duq6jhf6unyis"
 
 [display]
 
@@ -28,7 +29,7 @@ window/size/viewport_height=720
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/asset_placer/plugin.cfg", "res://addons/editor_theme_explorer/plugin.cfg", "res://addons/time-tracker/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/asset_placer/plugin.cfg", "res://addons/editor_theme_explorer/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/time-tracker/plugin.cfg")
 
 [file_customization]
 

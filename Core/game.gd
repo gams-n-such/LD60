@@ -18,6 +18,22 @@ func _input(event: InputEvent) -> void:
 func toggle_mouse_cursor() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED else Input.MOUSE_MODE_VISIBLE
 
+
+#region States
+
+signal state_changed
+
+@onready var game_state_machine: StateMachine = %GameStateMachine
+
+func change_game_state(new_state_name : StringName) -> void:
+	game_state_machine.request_transition_external(new_state_name)
+
+func _on_game_state_changed(old_state: State, new_state: State) -> void:
+	# TODO: add arguments
+	state_changed.emit()
+
+#endregion
+
 #region Pause
 
 var _active_pause_menu : Control
@@ -46,7 +62,7 @@ func restart_from_last_checkpoint() -> bool:
 	else:
 		return false
 
-func clear_cheackpoint() -> void:
+func clear_checkpoint() -> void:
 	last_checkpoint = null
 
 #endregion
@@ -54,7 +70,7 @@ func clear_cheackpoint() -> void:
 #region Game Flow
 
 func start_game() -> void:
-	load_gameplay_scene()
+	change_game_state(GameState.GAMEPLAY)
 
 func restart_level() -> void:
 	pre_level_change()
@@ -66,7 +82,8 @@ enum StageResult { IN_PROGRESS, LOOSE, WIN }
 var stage_result : StageResult = StageResult.IN_PROGRESS
 
 func win() -> void:
-	init_game_over(StageResult.WIN)
+	#init_game_over(StageResult.WIN)
+	change_game_state(GameState.VICTORY)
 
 func loose() -> void:
 	init_game_over(StageResult.LOOSE)
@@ -125,7 +142,7 @@ func post_level_change() -> void:
 #region UI
 
 # TODO: this shall not work in split-scren = cannot make it an autoload
-var canvas_manager : CanvasManager = null
+@onready var canvas_manager : CanvasManager = %CanvasManager
 
 #endregion
 

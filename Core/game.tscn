@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://be8iqphg5okyn" path="res://UI/CanvasManager/canvas_manager.tscn" id="2_xt2r0"]
 [ext_resource type="PackedScene" uid="uid://uij46cficj03" path="res://UI/PauseMenu/pause_menu.tscn" id="3_52drc"]
 [ext_resource type="PackedScene" uid="uid://mbpwhjgv7obw" path="res://UI/GameOver/game_over_screen.tscn" id="4_jcax3"]
+[ext_resource type="Script" uid="uid://cf7i1a3dh3at4" path="res://UI/web_mouse_captor.gd" id="5_gwpo4"]
+[ext_resource type="Script" uid="uid://cmo5n6t4g2sel" path="res://Gameplay/StateMachine/state_machine.gd" id="5_lqrbg"]
+[ext_resource type="Script" uid="uid://byxbbtwkua6nq" path="res://Core/States/main_menu_game_state.gd" id="6_43kao"]
+[ext_resource type="Script" uid="uid://hm4mr3v1hfai" path="res://Core/States/gameplay_game_state.gd" id="7_j36f3"]
 
 [node name="Game" type="Node" unique_id=736238743]
 process_mode = 3
@@ -15,7 +19,26 @@ title_scene = ExtResource("2_htkch")
 pause_menu_scene = ExtResource("3_52drc")
 game_over_scene = ExtResource("4_jcax3")
 
+[node name="WebMouseCaptor" type="Node" parent="." unique_id=245208459]
+script = ExtResource("5_gwpo4")
+metadata/_custom_type_script = "uid://cf7i1a3dh3at4"
+
+[node name="GameStateMachine" type="Node" parent="." unique_id=1842708992 node_paths=PackedStringArray("INITIAL_STATE")]
+unique_name_in_owner = true
+script = ExtResource("5_lqrbg")
+INITIAL_STATE = NodePath("MainMenu")
+metadata/_custom_type_script = "uid://cmo5n6t4g2sel"
+
+[node name="MainMenu" type="Node" parent="GameStateMachine" unique_id=1985978003]
+script = ExtResource("6_43kao")
+metadata/_custom_type_script = "uid://byxbbtwkua6nq"
+
+[node name="Gameplay" type="Node" parent="GameStateMachine" unique_id=513353638]
+script = ExtResource("7_j36f3")
+metadata/_custom_type_script = "uid://hm4mr3v1hfai"
+
 [node name="CanvasManager" parent="." unique_id=2009050083 instance=ExtResource("2_xt2r0")]
+unique_name_in_owner = true
 
 [node name="HUD" type="CanvasLayer" parent="CanvasManager" unique_id=994595691]
 layer = 55
@@ -28,3 +51,5 @@ layer = 90
 
 [node name="Menu" type="CanvasLayer" parent="CanvasManager" unique_id=254975533]
 layer = 100
+
+[connection signal="state_changed" from="GameStateMachine" to="." method="_on_game_state_changed"]

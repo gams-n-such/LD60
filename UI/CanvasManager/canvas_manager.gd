@@ -9,7 +9,6 @@ func _ready() -> void:
 			layers[child.name] = child
 		else:
 			push_warning("Child node %s is incompatible with Canvas Manager %s" % [child.name, get_path()])
-	Game.canvas_manager = self
 
 func push_content_to_layer(layer : StringName, content : Control) -> void:
 	var layer_node := _get_layer(layer)
