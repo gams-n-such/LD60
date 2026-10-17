@@ -12,5 +12,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	var direction := Input.get_axis("rotate_left", "rotate_right")
-	ship_pivot.rotation_degrees.y += direction * rotation_degrees_per_second * delta
+	if not Game.player.has_time_hud_open :
+		var direction := Input.get_axis("rotate_left", "rotate_right")
+		var rotation_delta := direction * rotation_degrees_per_second * delta
+		ship_pivot.rotation_degrees.y += rotation_delta
+		Game.ship_state.set_heading(Game.ship_state.heading + rotation_delta)
