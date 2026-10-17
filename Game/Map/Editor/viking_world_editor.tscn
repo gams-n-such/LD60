@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://sqew1mscrbbx"]
+
+[ext_resource type="Script" uid="uid://bk77k1sabjis2" path="res://Game/Map/Editor/viking_world_editor.gd" id="1_lopkh"]
+[ext_resource type="Resource" uid="uid://bk71h36b42f2y" path="res://Game/viking_world.tres" id="2_40dv5"]
+[ext_resource type="Texture2D" uid="uid://dtulblyeev72w" path="res://Game/Map/Editor/world_border.svg" id="3_jhomw"]
+[ext_resource type="PackedScene" uid="uid://rxnqdg3jxniu" path="res://Game/Map/Editor/viking_world_editor_place.tscn" id="4_n6doo"]
+[ext_resource type="Script" uid="uid://bsn80qneh7ypr" path="res://Game/Map/Editor/viking_world_editor_place.gd" id="5_el7dv"]
+
+[node name="VikingWorldEditor" type="Node2D" unique_id=1955510249]
+script = ExtResource("1_lopkh")
+world_resource = ExtResource("2_40dv5")
+
+[node name="BorderSprite" type="Sprite2D" parent="." unique_id=1157193102]
+scale = Vector2(1.6640887, 1.6640887)
+texture = ExtResource("3_jhomw")
+
+[node name="Islands" type="Node2D" parent="." unique_id=743131356]
+unique_name_in_owner = true
+
+[node name="VikingWorldEditorPlace" parent="Islands" unique_id=359062302 instance=ExtResource("4_n6doo")]
+position = Vector2(-71, -58)
+rotation = -0.46837303
+script = ExtResource("5_el7dv")
+
+[node name="MapPolygon" parent="Islands/VikingWorldEditorPlace" index="0" unique_id=196226907]
+unique_name_in_owner = true
+polygon = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
+
+[node name="@Node2D@29879" parent="Islands" unique_id=1959112458 instance=ExtResource("4_n6doo")]
+position = Vector2(-31, 49)
+rotation = 0.56242305
+script = ExtResource("5_el7dv")
+
+[node name="MapPolygon" parent="Islands/@Node2D@29879" index="0" unique_id=196226907]
+unique_name_in_owner = true
+polygon = PackedVector2Array(-16, 16, 152, 16, 152, -17, -16, -16)
+
+[editable path="Islands/VikingWorldEditorPlace"]
+[editable path="Islands/@Node2D@29879"]

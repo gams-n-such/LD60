@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="VikingWorldResource" format=3 uid="uid://bk71h36b42f2y"]
+
+[ext_resource type="Script" uid="uid://x5ouc5vohp8a" path="res://Game/Map/viking_place_resource.gd" id="1_icmae"]
+[ext_resource type="Script" uid="uid://dw56iobukyh5d" path="res://Game/Map/viking_island_resource.gd" id="2_icmae"]
+[ext_resource type="Script" uid="uid://d0xgx6qvmr336" path="res://Game/Map/viking_world_resource.gd" id="3_s272b"]
+
+[sub_resource type="Resource" id="Resource_icmae"]
+script = ExtResource("2_icmae")
+map_polygon = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
+
+[sub_resource type="Resource" id="Resource_nq65h"]
+script = ExtResource("1_icmae")
+island = SubResource("Resource_icmae")
+coordinates = Vector2(-7.1, -5.8)
+heading = -0.468373
+
+[sub_resource type="Resource" id="Resource_s272b"]
+script = ExtResource("2_icmae")
+map_polygon = PackedVector2Array(-16, 16, 152, 16, 152, -17, -16, -16)
+
+[sub_resource type="Resource" id="Resource_pf8t6"]
+script = ExtResource("1_icmae")
+island = SubResource("Resource_s272b")
+coordinates = Vector2(-3.1, 4.9)
+heading = 0.56242305
+
+[resource]
+script = ExtResource("3_s272b")
+radius = 35.77791
+places = Array[ExtResource("1_icmae")]([SubResource("Resource_nq65h"), SubResource("Resource_pf8t6")])
+metadata/_custom_type_script = "uid://d0xgx6qvmr336"

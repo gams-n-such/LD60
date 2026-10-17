@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://rxnqdg3jxniu"]
+
+[ext_resource type="Script" uid="uid://bsn80qneh7ypr" path="res://Game/Map/Editor/viking_world_editor_place.gd" id="1_v6u60"]
+
+[node name="VikingWorldEditorPlace" type="Node2D" unique_id=359062302]
+script = ExtResource("1_v6u60")
+
+[node name="MapPolygon" type="Polygon2D" parent="." unique_id=196226907]
+unique_name_in_owner = true
+polygon = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
