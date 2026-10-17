@@ -24,6 +24,7 @@ const EDITOR_PLACE_SCENE = preload("uid://rxnqdg3jxniu")
 			var place := child as VikingWorldEditorPlace
 			world_resource.places.append(place.as_resource(pixels_per_size_unit))
 	world_resource.emit_changed()
+	ResourceSaver.save(world_resource)
 
 @export_tool_button("Load from resource") var load_world := func ():
 	for child in islands_root.get_children():
