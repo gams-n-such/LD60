@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cmo5n6t4g2sel" path="res://Gameplay/StateMachine/state_machine.gd" id="5_lqrbg"]
 [ext_resource type="Script" uid="uid://byxbbtwkua6nq" path="res://Core/States/main_menu_game_state.gd" id="6_43kao"]
 [ext_resource type="Script" uid="uid://hm4mr3v1hfai" path="res://Core/States/gameplay_game_state.gd" id="7_j36f3"]
+[ext_resource type="PackedScene" uid="uid://dpoay026t1lnn" path="res://UI/MainMenu/main_menu.tscn" id="8_4qclw"]
 
 [node name="Game" type="Node" unique_id=736238743]
 process_mode = 3
@@ -31,6 +32,7 @@ metadata/_custom_type_script = "uid://cmo5n6t4g2sel"
 
 [node name="MainMenu" type="Node" parent="GameStateMachine" unique_id=1985978003]
 script = ExtResource("6_43kao")
+main_menu_scene = ExtResource("8_4qclw")
 metadata/_custom_type_script = "uid://byxbbtwkua6nq"
 
 [node name="Gameplay" type="Node" parent="GameStateMachine" unique_id=513353638]
