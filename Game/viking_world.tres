@@ -4,18 +4,24 @@
 [ext_resource type="Script" uid="uid://dw56iobukyh5d" path="res://Game/Map/viking_island_resource.gd" id="2_icmae"]
 [ext_resource type="Script" uid="uid://d0xgx6qvmr336" path="res://Game/Map/viking_world_resource.gd" id="3_s272b"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v6u60"]
+size = Vector2(32, 32)
+
 [sub_resource type="Resource" id="Resource_icmae"]
 script = ExtResource("2_icmae")
+name = "SmallBall"
 map_polygon = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
+map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 
 [sub_resource type="Resource" id="Resource_nq65h"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_icmae")
 coordinates = Vector2(-7.1, -5.8)
-heading = -0.468373
+heading = -0.46837303
 
 [sub_resource type="Resource" id="Resource_s272b"]
 script = ExtResource("2_icmae")
+name = "LongCock"
 map_polygon = PackedVector2Array(-16, 16, 152, 16, 152, -17, -16, -16)
 
 [sub_resource type="Resource" id="Resource_pf8t6"]

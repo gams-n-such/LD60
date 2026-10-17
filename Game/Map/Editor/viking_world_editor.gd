@@ -33,6 +33,8 @@ const EDITOR_PLACE_SCENE = preload("uid://rxnqdg3jxniu")
 	if not world_resource:
 		return
 	
+	border_sprite.scale = Vector2.ONE * world_resource.radius * pixels_per_size_unit / border_inner_radius
+	
 	for place in world_resource.places:
 		var place_node := EDITOR_PLACE_SCENE.instantiate() as VikingWorldEditorPlace
 		islands_root.add_child(place_node)

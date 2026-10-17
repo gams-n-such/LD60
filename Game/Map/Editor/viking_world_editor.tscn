@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://rxnqdg3jxniu" path="res://Game/Map/Editor/viking_world_editor_place.tscn" id="4_n6doo"]
 [ext_resource type="Script" uid="uid://bsn80qneh7ypr" path="res://Game/Map/Editor/viking_world_editor_place.gd" id="5_el7dv"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v6u60"]
+size = Vector2(32, 32)
+
 [node name="VikingWorldEditor" type="Node2D" unique_id=1955510249]
 script = ExtResource("1_lopkh")
 world_resource = ExtResource("2_40dv5")
@@ -22,18 +25,56 @@ position = Vector2(-71, -58)
 rotation = -0.46837303
 script = ExtResource("5_el7dv")
 
-[node name="MapPolygon" parent="Islands/VikingWorldEditorPlace" index="0" unique_id=196226907]
-unique_name_in_owner = true
-polygon = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
+[node name="RemoteTransform2D" parent="Islands/VikingWorldEditorPlace" index="0" unique_id=839395979]
+remote_path = NodePath("../Node/LabelRoot")
+update_rotation = false
+update_scale = false
 
-[node name="@Node2D@29879" parent="Islands" unique_id=1959112458 instance=ExtResource("4_n6doo")]
+[node name="MapPolygon" parent="Islands/VikingWorldEditorPlace" index="1" unique_id=196226907]
+unique_name_in_owner = true
+
+[node name="MapSprite" parent="Islands/VikingWorldEditorPlace" index="2" unique_id=624345107]
+unique_name_in_owner = true
+texture = SubResource("PlaceholderTexture2D_v6u60")
+
+[node name="LabelRoot" parent="Islands/VikingWorldEditorPlace/Node" parent_id_path=PackedInt32Array(359062302, 700596021) index="0" unique_id=692656546]
+position = Vector2(-71, -58)
+
+[node name="NameLabel" parent="Islands/VikingWorldEditorPlace/Node/LabelRoot" index="0" unique_id=1342648887]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 12
+text = "SmallBall"
+
+[node name="@Node2D@25232" parent="Islands" unique_id=317831195 instance=ExtResource("4_n6doo")]
 position = Vector2(-31, 49)
 rotation = 0.56242305
 script = ExtResource("5_el7dv")
 
-[node name="MapPolygon" parent="Islands/@Node2D@29879" index="0" unique_id=196226907]
+[node name="RemoteTransform2D" parent="Islands/@Node2D@25232" index="0" unique_id=839395979]
+remote_path = NodePath("../Node/LabelRoot")
+update_rotation = false
+update_scale = false
+
+[node name="MapPolygon" parent="Islands/@Node2D@25232" index="1" unique_id=196226907]
 unique_name_in_owner = true
 polygon = PackedVector2Array(-16, 16, 152, 16, 152, -17, -16, -16)
 
+[node name="MapSprite" parent="Islands/@Node2D@25232" index="2" unique_id=624345107]
+unique_name_in_owner = true
+
+[node name="LabelRoot" parent="Islands/@Node2D@25232/Node" parent_id_path=PackedInt32Array(317831195, 700596021) index="0" unique_id=692656546]
+position = Vector2(-31, 49)
+
+[node name="NameLabel" parent="Islands/@Node2D@25232/Node/LabelRoot" index="0" unique_id=1342648887]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 12
+text = "LongCock"
+
 [editable path="Islands/VikingWorldEditorPlace"]
-[editable path="Islands/@Node2D@29879"]
+[editable path="Islands/@Node2D@25232"]
