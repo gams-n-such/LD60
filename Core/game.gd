@@ -5,7 +5,8 @@ extends Node
 @export_flags_3d_render var editor_camera_layers
 
 func _ready() -> void:
-	pass
+	ship_state = ship_state_scene.instantiate() as VikingShipState
+	add_child(ship_state)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_exit"):
@@ -54,6 +55,9 @@ func unpause() -> void:
 #region Game
 
 var last_checkpoint : Checkpoint = null
+
+var ship_state : VikingShipState = null
+var player : VikingCharacter3D = null
 
 func restart_from_last_checkpoint() -> bool:
 	if last_checkpoint:
@@ -115,6 +119,8 @@ func init_game_over(result : StageResult) -> void:
 @export var gameplay_scene : PackedScene
 @export var pause_menu_scene : PackedScene
 @export var game_over_scene : PackedScene
+
+@export var ship_state_scene : PackedScene = null
 
 func load_title_scene() -> void:
 	load_level(title_scene)
