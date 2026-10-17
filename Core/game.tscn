@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cs34d64dgwg7p"]
 
 [ext_resource type="Script" uid="uid://0ap3o5uyhhv" path="res://Core/game.gd" id="1_t3eon"]
+[ext_resource type="Resource" uid="uid://bk71h36b42f2y" path="res://Game/viking_world.tres" id="2_3yptt"]
 [ext_resource type="PackedScene" uid="uid://dmx8q6tej75td" path="res://TitleScene/title_scene.tscn" id="2_htkch"]
 [ext_resource type="PackedScene" uid="uid://be8iqphg5okyn" path="res://UI/CanvasManager/canvas_manager.tscn" id="2_xt2r0"]
 [ext_resource type="PackedScene" uid="uid://uij46cficj03" path="res://UI/PauseMenu/pause_menu.tscn" id="3_52drc"]
@@ -19,6 +20,7 @@ process_mode = 3
 script = ExtResource("1_t3eon")
 default_camera_layers = 1
 editor_camera_layers = 524288
+default_world_config = ExtResource("2_3yptt")
 title_scene = ExtResource("2_htkch")
 gameplay_scene = ExtResource("3_qe6tj")
 pause_menu_scene = ExtResource("3_52drc")

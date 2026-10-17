@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bd4kmv23vbk3y"]
+
+[ext_resource type="Script" uid="uid://b2timd664ltt2" path="res://UI/HUD/SkipHoursSelector/skip_hours_selector.gd" id="1_script"]
+
+[node name="SkipHoursSelector" type="Control" unique_id=1504045776]
+custom_minimum_size = Vector2(240, 76)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_script")
+
+[node name="HoursLabel" type="Label" parent="." unique_id=1455090005]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 24
+text = "1 hour"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HintLabel" type="Label" parent="." unique_id=2137940292]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 240.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 14
+text = "A  -  Decrease     Increase  -  D
+     Confirm  -  Enter"
+horizontal_alignment = 1
+vertical_alignment = 1

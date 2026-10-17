@@ -1,6 +1,7 @@
 class_name VikingCharacter3D
 extends PlayerCharacter3D
 
+var has_time_hud_open : bool = false
 
 func _ready() -> void:
 	super._ready()

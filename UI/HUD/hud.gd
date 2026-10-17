@@ -1,11 +1,26 @@
+
 extends Control
 
+@onready var skip_hours_selector: SkipHoursSelector = %SkipHoursSelector
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
+	skip_hours_selector.hide()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _unhandled_key_input(event: InputEvent) -> void:
+	if not event is InputEventKey:
+		return
+
+	if not event.pressed or event.echo:
+		return
+
+	if event.physical_keycode == KEY_T:
+		skip_hours_selector.visible = not skip_hours_selector.visible
+		Game.player.has_time_hud_open = not Game.player.has_time_hud_open
+		get_viewport().set_input_as_handled()
+		
+	if event.physical_keycode == KEY_ENTER :
+		if skip_hours_selector.visible :
+			var hours := skip_hours_selector.get_selected_hours()
+			Game.skip_time(float(hours), true)

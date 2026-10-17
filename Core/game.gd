@@ -7,6 +7,28 @@ extends Node
 func _ready() -> void:
 	ship_state = ship_state_scene.instantiate() as VikingShipState
 	add_child(ship_state)
+	_create_fade_overlay()
+
+func _create_fade_overlay() -> void:
+	var fade_layer := CanvasLayer.new()
+	fade_layer.name = "TimeSkipFade"
+	fade_layer.layer = 110
+	add_child(fade_layer)
+
+	_fade_rect = ColorRect.new()
+	_fade_rect.name = "FadeRect"
+	_fade_rect.color = Color.BLACK
+	_fade_rect.modulate.a = 0.0
+	_fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_fade_rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	fade_layer.add_child(_fade_rect)
+
+func _fade_to(alpha: float) -> void:
+	var tween := create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(_fade_rect, "modulate:a", alpha, 1.0)
+	await tween.finished
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_exit"):
@@ -59,6 +81,8 @@ var last_checkpoint : Checkpoint = null
 var ship_state : VikingShipState = null
 var player : VikingCharacter3D = null
 
+@export var default_world_config : VikingWorldResource
+
 func restart_from_last_checkpoint() -> bool:
 	if last_checkpoint:
 		last_checkpoint.request_restart()
@@ -72,6 +96,11 @@ func clear_checkpoint() -> void:
 #endregion
 
 #region Game Flow
+
+var _fade_rect: ColorRect
+var _is_skipping_time: bool = false
+
+var gameplay_level: VikingLevel = null
 
 func start_game() -> void:
 	change_game_state(GameState.GAMEPLAY)
@@ -97,6 +126,30 @@ func quit_to_title() -> void:
 
 func quit_to_desktop() -> void:
 	get_tree().quit()
+
+func skip_time(hours: float, fade: bool) -> void:
+	if _is_skipping_time:
+		return
+	if hours < 0.0:
+		push_warning("Cannot skip a non-positive number of hours.")
+		return
+	if not is_instance_valid(gameplay_level):
+		push_error("Cannot skip time: no active VikingLevel registered.")
+		return
+	if default_world_config == null:
+		push_error("Cannot skip time: default_world_config is not set.")
+		return
+	if fade:
+		_is_skipping_time = true
+		await _fade_to(1.0)
+	ship_state.sail_forward(hours)
+	gameplay_level.update_nearby_islands(
+		default_world_config,
+		ship_state.map_position
+	)
+	if fade:
+		await _fade_to(0.0)
+		_is_skipping_time = false
 
 #endregion
 

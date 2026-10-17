@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bwc8m6ioegbnd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0yyek"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x0hc6"]
+albedo_color = Color(0.606848, 0.31646267, 0.07440361, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_02f87"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="SmallBallIsland" type="Node3D" unique_id=1671935640]
+
+[node name="PlaceholderMeshInstance3D" type="MeshInstance3D" parent="." unique_id=1905425986]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("SphereMesh_0yyek")
+surface_material_override/0 = SubResource("StandardMaterial3D_x0hc6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PlaceholderMeshInstance3D" unique_id=1294531565]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlaceholderMeshInstance3D/StaticBody3D" unique_id=123371253]
+shape = SubResource("ConcavePolygonShape3D_02f87")
