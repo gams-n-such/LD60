@@ -25,8 +25,8 @@ func get_forward() -> Vector3:
 	)
 
 func move_forward(distance: float) -> void:
-	if Game.default_world_config == null:
-		push_error("Cannot move ship: default_world_config is null.")
+	if Game.world_resource == null:
+		push_error("Cannot move ship: world_resource is null.")
 		return
 	var radians := deg_to_rad(heading)
 	var movement := Vector2(
@@ -34,7 +34,7 @@ func move_forward(distance: float) -> void:
 		cos(radians)
 	) * distance
 	var target_position := map_position + movement
-	var world_radius : float = Game.default_world_config.radius
+	var world_radius : float = Game.world_resource.radius
 	if target_position.length() > world_radius:
 		target_position = target_position.normalized() * world_radius
 		print("World border reached. Clamping movement to radius: %f" % world_radius)

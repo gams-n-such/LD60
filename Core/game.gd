@@ -42,6 +42,39 @@ func toggle_mouse_cursor() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED else Input.MOUSE_MODE_VISIBLE
 
 
+#region Jam
+
+@export var world_resource : VikingWorldResource
+
+var ship_state : VikingShipState = null
+var player : VikingCharacter3D = null
+
+func skip_time(hours: float, fade: bool) -> void:
+	if _is_skipping_time:
+		return
+	if hours < 0.0:
+		push_warning("Cannot skip a non-positive number of hours.")
+		return
+	if not is_instance_valid(gameplay_level):
+		push_error("Cannot skip time: no active VikingLevel registered.")
+		return
+	if world_resource == null:
+		push_error("Cannot skip time: world_resource is not set.")
+		return
+	if fade:
+		_is_skipping_time = true
+		await _fade_to(1.0)
+	ship_state.sail_forward(hours)
+	gameplay_level.update_nearby_islands(
+		world_resource,
+		ship_state.map_position
+	)
+	if fade:
+		await _fade_to(0.0)
+		_is_skipping_time = false
+
+#endregion
+
 #region States
 
 signal state_changed
@@ -77,11 +110,6 @@ func unpause() -> void:
 #region Game
 
 var last_checkpoint : Checkpoint = null
-
-var ship_state : VikingShipState = null
-var player : VikingCharacter3D = null
-
-@export var default_world_config : VikingWorldResource
 
 func restart_from_last_checkpoint() -> bool:
 	if last_checkpoint:
@@ -126,30 +154,6 @@ func quit_to_title() -> void:
 
 func quit_to_desktop() -> void:
 	get_tree().quit()
-
-func skip_time(hours: float, fade: bool) -> void:
-	if _is_skipping_time:
-		return
-	if hours < 0.0:
-		push_warning("Cannot skip a non-positive number of hours.")
-		return
-	if not is_instance_valid(gameplay_level):
-		push_error("Cannot skip time: no active VikingLevel registered.")
-		return
-	if default_world_config == null:
-		push_error("Cannot skip time: default_world_config is not set.")
-		return
-	if fade:
-		_is_skipping_time = true
-		await _fade_to(1.0)
-	ship_state.sail_forward(hours)
-	gameplay_level.update_nearby_islands(
-		default_world_config,
-		ship_state.map_position
-	)
-	if fade:
-		await _fade_to(0.0)
-		_is_skipping_time = false
 
 #endregion
 

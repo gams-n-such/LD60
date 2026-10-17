@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dmx8q6tej75td" path="res://TitleScene/title_scene.tscn" id="2_htkch"]
 [ext_resource type="PackedScene" uid="uid://be8iqphg5okyn" path="res://UI/CanvasManager/canvas_manager.tscn" id="2_xt2r0"]
 [ext_resource type="PackedScene" uid="uid://uij46cficj03" path="res://UI/PauseMenu/pause_menu.tscn" id="3_52drc"]
-[ext_resource type="PackedScene" uid="uid://b54r4hxq24xr" path="res://Core/VikingLevel.tscn" id="3_qe6tj"]
+[ext_resource type="PackedScene" uid="uid://b54r4hxq24xr" path="res://Game/VikingLevel.tscn" id="3_qe6tj"]
 [ext_resource type="PackedScene" uid="uid://mbpwhjgv7obw" path="res://UI/GameOver/game_over_screen.tscn" id="4_jcax3"]
 [ext_resource type="Script" uid="uid://cf7i1a3dh3at4" path="res://UI/web_mouse_captor.gd" id="5_gwpo4"]
 [ext_resource type="Script" uid="uid://cmo5n6t4g2sel" path="res://Gameplay/StateMachine/state_machine.gd" id="5_lqrbg"]
@@ -20,7 +20,7 @@ process_mode = 3
 script = ExtResource("1_t3eon")
 default_camera_layers = 1
 editor_camera_layers = 524288
-default_world_config = ExtResource("2_3yptt")
+world_resource = ExtResource("2_3yptt")
 title_scene = ExtResource("2_htkch")
 gameplay_scene = ExtResource("3_qe6tj")
 pause_menu_scene = ExtResource("3_52drc")
