@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dxhk0onvkhd3r"]
+
+[ext_resource type="Script" uid="uid://dna2xw2yd4rub" path="res://Gameplay/Ship/viking_ship_state.gd" id="1_v6ges"]
+
+[node name="VikingShipState" type="Node" unique_id=423006667]
+script = ExtResource("1_v6ges")

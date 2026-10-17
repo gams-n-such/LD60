@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://di6dhhwojinx8"]
 
+[ext_resource type="Script" uid="uid://ba7feeoknbji5" path="res://Level/Ship/ship.gd" id="1_obob2"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_h10kl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5f2x"]
@@ -9,13 +11,20 @@ albedo_color = Color(0.42362538, 0.14940658, 0.19201136, 1)
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="Ship" type="Node3D" unique_id=1982402246]
+script = ExtResource("1_obob2")
 
-[node name="PlaceholderMeshInstance3D" type="MeshInstance3D" parent="." unique_id=1646944193]
+[node name="ShipPivot" type="Node3D" parent="." unique_id=1999960870]
+unique_name_in_owner = true
+
+[node name="ShipVisuals" type="Node3D" parent="ShipPivot" unique_id=1926840160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.763071, 0, 0)
+
+[node name="PlaceholderMeshInstance3D" type="MeshInstance3D" parent="ShipPivot/ShipVisuals" unique_id=1646944193]
 transform = Transform3D(25, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("BoxMesh_h10kl")
 surface_material_override/0 = SubResource("StandardMaterial3D_b5f2x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PlaceholderMeshInstance3D" unique_id=1064598671]
+[node name="StaticBody3D" type="StaticBody3D" parent="ShipPivot/ShipVisuals/PlaceholderMeshInstance3D" unique_id=1064598671]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlaceholderMeshInstance3D/StaticBody3D" unique_id=915314489]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShipPivot/ShipVisuals/PlaceholderMeshInstance3D/StaticBody3D" unique_id=915314489]
 shape = SubResource("ConcavePolygonShape3D_wovl2")

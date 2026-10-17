@@ -7,6 +7,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	_mouse_rotation = global_basis.get_euler() * Vector3.UP
 	interaction_ray.add_exception(self)
+	Game.player = self
 
 func _physics_process(delta: float) -> void:
 	_process_gravity(delta)

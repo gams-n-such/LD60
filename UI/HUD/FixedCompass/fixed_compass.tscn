@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://drnuopnjg1a0p"]
+
+[ext_resource type="Script" uid="uid://cub15xoacq3ec" path="res://UI/HUD/FixedCompass/fixed_compass.gd" id="1_ealsu"]
+[ext_resource type="Texture2D" uid="uid://b2k6m7xba6ul4" path="res://icon.svg" id="2_voyfg"]
+
+[node name="FixedCompass" type="Control" unique_id=1614903024]
+custom_minimum_size = Vector2(500, 60)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ealsu")
+
+[node name="NorthMarker" type="TextureRect" parent="." unique_id=1468263069]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 1)
+texture = ExtResource("2_voyfg")
+
+[node name="TickContainer" type="Control" parent="." unique_id=1424707071]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

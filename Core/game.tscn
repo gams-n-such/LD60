@@ -9,8 +9,10 @@
 [ext_resource type="Script" uid="uid://cf7i1a3dh3at4" path="res://UI/web_mouse_captor.gd" id="5_gwpo4"]
 [ext_resource type="Script" uid="uid://cmo5n6t4g2sel" path="res://Gameplay/StateMachine/state_machine.gd" id="5_lqrbg"]
 [ext_resource type="Script" uid="uid://byxbbtwkua6nq" path="res://Core/States/main_menu_game_state.gd" id="6_43kao"]
+[ext_resource type="PackedScene" uid="uid://dxhk0onvkhd3r" path="res://Gameplay/Ship/VikingShipState.tscn" id="6_j0bao"]
 [ext_resource type="Script" uid="uid://hm4mr3v1hfai" path="res://Core/States/gameplay_game_state.gd" id="7_j36f3"]
 [ext_resource type="PackedScene" uid="uid://dpoay026t1lnn" path="res://UI/MainMenu/main_menu.tscn" id="8_4qclw"]
+[ext_resource type="PackedScene" uid="uid://c6uqpxfa40845" path="res://UI/HUD/hud.tscn" id="11_74v2q"]
 
 [node name="Game" type="Node" unique_id=736238743]
 process_mode = 3
@@ -21,6 +23,7 @@ title_scene = ExtResource("2_htkch")
 gameplay_scene = ExtResource("3_qe6tj")
 pause_menu_scene = ExtResource("3_52drc")
 game_over_scene = ExtResource("4_jcax3")
+ship_state_scene = ExtResource("6_j0bao")
 
 [node name="WebMouseCaptor" type="Node" parent="." unique_id=245208459]
 script = ExtResource("5_gwpo4")
@@ -39,6 +42,7 @@ metadata/_custom_type_script = "uid://byxbbtwkua6nq"
 
 [node name="Gameplay" type="Node" parent="GameStateMachine" unique_id=513353638]
 script = ExtResource("7_j36f3")
+hud_scene = ExtResource("11_74v2q")
 metadata/_custom_type_script = "uid://hm4mr3v1hfai"
 
 [node name="CanvasManager" parent="." unique_id=2009050083 instance=ExtResource("2_xt2r0")]
