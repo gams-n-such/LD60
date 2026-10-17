@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cy5lwcplhd74x"]
+
+[ext_resource type="Script" uid="uid://cdn6pe2hw6utt" path="res://UI/Map/map_screen.gd" id="1_wlwya"]
+[ext_resource type="PackedScene" uid="uid://bwxsr3grt63ro" path="res://UI/Map/map_control.tscn" id="2_wlwya"]
+
+[node name="MapScreen" type="Control" unique_id=67232622]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+script = ExtResource("1_wlwya")
+
+[node name="MapRoot" type="Control" parent="." unique_id=558774208]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MapRoot" unique_id=1437765890]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="MapControl" parent="MapRoot/MarginContainer" unique_id=317331911 instance=ExtResource("2_wlwya")]
+layout_mode = 2

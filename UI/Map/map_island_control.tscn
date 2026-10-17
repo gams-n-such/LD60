@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dta16kwj7iqp8"]
+
+[ext_resource type="Script" uid="uid://dej816gyl7pfm" path="res://UI/Map/map_island_control.gd" id="1_2uo3a"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tp06f"]
+
+[node name="MapIslandControl" type="Control" unique_id=1517676658]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2uo3a")
+
+[node name="Polygon" type="Polygon2D" parent="." unique_id=557583236]
+unique_name_in_owner = true
+
+[node name="Sprite" type="TextureRect" parent="." unique_id=1371003863]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("PlaceholderTexture2D_tp06f")
+
+[node name="NameLabel" type="Label" parent="." unique_id=1311903740]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+offset_transform_enabled = true

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bwxsr3grt63ro"]
+
+[ext_resource type="Script" uid="uid://b26et73u1ejra" path="res://UI/Map/map_control.gd" id="1_ekntj"]
+[ext_resource type="Texture2D" uid="uid://dtulblyeev72w" path="res://Game/Map/Editor/world_border.svg" id="2_kq328"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tp06f"]
+
+[node name="MapControl" type="Control" unique_id=1536504318]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekntj")
+
+[node name="SquareContainer" type="AspectRatioContainer" parent="." unique_id=317331911]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 1
+
+[node name="MapContainer" type="PanelContainer" parent="SquareContainer" unique_id=1965052022]
+clip_children = 2
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tp06f")
+
+[node name="MarginContainer" type="MarginContainer" parent="SquareContainer/MapContainer" unique_id=2086381445]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ActualMap" type="Control" parent="SquareContainer/MapContainer/MarginContainer" unique_id=1654523958]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TempBorders" type="TextureRect" parent="SquareContainer/MapContainer/MarginContainer/ActualMap" unique_id=383791957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_kq328")
+
+[node name="IslandsRoot" type="Control" parent="SquareContainer/MapContainer/MarginContainer/ActualMap" unique_id=1767668827]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
