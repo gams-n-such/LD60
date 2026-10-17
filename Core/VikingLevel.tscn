@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b54r4hxq24xr"]
+
+[ext_resource type="PackedScene" uid="uid://1jnr587qhn2e" path="res://Level/Level.tscn" id="1_dslnq"]
+[ext_resource type="PackedScene" uid="uid://doy4aa11amu11" path="res://Player3D/viking_character_3d.tscn" id="1_y5fr2"]
+[ext_resource type="PackedScene" uid="uid://di6dhhwojinx8" path="res://Level/Ship/Ship.tscn" id="2_y5fr2"]
+
+[node name="SailingLevel" type="Node3D" unique_id=1552260592]
+
+[node name="PlatformingCharacter3D" parent="." unique_id=1945718915 instance=ExtResource("1_y5fr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.03129, 0, 0)
+
+[node name="Level" parent="." unique_id=1330335551 instance=ExtResource("1_dslnq")]
+
+[node name="Ship" parent="." unique_id=1982402246 instance=ExtResource("2_y5fr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3970006, 0)
