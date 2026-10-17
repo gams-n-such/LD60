@@ -12,6 +12,7 @@ func as_resource(pixels_per_unit : float = 10.0) -> VikingPlaceResource:
 	result.island.map_sprite_rotation = map_sprite.rotation
 	result.island.map_sprite_scale = map_sprite.scale
 	result.island.map_polygon = map_polygon.polygon
+	result.island.map_polygon_scale = map_polygon.scale
 	result.heading = global_rotation
 	result.coordinates = global_position / pixels_per_unit
 	result.scale = scale
@@ -28,6 +29,7 @@ func from_resource(resource : VikingPlaceResource, pixels_per_unit : float = 10.
 	else:
 		map_sprite.texture = null
 		map_polygon.polygon = resource.island.map_polygon
+		map_polygon.scale = resource.island.map_polygon_scale
 	global_rotation = resource.heading
 	global_position = resource.coordinates * pixels_per_unit
 	scale = resource.scale
