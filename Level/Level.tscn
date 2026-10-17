@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://1jnr587qhn2e"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2gduj"]
+
+[sub_resource type="Sky" id="Sky_2gduj"]
+sky_material = SubResource("ProceduralSkyMaterial_2gduj")
+
+[sub_resource type="Environment" id="Environment_h10kl"]
+background_mode = 2
+sky = SubResource("Sky_2gduj")
+ambient_light_source = 2
+ambient_light_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+
+[node name="Level" type="Node3D" unique_id=1330335551]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=539254290]
+environment = SubResource("Environment_h10kl")
