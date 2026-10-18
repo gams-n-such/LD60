@@ -7,6 +7,7 @@ size = Vector2(20, 20)
 
 [node name="VikingWorldEditorPlace" type="Node2D" unique_id=359062302]
 script = ExtResource("1_v6u60")
+type = null
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="." unique_id=839395979]
 remote_path = NodePath("../Node/LabelRoot")
