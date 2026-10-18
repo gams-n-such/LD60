@@ -40,7 +40,7 @@ func from_resource(resource : VikingPlaceResource, pixels_per_unit : float = 10.
 	if resource.island.map_sprite:
 		map_sprite.texture = resource.island.map_sprite
 		map_sprite.rotation = resource.island.map_sprite_rotation
-		map_sprite.scale = resource.island.map_sprite_scale
+		#map_sprite.scale = resource.island.map_sprite_scale
 		map_polygon.polygon = PackedVector2Array()
 	else:
 		map_sprite.texture = null
@@ -48,7 +48,7 @@ func from_resource(resource : VikingPlaceResource, pixels_per_unit : float = 10.
 		map_polygon.scale = resource.island.map_polygon_scale
 	global_rotation = resource.heading
 	global_position = resource.coordinates * pixels_per_unit
-	scale = resource.scale * pixels_per_unit
+	#scale = resource.scale * pixels_per_unit
 
 func apply_island_resource(resource : VikingIslandResource) -> void:
 	if not resource:
@@ -58,7 +58,7 @@ func apply_island_resource(resource : VikingIslandResource) -> void:
 	place_scene = resource.scene
 	map_sprite.texture = resource.map_sprite
 	map_sprite.rotation = resource.map_sprite_rotation
-	map_sprite.scale = resource.map_sprite_scale
+	#map_sprite.scale = resource.map_sprite_scale
 	map_polygon.polygon = resource.map_polygon
 	map_polygon.scale = resource.map_polygon_scale
 
