@@ -15,12 +15,13 @@ script = ExtResource("1_obob2")
 
 [node name="ShipPivot" type="Node3D" parent="." unique_id=1999960870]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 
 [node name="ShipVisuals" type="Node3D" parent="ShipPivot" unique_id=1926840160]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.763071, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
 
 [node name="PlaceholderMeshInstance3D" type="MeshInstance3D" parent="ShipPivot/ShipVisuals" unique_id=1646944193]
-transform = Transform3D(25, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(-1.0927847e-06, 0, 10, 0, 1, 0, -25, 0, -4.371139e-07, 0, 0, 0)
 mesh = SubResource("BoxMesh_h10kl")
 surface_material_override/0 = SubResource("StandardMaterial3D_b5f2x")
 
