@@ -94,13 +94,10 @@ func update_nearby_islands(
 		var map_offset := place.coordinates - ship_map_position
 		var heading_radians := deg_to_rad(Game.ship_state.heading)
 		print("Heading radians: %s" % str(heading_radians))
-		var rotated_offset := map_offset.rotated(heading_radians)
-		print("Rotated offset: %s" % str(rotated_offset))
+		print("Map offset: %s" % str(map_offset))
 		print("Ship map pos: %s" % str(ship_map_position))
 		print("Ship level pos: %s" % str(ship.position))
-		#var ship_local_position := to_local(ship.global_position)
-		#print("Ship to_local pos: %s" % str(ship_local_position))
-		var level_offset := rotated_offset * level_units_per_map_unit
+		var level_offset := map_offset * level_units_per_map_unit
 		print("Level offset: %s" % str(level_offset))
 		var final_offset = Vector3(
 			level_offset.x,
@@ -112,7 +109,7 @@ func update_nearby_islands(
 			0.0,
 			final_offset.z
 		)
-		island_instance.rotation.y = deg_to_rad(place.heading - Game.ship_state.heading)
+		island_instance.rotation.y = deg_to_rad(place.heading)
 		island_instance.scale = Vector3(
 			place.scale.x,
 			1.0,
