@@ -41,9 +41,5 @@ func from_resource(resource : VikingPlaceResource, pixels_per_unit : float = 10.
 
 
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-func _process(delta: float) -> void:
 	if Engine.is_editor_hint() and owner:
 		owner.set_editable_instance(self, true)
