@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 	if Game.player == null:
 		return
 
-	var forward : Vector3 = -Game.player.global_basis.z
+	var forward : Vector3 = Game.player.global_basis.z
 	var heading : float = fposmod(
 		rad_to_deg(atan2(forward.x, -forward.z)),
 		360.0
