@@ -2,6 +2,10 @@
 class_name VikingLevel
 extends Node3D
 
+## How many 3D level units correspond to one map unit.
+## Map coordinates remain unchanged; this only affects 3D placement.
+@export_range(1, 20.0, 0.1, "or_greater")
+var level_units_per_map_unit: float = 1.0
 @onready var ship: Node3D = %Ship
 
 # Maps each world-place resource to its instantiated island node.
@@ -32,7 +36,6 @@ func update_nearby_islands(
 		return
 	if world.places.is_empty():
 		print("WARNING: World contains no places.")
-	print("World radius: ", world.radius)
 	print("Total places in world: ", world.places.size())
 	var nearby_places: Dictionary = {}
 	for index in range(world.places.size()):
@@ -52,14 +55,14 @@ func update_nearby_islands(
 			)
 			continue
 		var distance := place.coordinates.distance_to(ship_map_position)
-		if distance > world.radius:
+		if distance > place.visibility_range:
 			print(
-				"OUT OF RANGE '%s': map coordinates=%s, distance=%.2f, radius=%.2f"
+				"OUT OF RANGE '%s': map coordinates=%s, distance=%.2f, visibility_range=%.2f"
 				% [
 					place.island.name,
 					str(place.coordinates),
 					distance,
-					world.radius
+					place.visibility_range
 				]
 			)
 			continue
@@ -90,15 +93,17 @@ func update_nearby_islands(
 		var heading_radians := deg_to_rad(Game.ship_state.heading)
 		print("Heading radians: %s" % str(heading_radians))
 		var rotated_offset := map_offset.rotated(heading_radians)
-		print("Rotated offsset: %s" % str(rotated_offset))
+		print("Rotated offset: %s" % str(rotated_offset))
 		print("Ship map pos: %s" % str(ship_map_position))
 		print("Ship level pos: %s" % str(ship.position))
 		#var ship_local_position := to_local(ship.global_position)
 		#print("Ship to_local pos: %s" % str(ship_local_position))
+		var level_offset := rotated_offset * level_units_per_map_unit
+		print("Level offset: %s" % str(level_offset))
 		var final_offset = Vector3(
-			rotated_offset.x,
+			level_offset.x,
 			0.0,
-			rotated_offset.y
+			level_offset.y
 		)
 		island_instance.position = Vector3(
 			final_offset.x,

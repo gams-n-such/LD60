@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://1jnr587qhn2e" path="res://Level/Level.tscn" id="2_6quwq"]
 [ext_resource type="PackedScene" uid="uid://di6dhhwojinx8" path="res://Level/Ship/Ship.tscn" id="3_0afi1"]
 [ext_resource type="PackedScene" uid="uid://doy4aa11amu11" path="res://Player3D/viking_character_3d.tscn" id="4_c20gm"]
-[ext_resource type="PackedScene" uid="uid://degt6lird1orb" path="res://Level/Islands/PlaceholderIsland.tscn" id="5_iltxm"]
 
 [node name="SailingLevel" type="Node3D" unique_id=1552260592]
 script = ExtResource("1_25o1n")
+level_units_per_map_unit = null
 
 [node name="Level" parent="." unique_id=1330335551 instance=ExtResource("2_6quwq")]
 
@@ -17,9 +17,5 @@ unique_name_in_owner = true
 [node name="PlatformingCharacter3D" parent="Ship/ShipPivot/ShipVisuals" parent_id_path=PackedInt32Array(1982402246, 1926840160) index="0" unique_id=1945718915 instance=ExtResource("4_c20gm")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6271253, -10.105919)
-
-[node name="PlaceholderIsland" parent="." unique_id=1671935640 instance=ExtResource("5_iltxm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4, 60)
-visible = false
 
 [editable path="Ship"]
