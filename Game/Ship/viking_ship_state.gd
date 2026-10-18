@@ -1,8 +1,10 @@
 class_name VikingShipState
 extends Node
 
-## Sailing speed in kilometers per hour.
-@export var speed_km_per_hour: float = 1.0
+## Sailing speed in miles per hour.
+var speed_units_per_hour: float:
+	get:
+		return Game.config.ship_speed
 
 ## Ship heading in degrees: 0 = north, 90 = east.
 var heading: float = 0.0
@@ -11,6 +13,9 @@ var heading: float = 0.0
 ## One unit represents one kilometer.
 var map_position: Vector2 = Vector2.ZERO
 
+func reset() -> void:
+	heading = 0.0
+	map_position = Vector2.ZERO
 
 func set_heading(value: float) -> void:
 	heading = fposmod(value, 360.0)
@@ -49,7 +54,7 @@ func sail_forward(hours: float) -> void:
 		push_warning("Sailing duration cannot be negative.")
 		return
 
-	var distance := speed_km_per_hour * hours
+	var distance := speed_units_per_hour * hours
 	print("Moving forward %d hours from position: %f, %f, heading: %f" % [
 		hours, map_position.x, map_position.y, heading
 	])

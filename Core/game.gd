@@ -5,8 +5,6 @@ extends Node
 @export_flags_3d_render var editor_camera_layers
 
 func _ready() -> void:
-	ship_state = ship_state_scene.instantiate() as VikingShipState
-	add_child(ship_state)
 	_create_fade_overlay()
 
 func _create_fade_overlay() -> void:
@@ -45,8 +43,9 @@ func toggle_mouse_cursor() -> void:
 #region Jam
 
 @export var world_resource : VikingWorldResource
+@export var config : VikingGameConfig
+@onready var ship_state: VikingShipState = $VikingShipState
 
-var ship_state : VikingShipState = null
 var player : VikingCharacter3D = null
 
 func skip_time(hours: float, fade: bool) -> void:
@@ -176,8 +175,6 @@ func init_game_over(result : StageResult) -> void:
 @export var gameplay_scene : PackedScene
 @export var pause_menu_scene : PackedScene
 @export var game_over_scene : PackedScene
-
-@export var ship_state_scene : PackedScene = null
 
 func load_title_scene() -> void:
 	load_level(title_scene)
