@@ -7,6 +7,7 @@ func enter(prev_state : State) -> void:
 	super.enter(prev_state)
 	if not get_tree().current_scene.is_node_ready():
 		await get_tree().current_scene.ready
+	Game.load_title_scene()
 	var main_menu := main_menu_scene.instantiate() as Control
 	if main_menu:
 		Game.canvas_manager.set_layer_content(JamUtils.layer_ui_menu, main_menu)

@@ -150,7 +150,7 @@ func loose() -> void:
 	init_game_over(StageResult.LOOSE)
 
 func quit_to_title() -> void:
-	load_title_scene()
+	change_game_state(GameState.MENU)
 
 func quit_to_desktop() -> void:
 	get_tree().quit()
