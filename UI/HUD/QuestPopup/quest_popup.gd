@@ -16,7 +16,7 @@ func _ready() -> void:
 		Game.quest_system.quest_completed.connect(_on_quest_completed)
 
 func _on_quest_completed(quest: VikingQuestResource) -> void:
-	title_label.text = "QUEST COMPLETED"
+	title_label.text = quest.header
 	description_label.text = quest.description
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	panel.show()
