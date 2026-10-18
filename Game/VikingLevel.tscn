@@ -7,7 +7,6 @@
 
 [node name="SailingLevel" type="Node3D" unique_id=1552260592]
 script = ExtResource("1_25o1n")
-level_units_per_map_unit = null
 
 [node name="Level" parent="." unique_id=1330335551 instance=ExtResource("2_6quwq")]
 

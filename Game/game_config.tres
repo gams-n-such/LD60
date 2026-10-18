@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="VikingGameConfig" format=3 uid="uid://8s4nkm8wl3la"]
+
+[ext_resource type="Script" uid="uid://bymuqhfqednk" path="res://Game/Config/viking_game_config.gd" id="1_y53pl"]
+
+[resource]
+script = ExtResource("1_y53pl")
+metadata/_custom_type_script = "uid://bymuqhfqednk"

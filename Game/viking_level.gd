@@ -4,8 +4,10 @@ extends Node3D
 
 ## How many 3D level units correspond to one map unit.
 ## Map coordinates remain unchanged; this only affects 3D placement.
-@export_range(1, 20.0, 0.1, "or_greater")
-var level_units_per_map_unit: float = 1.0
+var level_units_per_map_unit: float:
+	get:
+		return Game.config.miles_per_map_unit
+
 @onready var ship: Node3D = %Ship
 
 # Maps each world-place resource to its instantiated island node.
