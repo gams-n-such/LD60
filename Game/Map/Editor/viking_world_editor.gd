@@ -3,14 +3,6 @@ extends Node2D
 
 const EDITOR_PLACE_SCENE = preload("uid://rxnqdg3jxniu")
 
-@export_tool_button("Edit island shapes") var edit_islands := func ():
-	for child in islands_root.get_children():
-		set_editable_instance(child, true)
-
-@export_tool_button("Fix island shapes") var fix_islands := func ():
-	for child in islands_root.get_children():
-		set_editable_instance(child, false)
-
 @export_tool_button("Save to resource") var save_world := func ():
 	if not world_resource:
 		return
@@ -25,6 +17,14 @@ const EDITOR_PLACE_SCENE = preload("uid://rxnqdg3jxniu")
 			world_resource.places.append(place.as_resource(pixels_per_size_unit))
 	world_resource.emit_changed()
 	ResourceSaver.save(world_resource)
+
+@export_tool_button("Edit island shapes") var edit_islands := func ():
+	for child in islands_root.get_children():
+		set_editable_instance(child, true)
+
+@export_tool_button("Fix island shapes") var fix_islands := func ():
+	for child in islands_root.get_children():
+		set_editable_instance(child, false)
 
 @export_tool_button("Load from resource") var load_world := func ():
 	for child in islands_root.get_children():
