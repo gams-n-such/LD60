@@ -50,8 +50,8 @@ func as_resource(map_scale : float = 1.0) -> VikingPlaceResource:
 	result.rune = generate_rune_resource()
 	result.heading = global_rotation.y
 	result.coordinates = Vector2(global_position.x, global_position.z) / map_scale
-	result.scale = scale / map_scale
-	result.visibility_range = visibility_sphere.radius
+	result.scale = (_spawned_editor_island if _spawned_editor_island else self).scale / map_scale
+	result.visibility_range = visibility_sphere.radius * maxf(scale.x, scale.z) / map_scale
 	return result
 
 func generate_island_resource() -> VikingIslandResource:
@@ -80,8 +80,8 @@ func from_resource(resource : VikingPlaceResource, map_scale : float = 1.0) -> v
 	apply_rune_resource(resource.rune)
 	global_position = Vector3(resource.coordinates.x, 0.0, resource.coordinates.y) * map_scale
 	global_rotation = Vector3.UP * resource.heading
-	scale = resource.scale * map_scale
-	visibility_sphere.radius = resource.visibility_range
+	(_spawned_editor_island if _spawned_editor_island else self).scale = resource.scale * map_scale
+	visibility_sphere.radius = resource.visibility_range / maxf(scale.x, scale.z) * map_scale
 
 func apply_island_resource(resource : VikingIslandResource) -> void:
 	if not resource:
