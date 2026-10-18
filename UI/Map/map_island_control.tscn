@@ -16,6 +16,11 @@ script = ExtResource("1_2uo3a")
 [node name="Polygon" type="Polygon2D" parent="." unique_id=557583236]
 unique_name_in_owner = true
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="." unique_id=1026642500]
+remote_path = NodePath("../Node/LabelRoot")
+update_rotation = false
+update_scale = false
+
 [node name="Sprite" type="TextureRect" parent="." unique_id=1371003863]
 unique_name_in_owner = true
 layout_mode = 0
@@ -23,9 +28,15 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = SubResource("PlaceholderTexture2D_tp06f")
 
-[node name="NameLabel" type="Label" parent="." unique_id=1311903740]
+[node name="Node" type="Node" parent="." unique_id=233448241]
+
+[node name="LabelRoot" type="Node2D" parent="Node" unique_id=1225383234]
+
+[node name="NameLabel" type="Label" parent="Node/LabelRoot" unique_id=1311903740]
 unique_name_in_owner = true
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 offset_transform_enabled = true
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 12
+text = "SomeLand"

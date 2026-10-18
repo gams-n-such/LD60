@@ -13,6 +13,10 @@ var map_radius_px : float:
 	get:
 		return actual_map.size.x / 2.0
 
+var pixels_per_unit : float:
+	get:
+		return map_radius_px / world_resource.radius
+
 var world_resource : VikingWorldResource:
 	get:
 		return Game.world_resource
@@ -26,11 +30,11 @@ func _ready() -> void:
 	for place in world_resource.places:
 		var island_control := MAP_ISLAND_CONTROL.instantiate() as MapIslandControl
 		islands_root.add_child(island_control)
-		island_control.from_resource(place.island)
+		island_control.from_resource(place.island, pixels_per_unit)
 		print(map_center_px)
-		island_control.position = map_center_px + map_radius_px * (place.coordinates / world_resource.radius)
+		island_control.position = map_center_px + place.coordinates * pixels_per_unit
 		island_control.rotation = place.heading
-		island_control.scale = place.scale
+		island_control.scale = place.scale * pixels_per_unit
 
 
 func _process(delta: float) -> void:
