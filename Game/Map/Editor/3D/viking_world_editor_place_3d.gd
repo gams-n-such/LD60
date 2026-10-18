@@ -40,6 +40,7 @@ func _respawn_editor_scene() -> void:
 @export var map_icon: Texture2D
 @export_custom(PROPERTY_HINT_NONE, "") var map_icon_rotation: float = 0.0
 @export var map_icon_scale: float = 1.0
+@onready var visibility_sphere: CSGSphere3D = %VisibilitySphere
 
 
 func as_resource(map_scale : float = 1.0) -> VikingPlaceResource:
@@ -50,6 +51,7 @@ func as_resource(map_scale : float = 1.0) -> VikingPlaceResource:
 	result.heading = global_rotation.y
 	result.coordinates = Vector2(global_position.x, global_position.z) / map_scale
 	result.scale = scale / map_scale
+	result.visibility_range = visibility_sphere.radius
 	return result
 
 func generate_island_resource() -> VikingIslandResource:
@@ -79,6 +81,7 @@ func from_resource(resource : VikingPlaceResource, map_scale : float = 1.0) -> v
 	global_position = Vector3(resource.coordinates.x, 0.0, resource.coordinates.y) * map_scale
 	global_rotation = Vector3.UP * resource.heading
 	scale = resource.scale * map_scale
+	visibility_sphere.radius = resource.visibility_range
 
 func apply_island_resource(resource : VikingIslandResource) -> void:
 	if not resource:

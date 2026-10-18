@@ -2,5 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dk1cs5806vdnv" path="res://Game/Map/Editor/3D/viking_world_editor_place_3d.gd" id="1_4ob51"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tp06f"]
+transparency = 1
+albedo_color = Color(0, 1, 1, 0.5294118)
+
 [node name="VikingEditorPlace3d" type="Node3D" unique_id=622237465]
 script = ExtResource("1_4ob51")
+
+[node name="VisibilitySphere" type="CSGSphere3D" parent="." unique_id=2094651265]
+unique_name_in_owner = true
+material = SubResource("StandardMaterial3D_tp06f")

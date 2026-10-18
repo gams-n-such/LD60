@@ -5,6 +5,14 @@ extends Node3D
 func _ready() -> void:
 	pass # Replace with function body.
 
+@onready var player_start: Node3D = %PlayerStart
+@export var map_scale : float = 1.0
+@export var game_config : VikingGameConfig = null
+@export var world_resource : VikingWorldResource = null
+@onready var border_mesh: MeshInstance3D = %BorderMesh
+
+@onready var islands_root: Node3D = %Islands
+
 
 const EDITOR_PLACE_SCENE = preload("uid://dad2mnghcn17b")
 
@@ -13,6 +21,7 @@ const EDITOR_PLACE_SCENE = preload("uid://dad2mnghcn17b")
 		return
 	
 	world_resource.radius = maxf(border_mesh.scale.x, border_mesh.scale.z) / map_scale
+	world_resource.player_start_coords = Vector2(player_start.global_position.x, player_start.global_position.y) / map_scale
 	
 	world_resource.places.clear()
 	for child in islands_root.get_children():
@@ -39,17 +48,10 @@ const EDITOR_PLACE_SCENE = preload("uid://dad2mnghcn17b")
 		return
 	
 	border_mesh.scale = Vector3.ONE * world_resource.radius * map_scale
-	
+	player_start.global_position = Vector3(world_resource.player_start_coords.x, 0.0, world_resource.player_start_coords.y) * map_scale
 	for place in world_resource.places:
 		var place_node := EDITOR_PLACE_SCENE.instantiate() as VikingWorldEditorPlace3D
 		islands_root.add_child(place_node)
 		place_node.owner = self
 		#set_editable_instance(place_node, true)
 		place_node.from_resource(place, map_scale)
-
-@export var map_scale : float = 1.0
-@export var game_config : VikingGameConfig = null
-@export var world_resource : VikingWorldResource = null
-@onready var border_mesh: MeshInstance3D = %BorderMesh
-
-@onready var islands_root: Node3D = %Islands
