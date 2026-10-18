@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b2x8n004g3ybj"]
+
+[ext_resource type="Script" uid="uid://cyu1cdek8emj1" path="res://UI/HUD/QuestPopup/quest_popup.gd" id="1_ihix6"]
+
+[node name="QuestPopup" type="CanvasLayer" unique_id=1808250790]
+layer = 10
+script = ExtResource("1_ihix6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=62928665]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -83.0
+offset_right = 282.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=732855136]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=784522534]
+unique_name_in_owner = true
+layout_mode = 2
+text = "QUEST"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1992081909]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 15)
+layout_mode = 2
+text = "afmoiasjosnaifnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="OkButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=616342229]
+unique_name_in_owner = true
+layout_mode = 2
+text = "OK"

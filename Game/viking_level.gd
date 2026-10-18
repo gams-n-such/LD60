@@ -39,6 +39,7 @@ func update_nearby_islands(
 	if world.places.is_empty():
 		print("WARNING: World contains no places.")
 	print("Total places in world: ", world.places.size())
+	Game.acquisitionable_islands.clear()
 	var nearby_places: Dictionary = {}
 	for index in range(world.places.size()):
 		var place: VikingPlaceResource = world.places[index]
@@ -68,6 +69,8 @@ func update_nearby_islands(
 				]
 			)
 			continue
+		if distance <= place.acquisition_range:
+			Game.acquisitionable_islands.append(place)
 		nearby_places[place] = true
 		var island_instance: Node3D = _spawned_islands.get(place) as Node3D
 		var was_spawned := false
@@ -89,7 +92,7 @@ func update_nearby_islands(
 			add_child(island_instance)
 			_spawned_islands[place] = island_instance
 			was_spawned = true
-
+		
 		# Convert global map coordinates into an offset from the ship.
 		var map_offset := place.coordinates - ship_map_position
 		var heading_radians := deg_to_rad(Game.ship_state.heading)
@@ -149,8 +152,6 @@ func update_nearby_islands(
 		"=== Island update complete: %d active island references ===\n"
 		% _spawned_islands.size()
 	)
-
-
 
 ## Extra distance between the ship and an island after separation.
 @export var island_collision_margin: float = 0.1
