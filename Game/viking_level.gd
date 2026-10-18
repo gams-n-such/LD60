@@ -103,7 +103,7 @@ func update_nearby_islands(
 			0.0,
 			final_offset.z
 		)
-		#island_instance.rotation.y = deg_to_rad(place.heading)
+		island_instance.rotation.y = deg_to_rad(place.heading - Game.ship_state.heading)
 		island_instance.scale = Vector3(
 			place.scale.x,
 			1.0,
