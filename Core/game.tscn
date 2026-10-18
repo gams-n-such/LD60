@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dxhk0onvkhd3r" path="res://Game/Ship/VikingShipState.tscn" id="6_j0bao"]
 [ext_resource type="Script" uid="uid://hm4mr3v1hfai" path="res://Core/States/gameplay_game_state.gd" id="7_j36f3"]
 [ext_resource type="PackedScene" uid="uid://dpoay026t1lnn" path="res://UI/MainMenu/main_menu.tscn" id="8_4qclw"]
+[ext_resource type="Script" uid="uid://d1f7binve1rld" path="res://Game/Systems/time_system.gd" id="8_7yjlo"]
 [ext_resource type="PackedScene" uid="uid://c6uqpxfa40845" path="res://UI/HUD/hud.tscn" id="11_74v2q"]
 
 [node name="Game" type="Node" unique_id=736238743]
@@ -27,6 +28,11 @@ title_scene = ExtResource("2_htkch")
 gameplay_scene = ExtResource("3_qe6tj")
 pause_menu_scene = ExtResource("3_52drc")
 game_over_scene = ExtResource("4_jcax3")
+
+[node name="VikingTimeSystem" type="Node" parent="." unique_id=1841525897]
+unique_name_in_owner = true
+script = ExtResource("8_7yjlo")
+metadata/_custom_type_script = "uid://d1f7binve1rld"
 
 [node name="VikingShipState" parent="." unique_id=423006667 instance=ExtResource("6_j0bao")]
 
