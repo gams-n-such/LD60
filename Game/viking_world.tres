@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="VikingWorldResource" format=3 uid="uid://bk71h36b42f2y"]
 
 [ext_resource type="Script" uid="uid://x5ouc5vohp8a" path="res://Game/Map/viking_place_resource.gd" id="1_icmae"]
+[ext_resource type="Script" uid="uid://wnj3puet57uv" path="res://Game/Quest/viking_quest_resource.gd" id="1_rb06u"]
 [ext_resource type="Script" uid="uid://dw56iobukyh5d" path="res://Game/Map/viking_island_resource.gd" id="2_icmae"]
 [ext_resource type="PackedScene" uid="uid://bwc8m6ioegbnd" path="res://Game/Level/Islands/SmallBallIsland.tscn" id="2_nq65h"]
 [ext_resource type="Script" uid="uid://d0xgx6qvmr336" path="res://Game/Map/viking_world_resource.gd" id="3_s272b"]
@@ -75,6 +76,7 @@ script = ExtResource("1_icmae")
 island = SubResource("Resource_3q5mt")
 coordinates = Vector2(8350, 1769.0001)
 heading = -0.7440029
+visibility_range = 1000.0
 
 [sub_resource type="Resource" id="Resource_jubqp"]
 script = ExtResource("2_icmae")
@@ -104,8 +106,8 @@ script = ExtResource("1_icmae")
 island = SubResource("Resource_gs1pr")
 coordinates = Vector2(-985, 1563)
 heading = 0.56242305
-scale = Vector3(30.52126, 30.52126, 30.52126)
-visibility_range = 1538.3900451660156
+visibility_range = 1000.0
+acquisition_range = 1000.0
 
 [sub_resource type="Resource" id="Resource_fussg"]
 script = ExtResource("2_icmae")
@@ -172,9 +174,16 @@ heading = -0.65015626
 scale = Vector3(1.0000001, 1, 1.0000001)
 visibility_range = 4.999999865889393
 
+[sub_resource type="Resource" id="Resource_e3tp2"]
+script = ExtResource("1_rb06u")
+island_name = "LongCock"
+description = "You arrived at LONG COCK!!!!"
+metadata/_custom_type_script = "uid://wnj3puet57uv"
+
 [resource]
 script = ExtResource("3_s272b")
 radius = 21500.0
 player_start_coords = Vector2(-965.29626, 948.8829)
 places = Array[ExtResource("1_icmae")]([SubResource("Resource_rb06u"), SubResource("Resource_n3tos"), SubResource("Resource_7gpj0"), SubResource("Resource_ntpek"), SubResource("Resource_u5tfx"), SubResource("Resource_ant62"), SubResource("Resource_7lotx"), SubResource("Resource_1hv7y"), SubResource("Resource_3wlei"), SubResource("Resource_jqksj"), SubResource("Resource_bitc8"), SubResource("Resource_vl3aq")])
+quests = Array[ExtResource("1_rb06u")]([SubResource("Resource_e3tp2")])
 metadata/_custom_type_script = "uid://d0xgx6qvmr336"

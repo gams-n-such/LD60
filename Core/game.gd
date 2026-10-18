@@ -44,8 +44,11 @@ func toggle_mouse_cursor() -> void:
 
 @export var world_resource : VikingWorldResource
 @export var config : VikingGameConfig
-@onready var ship_state: VikingShipState = $VikingShipState
+@onready var ship_state: VikingShipState = %VikingShipState
 @onready var time_system: VikingTimeSystem = %VikingTimeSystem
+@onready var quest_system: VikingQuestSystem = %VikingQuestSystem
+
+var acquisitionable_islands : Array[VikingPlaceResource] = []
 
 var player : VikingCharacter3D = null
 
@@ -66,6 +69,7 @@ func skip_time(hours: float, fade: bool) -> void:
 		await _fade_to(1.0)
 	ship_state.sail_forward(hours)
 	time_system.advance_time(hours)
+	quest_system.check_active_quests()
 	gameplay_level.update_nearby_islands(
 		world_resource,
 		ship_state.map_position

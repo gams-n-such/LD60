@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://hm4mr3v1hfai" path="res://Core/States/gameplay_game_state.gd" id="7_j36f3"]
 [ext_resource type="PackedScene" uid="uid://dpoay026t1lnn" path="res://UI/MainMenu/main_menu.tscn" id="8_4qclw"]
 [ext_resource type="Script" uid="uid://d1f7binve1rld" path="res://Game/Systems/time_system.gd" id="8_7yjlo"]
+[ext_resource type="Script" uid="uid://cwdl8npmvnl5v" path="res://Game/Systems/quest_system.gd" id="9_6r42o"]
 [ext_resource type="PackedScene" uid="uid://c6uqpxfa40845" path="res://UI/HUD/hud.tscn" id="11_74v2q"]
 
 [node name="Game" type="Node" unique_id=736238743]
@@ -34,7 +35,13 @@ unique_name_in_owner = true
 script = ExtResource("8_7yjlo")
 metadata/_custom_type_script = "uid://d1f7binve1rld"
 
+[node name="VikingQuestSystem" type="Node" parent="." unique_id=1056151079]
+unique_name_in_owner = true
+script = ExtResource("9_6r42o")
+metadata/_custom_type_script = "uid://cwdl8npmvnl5v"
+
 [node name="VikingShipState" parent="." unique_id=423006667 instance=ExtResource("6_j0bao")]
+unique_name_in_owner = true
 
 [node name="WebMouseCaptor" type="Node" parent="." unique_id=245208459]
 script = ExtResource("5_gwpo4")
