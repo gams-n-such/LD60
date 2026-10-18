@@ -40,10 +40,9 @@ metadata/_custom_type_script = "uid://d1f7binve1rld"
 script = ExtResource("5_gwpo4")
 metadata/_custom_type_script = "uid://cf7i1a3dh3at4"
 
-[node name="GameStateMachine" type="Node" parent="." unique_id=1842708992 node_paths=PackedStringArray("INITIAL_STATE")]
+[node name="GameStateMachine" type="Node" parent="." unique_id=1842708992]
 unique_name_in_owner = true
 script = ExtResource("5_lqrbg")
-INITIAL_STATE = NodePath("MainMenu")
 metadata/_custom_type_script = "uid://cmo5n6t4g2sel"
 
 [node name="MainMenu" type="Node" parent="GameStateMachine" unique_id=1985978003]
