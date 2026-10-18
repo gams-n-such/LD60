@@ -13,10 +13,10 @@ script = ExtResource("1_25o1n")
 
 [node name="Ship" parent="." unique_id=1982402246 instance=ExtResource("3_0afi1")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4, 0)
 
-[node name="PlatformingCharacter3D" parent="Ship/ShipPivot" parent_id_path=PackedInt32Array(1982402246, 1999960870) index="0" unique_id=1945718915 instance=ExtResource("4_c20gm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8155599, 1.4, 0)
+[node name="PlatformingCharacter3D" parent="Ship/ShipPivot/ShipVisuals" parent_id_path=PackedInt32Array(1982402246, 1926840160) index="0" unique_id=1945718915 instance=ExtResource("4_c20gm")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6271253, -10.105919)
 
 [node name="PlaceholderIsland" parent="." unique_id=1671935640 instance=ExtResource("5_iltxm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4, 60)
