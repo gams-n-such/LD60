@@ -20,4 +20,5 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ArrowRoot" unique_id=850773194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, 0)
+cast_shadow = 0
 mesh = SubResource("CylinderMesh_tp06f")

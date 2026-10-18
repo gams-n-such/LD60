@@ -10,7 +10,7 @@ func from_resource(resource : VikingIslandResource, pixels_per_unit : float = 10
 	if resource.map_sprite:
 		sprite.texture = resource.map_sprite
 		sprite.rotation = resource.map_sprite_rotation
-		sprite.scale = resource.map_sprite_scale
+		sprite.scale = Vector2.ONE * resource.map_sprite_scale
 		polygon.polygon = PackedVector2Array()
 	else:
 		sprite.texture = null

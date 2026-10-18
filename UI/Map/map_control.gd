@@ -28,6 +28,8 @@ func _ready() -> void:
 	await get_tree().create_timer(.01).timeout
 	
 	for place in world_resource.places:
+		if not place.is_island():
+			continue
 		var island_control := MAP_ISLAND_CONTROL.instantiate() as MapIslandControl
 		islands_root.add_child(island_control)
 		island_control.from_resource(place.island, pixels_per_unit)
