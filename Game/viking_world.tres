@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://x5ouc5vohp8a" path="res://Game/Map/viking_place_resource.gd" id="1_icmae"]
 [ext_resource type="Script" uid="uid://dw56iobukyh5d" path="res://Game/Map/viking_island_resource.gd" id="2_icmae"]
-[ext_resource type="PackedScene" uid="uid://bwc8m6ioegbnd" path="res://Level/Islands/SmallBallIsland.tscn" id="2_nq65h"]
+[ext_resource type="PackedScene" uid="uid://bwc8m6ioegbnd" path="res://Game/Level/Islands/SmallBallIsland.tscn" id="2_nq65h"]
 [ext_resource type="Script" uid="uid://d0xgx6qvmr336" path="res://Game/Map/viking_world_resource.gd" id="3_s272b"]
-[ext_resource type="PackedScene" uid="uid://oeluq665wk56" path="res://Level/Islands/LongCockIsland.tscn" id="4_s272b"]
+[ext_resource type="PackedScene" uid="uid://oeluq665wk56" path="res://Game/Level/Islands/LongCockIsland.tscn" id="4_s272b"]
 [ext_resource type="Script" uid="uid://3pom5xueq4xe" path="res://Game/Map/viking_rune_resource.gd" id="5_k7hdp"]
 [ext_resource type="Texture2D" uid="uid://ccn1mwohl6hnl" path="res://Game/Map/Editor/rune-stone.svg" id="6_rb06u"]
 

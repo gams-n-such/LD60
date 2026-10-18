@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://di6dhhwojinx8"]
 
-[ext_resource type="Script" uid="uid://ba7feeoknbji5" path="res://Level/Ship/ship.gd" id="1_obob2"]
+[ext_resource type="Script" uid="uid://ba7feeoknbji5" path="res://Game/Level/Ship/ship.gd" id="1_obob2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_h10kl"]
 
