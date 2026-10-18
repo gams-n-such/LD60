@@ -115,6 +115,7 @@ func update_nearby_islands(
 			1.0,
 			place.scale.y
 		)
+		_separate_island_from_ship(island_instance)
 		var action := "SPAWNED" if was_spawned else "UPDATED"
 		print(
 			"%s '%s': map=%s, distance=%.2f, level_position=%s, heading=%.3f, final_offset=%s"
@@ -147,4 +148,75 @@ func update_nearby_islands(
 	print(
 		"=== Island update complete: %d active island references ===\n"
 		% _spawned_islands.size()
+	)
+
+
+
+## Extra distance between the ship and an island after separation.
+@export var island_collision_margin: float = 0.1
+
+
+func _get_box_collision(node: Node) -> CollisionShape3D:
+	return node.find_child("BoxCollision", true, false) as CollisionShape3D
+
+
+func _get_world_aabb(collision: CollisionShape3D) -> AABB:
+	var local_aabb: AABB = collision.shape.get_debug_mesh().get_aabb()
+	return collision.global_transform * local_aabb
+
+func _separate_island_from_ship(island: Node3D) -> void:
+	var ship_collision := _get_box_collision(ship)
+	var island_collision := _get_box_collision(island)
+	if ship_collision == null or island_collision == null:
+		push_warning("Cannot separate island: BoxCollision is missing.")
+		return
+	if not ship_collision.shape is BoxShape3D:
+		push_warning("Ship BoxCollision must use BoxShape3D.")
+		return
+	if not island_collision.shape is BoxShape3D:
+		push_warning("Island BoxCollision must use BoxShape3D.")
+		return
+	var ship_aabb := _get_world_aabb(ship_collision)
+	var island_aabb := _get_world_aabb(island_collision)
+	# Work in the horizontal plane.
+	var ship_center := ship_aabb.get_center()
+	var island_center := island_aabb.get_center()
+	var direction := Vector2(
+		island_center.x - ship_center.x,
+		island_center.z - ship_center.z
+	)
+	if direction.length_squared() < 0.000001:
+		direction = Vector2.UP
+	else:
+		direction = direction.normalized()
+	# Project both world-space AABBs onto the chosen horizontal direction.
+	var ship_radius := _projected_aabb_radius(ship_aabb, direction)
+	var island_radius := _projected_aabb_radius(island_aabb, direction)
+	var center_distance := Vector2(
+		island_center.x - ship_center.x,
+		island_center.z - ship_center.z
+	).dot(direction)
+	var required_distance := ship_radius + island_radius + island_collision_margin
+	if center_distance >= required_distance:
+		return
+	var displacement := required_distance - center_distance
+	island.global_position += Vector3(
+		direction.x * displacement,
+		0.0,
+		direction.y * displacement
+	)
+	print(
+		"Separated island '%s' from ship by %.2f level units."
+		% [island.name, displacement]
+	)
+
+
+func _projected_aabb_radius(
+	aabb: AABB,
+	direction: Vector2
+) -> float:
+	var half_size := aabb.size * 0.5
+	return (
+		abs(direction.x) * half_size.x
+		+ abs(direction.y) * half_size.z
 	)

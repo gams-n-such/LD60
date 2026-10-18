@@ -7,8 +7,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5f2x"]
 albedo_color = Color(0.42362538, 0.14940658, 0.19201136, 1)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wovl2"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7pfj"]
 
 [node name="Ship" type="Node3D" unique_id=1982402246]
 script = ExtResource("1_obob2")
@@ -27,5 +26,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_b5f2x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ShipPivot/ShipVisuals/PlaceholderMeshInstance3D" unique_id=1064598671]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ShipPivot/ShipVisuals/PlaceholderMeshInstance3D/StaticBody3D" unique_id=915314489]
-shape = SubResource("ConcavePolygonShape3D_wovl2")
+[node name="BoxCollision" type="CollisionShape3D" parent="ShipPivot/ShipVisuals/PlaceholderMeshInstance3D/StaticBody3D" unique_id=915314489]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_w7pfj")
