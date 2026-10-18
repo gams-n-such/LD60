@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://bwc8m6ioegbnd"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7l353"]
+size = Vector3(0.3826599, 0.35595703, 0.43014526)
+
 [sub_resource type="SphereMesh" id="SphereMesh_0yyek"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x0hc6"]
@@ -9,8 +12,14 @@ albedo_color = Color(0.606848, 0.31646267, 0.07440361, 1)
 
 [node name="SmallBallIsland" type="Node3D" unique_id=1671935640]
 
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=577876640]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="StaticBody3D" unique_id=1722737512]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, 2.0393372, 3.6254883, -0.7441406)
+shape = SubResource("BoxShape3D_7l353")
+
 [node name="PlaceholderMeshInstance3D" type="MeshInstance3D" parent="." unique_id=1905425986]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("SphereMesh_0yyek")
 surface_material_override/0 = SubResource("StandardMaterial3D_x0hc6")
 

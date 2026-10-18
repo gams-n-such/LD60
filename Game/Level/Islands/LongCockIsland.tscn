@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://oeluq665wk56"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h10kl"]
+size = Vector3(0.6530762, 1, 0.47839355)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_70x63"]
 
@@ -11,13 +12,14 @@ albedo_color = Color(0.22118151, 0.28436956, 4.813075e-08, 1)
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dom0x"]
+size = Vector3(1, 62.99994, 0.23583984)
 
 [node name="LongCockIsland" type="Node3D" unique_id=1671935640]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=692813556]
 
 [node name="BoxCollision" type="CollisionShape3D" parent="StaticBody3D" unique_id=1832363317]
-transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, 0, 0, -33.641327)
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, -0.4284668, 0, -10.169037)
 shape = SubResource("BoxShape3D_h10kl")
 
 [node name="PlaceholderMeshInstance3D2" type="MeshInstance3D" parent="." unique_id=815574576]
@@ -41,11 +43,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_x0hc6")
 shape = SubResource("ConcavePolygonShape3D_02f87")
 
 [node name="PlaceholderMeshInstance3D" type="MeshInstance3D" parent="PlaceholderMeshInstance3D" unique_id=816631294]
-transform = Transform3D(0.7, 0, 0, 0, 2, 0, 0, 0, 4, -0.47376585, 0, -2.0180182)
+transform = Transform3D(0.69999975, 0, 0, 0, 2, 0, 0, 0, 3.999999, -0.47376585, 61.99994, -0.48969796)
 mesh = SubResource("BoxMesh_dom0x")
 surface_material_override/0 = SubResource("StandardMaterial3D_x0hc6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PlaceholderMeshInstance3D/PlaceholderMeshInstance3D" unique_id=468401310]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlaceholderMeshInstance3D/PlaceholderMeshInstance3D/StaticBody3D" unique_id=2017219976]
 shape = SubResource("ConcavePolygonShape3D_02f87")
