@@ -6,75 +6,90 @@
 [ext_resource type="PackedScene" uid="uid://rxnqdg3jxniu" path="res://Game/Map/Editor/viking_world_editor_place.tscn" id="4_n6doo"]
 [ext_resource type="PackedScene" uid="uid://bwc8m6ioegbnd" path="res://Level/Islands/SmallBallIsland.tscn" id="5_el7dv"]
 [ext_resource type="PackedScene" uid="uid://oeluq665wk56" path="res://Level/Islands/LongCockIsland.tscn" id="6_pd8r0"]
-[ext_resource type="Texture2D" uid="uid://ccn1mwohl6hnl" path="res://Game/Map/Editor/rune-stone.svg" id="7_b15pq"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v6u60"]
-size = Vector2(32, 32)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k7hdp"]
-size = Vector2(20, 20)
 
 [node name="VikingWorldEditor" type="Node2D" unique_id=1955510249]
 script = ExtResource("1_lopkh")
 world_resource = ExtResource("2_40dv5")
+pixels_per_size_unit = 1.0
 
 [node name="BorderSprite" type="Sprite2D" parent="." unique_id=1157193102]
-scale = Vector2(1.6640887, 1.6640887)
+scale = Vector2(100, 100)
 texture = ExtResource("3_jhomw")
 
 [node name="Islands" type="Node2D" parent="." unique_id=743131356]
 unique_name_in_owner = true
 
 [node name="VikingWorldEditorPlace" parent="Islands" unique_id=359062302 instance=ExtResource("4_n6doo")]
-position = Vector2(-71, -58)
-rotation = -0.46837303
+position = Vector2(5593, -12302)
+rotation = -0.74400306
+scale = Vector2(28.277906, 31.062656)
 type = 0
 place_scene = ExtResource("5_el7dv")
 
-[node name="MapSprite" parent="Islands/VikingWorldEditorPlace" index="2" unique_id=624345107]
-texture = SubResource("PlaceholderTexture2D_v6u60")
+[node name="VikingWorldEditorPlace3" parent="Islands" unique_id=1837925710 instance=ExtResource("4_n6doo")]
+position = Vector2(-6339, -7900.0005)
+rotation = -0.74400306
+scale = Vector2(28.277906, 31.062656)
+type = 0
+place_scene = ExtResource("5_el7dv")
 
-[node name="LabelRoot" parent="Islands/VikingWorldEditorPlace/Node" parent_id_path=PackedInt32Array(359062302, 700596021) index="0" unique_id=692656546]
-position = Vector2(-71, -58)
+[node name="VikingWorldEditorPlace7" parent="Islands" unique_id=1733823430 instance=ExtResource("4_n6doo")]
+position = Vector2(-8526.001, -17376)
+rotation = -0.74400306
+scale = Vector2(28.277906, 31.062656)
+type = 0
+place_scene = ExtResource("5_el7dv")
 
-[node name="NameLabel" parent="Islands/VikingWorldEditorPlace/Node/LabelRoot" index="0" unique_id=1342648887]
-text = "SmallBall"
+[node name="VikingWorldEditorPlace8" parent="Islands" unique_id=329488650 instance=ExtResource("4_n6doo")]
+position = Vector2(6515.999, -11412)
+rotation = -0.74400306
+scale = Vector2(28.277906, 31.062656)
+type = 0
+place_scene = ExtResource("5_el7dv")
+
+[node name="VikingWorldEditorPlace4" parent="Islands" unique_id=1923666333 instance=ExtResource("4_n6doo")]
+position = Vector2(8350, 1769)
+rotation = -0.74400306
+scale = Vector2(28.277906, 31.062656)
+type = 0
+place_scene = ExtResource("5_el7dv")
+
+[node name="VikingWorldEditorPlace5" parent="Islands" unique_id=1576220232 instance=ExtResource("4_n6doo")]
+position = Vector2(628, 12777)
+rotation = -0.74400306
+scale = Vector2(28.277906, 31.062656)
+type = 0
+place_scene = ExtResource("5_el7dv")
 
 [node name="@Node2D@67738" parent="Islands" unique_id=175831058 instance=ExtResource("4_n6doo")]
-position = Vector2(-31, 49)
+position = Vector2(-985, 1563)
 rotation = 0.56242305
 type = 0
 place_scene = ExtResource("6_pd8r0")
 
-[node name="MapSprite" parent="Islands/@Node2D@67738" index="2" unique_id=624345107]
-texture = SubResource("PlaceholderTexture2D_k7hdp")
+[node name="VikingWorldEditorPlace6" parent="Islands" unique_id=584886 instance=ExtResource("4_n6doo")]
+position = Vector2(-9065, 4398)
+rotation = -0.74400306
+scale = Vector2(28.277906, 31.062656)
+type = 0
+place_scene = ExtResource("5_el7dv")
 
-[node name="LabelRoot" parent="Islands/@Node2D@67738/Node" parent_id_path=PackedInt32Array(175831058, 700596021) index="0" unique_id=692656546]
-position = Vector2(-31, 49)
-
-[node name="NameLabel" parent="Islands/@Node2D@67738/Node/LabelRoot" index="0" unique_id=1342648887]
-text = "LongCock"
-
-[node name="VikingWorldEditorPlace2" parent="Islands" unique_id=765759422 instance=ExtResource("4_n6doo")]
-position = Vector2(103.99999, -112)
+[node name="Rune" parent="Islands" unique_id=765759422 instance=ExtResource("4_n6doo")]
+position = Vector2(5582, -12812)
 rotation = -0.6501565
 type = 1
 
-[node name="MapPolygon" parent="Islands/VikingWorldEditorPlace2" index="1" unique_id=196226907]
-visible = false
+[node name="Rune2" parent="Islands" unique_id=177954474 instance=ExtResource("4_n6doo")]
+position = Vector2(-9154, 4165)
+rotation = -0.6501565
+type = 1
 
-[node name="MapSprite" parent="Islands/VikingWorldEditorPlace2" index="2" unique_id=624345107]
-rotation = 0.37790772
-scale = Vector2(0.29086348, 0.29086348)
-texture = ExtResource("7_b15pq")
+[node name="Rune3" parent="Islands" unique_id=257497189 instance=ExtResource("4_n6doo")]
+position = Vector2(-8357, -17193)
+rotation = -0.6501565
+type = 1
 
-[node name="LabelRoot" parent="Islands/VikingWorldEditorPlace2/Node" parent_id_path=PackedInt32Array(765759422, 700596021) index="0" unique_id=692656546]
-position = Vector2(103.99999, -112)
-
-[node name="NameLabel" parent="Islands/VikingWorldEditorPlace2/Node/LabelRoot" index="0" unique_id=1342648887]
-visible = false
-text = "Rune"
-
-[editable path="Islands/VikingWorldEditorPlace"]
-[editable path="Islands/@Node2D@67738"]
-[editable path="Islands/VikingWorldEditorPlace2"]
+[node name="Rune4" parent="Islands" unique_id=497970448 instance=ExtResource("4_n6doo")]
+position = Vector2(-1, 3.8146973e-06)
+rotation = -0.6501565
+type = 1
