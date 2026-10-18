@@ -12,7 +12,7 @@ const EDITOR_PLACE_SCENE = preload("uid://dad2mnghcn17b")
 	if not world_resource:
 		return
 	
-	world_resource.radius = maxf(border_mesh.x, border_mesh.z) / map_scale
+	world_resource.radius = maxf(border_mesh.scale.x, border_mesh.scale.z) / map_scale
 	
 	world_resource.places.clear()
 	for child in islands_root.get_children():

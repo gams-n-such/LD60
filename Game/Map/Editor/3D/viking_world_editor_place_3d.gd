@@ -38,7 +38,7 @@ func _respawn_editor_scene() -> void:
 		_spawned_editor_island.owner = self
 
 @export var map_icon: Texture2D
-@export_custom(PROPERTY_HINT_NONE, "suffix:deg") var map_icon_rotation: float = 0.0
+@export_custom(PROPERTY_HINT_NONE, "") var map_icon_rotation: float = 0.0
 @export var map_icon_scale: float = 1.0
 
 
@@ -47,8 +47,8 @@ func as_resource(map_scale : float = 1.0) -> VikingPlaceResource:
 	# TODO: persistent presets
 	result.island = generate_island_resource()
 	result.rune = generate_rune_resource()
-	result.heading = global_rotation
-	result.coordinates = global_position / map_scale
+	result.heading = global_rotation.y
+	result.coordinates = Vector2(global_position.x, global_position.z) / map_scale
 	result.scale = scale / map_scale
 	return result
 
@@ -77,7 +77,7 @@ func from_resource(resource : VikingPlaceResource, map_scale : float = 1.0) -> v
 	apply_island_resource(resource.island)
 	apply_rune_resource(resource.rune)
 	global_position = Vector3(resource.coordinates.x, 0.0, resource.coordinates.y) * map_scale
-	global_rotation_degrees = Vector3.UP * resource.heading
+	global_rotation = Vector3.UP * resource.heading
 	scale = resource.scale * map_scale
 
 func apply_island_resource(resource : VikingIslandResource) -> void:
