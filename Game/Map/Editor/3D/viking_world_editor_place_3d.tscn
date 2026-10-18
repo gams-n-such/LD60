@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dad2mnghcn17b"]
+
+[ext_resource type="Script" uid="uid://dk1cs5806vdnv" path="res://Game/Map/Editor/3D/viking_world_editor_place_3d.gd" id="1_4ob51"]
+
+[node name="VikingEditorPlace3d" type="Node3D" unique_id=622237465]
+script = ExtResource("1_4ob51")

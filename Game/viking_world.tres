@@ -23,7 +23,6 @@ script = ExtResource("1_icmae")
 island = SubResource("Resource_k7hdp")
 coordinates = Vector2(5593, -12302)
 heading = -0.74400306
-scale = Vector2(28.277906, 31.062656)
 
 [sub_resource type="Resource" id="Resource_ax8pg"]
 script = ExtResource("2_icmae")
@@ -37,7 +36,6 @@ script = ExtResource("1_icmae")
 island = SubResource("Resource_ax8pg")
 coordinates = Vector2(-6339, -7900.0005)
 heading = -0.74400306
-scale = Vector2(28.277906, 31.062656)
 
 [sub_resource type="Resource" id="Resource_sh1nk"]
 script = ExtResource("2_icmae")
@@ -51,7 +49,6 @@ script = ExtResource("1_icmae")
 island = SubResource("Resource_sh1nk")
 coordinates = Vector2(-8526.001, -17376)
 heading = -0.74400306
-scale = Vector2(28.277906, 31.062656)
 
 [sub_resource type="Resource" id="Resource_oacub"]
 script = ExtResource("2_icmae")
@@ -65,7 +62,6 @@ script = ExtResource("1_icmae")
 island = SubResource("Resource_oacub")
 coordinates = Vector2(6515.999, -11412)
 heading = -0.74400306
-scale = Vector2(28.277906, 31.062656)
 
 [sub_resource type="Resource" id="Resource_3q5mt"]
 script = ExtResource("2_icmae")
@@ -79,7 +75,6 @@ script = ExtResource("1_icmae")
 island = SubResource("Resource_3q5mt")
 coordinates = Vector2(8350, 1769)
 heading = -0.74400306
-scale = Vector2(28.277906, 31.062656)
 
 [sub_resource type="Resource" id="Resource_jubqp"]
 script = ExtResource("2_icmae")
@@ -93,7 +88,6 @@ script = ExtResource("1_icmae")
 island = SubResource("Resource_jubqp")
 coordinates = Vector2(628, 12777)
 heading = -0.74400306
-scale = Vector2(28.277906, 31.062656)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k7hdp"]
 size = Vector2(20, 20)
@@ -123,7 +117,6 @@ script = ExtResource("1_icmae")
 island = SubResource("Resource_fussg")
 coordinates = Vector2(-9065, 4398)
 heading = -0.74400306
-scale = Vector2(28.277906, 31.062656)
 
 [sub_resource type="Resource" id="Resource_0hpey"]
 script = ExtResource("5_k7hdp")

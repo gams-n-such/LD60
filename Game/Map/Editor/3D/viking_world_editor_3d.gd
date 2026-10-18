@@ -2,29 +2,23 @@
 extends Node3D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-const EDITOR_PLACE_SCENE = preload("uid://rxnqdg3jxniu")
+const EDITOR_PLACE_SCENE = preload("uid://dad2mnghcn17b")
 
 @export_tool_button("Save to resource") var save_world := func ():
 	if not world_resource:
 		return
 	
-	var border_size_px := border_inner_radius * border_sprite.scale
-	world_resource.radius = maxf(border_size_px.x, border_size_px.y) / pixels_per_size_unit
+	world_resource.radius = maxf(border_mesh.x, border_mesh.z) / map_scale
 	
 	world_resource.places.clear()
 	for child in islands_root.get_children():
-		if child is VikingWorldEditorPlace:
-			var place := child as VikingWorldEditorPlace
-			world_resource.places.append(place.as_resource(pixels_per_size_unit))
+		if child is VikingWorldEditorPlace3D:
+			var place := child as VikingWorldEditorPlace3D
+			world_resource.places.append(place.as_resource(map_scale))
 	world_resource.emit_changed()
 	ResourceSaver.save(world_resource)
 
@@ -44,15 +38,16 @@ const EDITOR_PLACE_SCENE = preload("uid://rxnqdg3jxniu")
 	if not world_resource:
 		return
 	
-	border_sprite.scale = Vector2.ONE * world_resource.radius * pixels_per_size_unit / border_inner_radius
+	border_mesh.scale = Vector3.ONE * world_resource.radius * map_scale
 	
 	for place in world_resource.places:
-		var place_node := EDITOR_PLACE_SCENE.instantiate() as VikingWorldEditorPlace
+		var place_node := EDITOR_PLACE_SCENE.instantiate() as VikingWorldEditorPlace3D
 		islands_root.add_child(place_node)
 		place_node.owner = self
-		set_editable_instance(place_node, true)
-		place_node.from_resource(place, pixels_per_size_unit)
+		#set_editable_instance(place_node, true)
+		place_node.from_resource(place, map_scale)
 
+@export var map_scale : float = 1.0
 @export var game_config : VikingGameConfig = null
 @export var world_resource : VikingWorldResource = null
 @onready var border_mesh: MeshInstance3D = %BorderMesh

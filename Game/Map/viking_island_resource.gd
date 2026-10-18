@@ -11,4 +11,4 @@ extends Resource
 
 @export var map_sprite : Texture2D = null
 @export var map_sprite_rotation : float = 0.0
-@export var map_sprite_scale : Vector2 = Vector2.ONE
+@export var map_sprite_scale : float = 1.0

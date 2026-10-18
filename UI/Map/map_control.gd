@@ -34,7 +34,8 @@ func _ready() -> void:
 		print(map_center_px)
 		island_control.position = map_center_px + place.coordinates * pixels_per_unit
 		island_control.rotation = place.heading
-		island_control.scale = place.scale * pixels_per_unit
+		island_control.scale = place.scale_2d * pixels_per_unit
+
 
 
 func _process(delta: float) -> void:

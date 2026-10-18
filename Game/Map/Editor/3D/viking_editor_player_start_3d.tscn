@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bc8ogp4b4dmju"]
 
+[ext_resource type="PackedScene" uid="uid://di6dhhwojinx8" path="res://Game/Level/Ship/Ship.tscn" id="1_j2rbh"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_biaub"]
 albedo_color = Color(0, 1, 0, 1)
 
@@ -11,6 +13,11 @@ height = 40.0
 
 [node name="VikingEditorPlayerStart3d" type="Node3D" unique_id=380266561]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=850773194]
+[node name="Ship" parent="." unique_id=1982402246 instance=ExtResource("1_j2rbh")]
+
+[node name="ArrowRoot" type="Node3D" parent="." unique_id=1795776946]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ArrowRoot" unique_id=850773194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, 0)
 mesh = SubResource("CylinderMesh_tp06f")
