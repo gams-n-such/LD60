@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2k6m7xba6ul4" path="res://icon.svg" id="2_voyfg"]
 
 [node name="FixedCompass" type="Control" unique_id=1614903024]
+clip_children = 2
 custom_minimum_size = Vector2(500, 60)
 layout_mode = 3
 anchors_preset = 0

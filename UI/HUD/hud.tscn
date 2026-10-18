@@ -22,7 +22,11 @@ offset_right = 1284.0
 offset_bottom = 76.0
 
 [node name="FixedCompass" parent="." unique_id=1614903024 instance=ExtResource("2_ing8j")]
-layout_mode = 0
-offset_left = 400.0
-offset_right = 900.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_right = 250.0
 offset_bottom = 60.0
+grow_horizontal = 2
