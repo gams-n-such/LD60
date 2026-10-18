@@ -96,7 +96,7 @@ func _process_camera(delta : float) -> void:
 	CAMERA_CONTROLLER.rotation.z = 0
 	
 	# TODO: revisit
-	global_transform.basis = Basis.from_euler(_player_rotation)
+	transform.basis = Basis.from_euler(_player_rotation)
 	
 	_input_pitch = 0
 	_input_yaw = 0
