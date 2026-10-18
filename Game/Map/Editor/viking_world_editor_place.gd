@@ -77,6 +77,7 @@ enum Type { ISLAND, RUNE }
 	set(new_type):
 		type = new_type
 		map_polygon.visible = type == Type.ISLAND
+		name_label.visible = type == Type.ISLAND
 
 @export var place_scene : PackedScene
 @onready var map_polygon: Polygon2D = %MapPolygon
