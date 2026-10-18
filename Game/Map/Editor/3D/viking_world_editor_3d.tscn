@@ -55,6 +55,7 @@ shape = SubResource("WorldBoundaryShape3D_tp06f")
 
 [node name="PlayerStart" parent="." unique_id=380266561 instance=ExtResource("2_cu25f")]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.70809, 0, 56.038864)
 
 [node name="Islands" type="Node3D" parent="." unique_id=2107822290]
 unique_name_in_owner = true

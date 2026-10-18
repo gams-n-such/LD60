@@ -21,7 +21,7 @@ const EDITOR_PLACE_SCENE = preload("uid://dad2mnghcn17b")
 		return
 	
 	world_resource.radius = maxf(border_mesh.scale.x, border_mesh.scale.z) / map_scale
-	world_resource.player_start_coords = Vector2(player_start.global_position.x, player_start.global_position.y) / map_scale
+	world_resource.player_start_coords = Vector2(player_start.global_position.x, player_start.global_position.z) / map_scale
 	
 	world_resource.places.clear()
 	for child in islands_root.get_children():

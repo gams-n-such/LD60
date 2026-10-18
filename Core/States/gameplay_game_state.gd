@@ -10,6 +10,8 @@ func enter(prev_state : State) -> void:
 	
 	_show_hud()
 	
+	Game.ship_state.map_position = Game.world_resource.player_start_coords
+	
 	Game.load_gameplay_scene()
 	
 	if countdown_scene:

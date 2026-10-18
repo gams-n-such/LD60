@@ -104,7 +104,7 @@ script = ExtResource("1_icmae")
 island = SubResource("Resource_gs1pr")
 coordinates = Vector2(-985, 1563)
 heading = 0.56242305
-visibility_range = 1000.0
+visibility_range = 1538.3901
 
 [sub_resource type="Resource" id="Resource_fussg"]
 script = ExtResource("2_icmae")
@@ -170,5 +170,6 @@ scale = Vector3(1.0000001, 1, 1.0000001)
 [resource]
 script = ExtResource("3_s272b")
 radius = 21500.0
+player_start_coords = Vector2(-487.0809, 560.3886)
 places = Array[ExtResource("1_icmae")]([SubResource("Resource_rb06u"), SubResource("Resource_n3tos"), SubResource("Resource_7gpj0"), SubResource("Resource_ntpek"), SubResource("Resource_u5tfx"), SubResource("Resource_ant62"), SubResource("Resource_7lotx"), SubResource("Resource_1hv7y"), SubResource("Resource_3wlei"), SubResource("Resource_jqksj"), SubResource("Resource_bitc8"), SubResource("Resource_vl3aq")])
 metadata/_custom_type_script = "uid://d0xgx6qvmr336"
