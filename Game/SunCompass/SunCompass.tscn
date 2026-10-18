@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://olxl35goqlc8"]
+
+[ext_resource type="Script" uid="uid://y4aam5yon7cr" path="res://Game/SunCompass/sun_compass.gd" id="1_v3in7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h10kl"]
+top_radius = 0.33
+bottom_radius = 0.33
+height = 0.035
+
+[node name="SunCompass" type="Node3D" unique_id=397924082]
+script = ExtResource("1_v3in7")
+
+[node name="CompassPivot" type="Node3D" parent="." unique_id=1224992984]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, -0.8)
+
+[node name="CompassPlaceholder" type="MeshInstance3D" parent="CompassPivot" unique_id=2054482724]
+mesh = SubResource("CylinderMesh_h10kl")

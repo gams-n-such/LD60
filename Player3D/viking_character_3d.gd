@@ -1,6 +1,8 @@
 class_name VikingCharacter3D
 extends PlayerCharacter3D
 
+@onready var sun_compass: SunCompass = %SunCompass
+
 var has_time_hud_open : bool = false
 
 func _ready() -> void:
@@ -19,6 +21,9 @@ func _physics_process(delta: float) -> void:
 @onready var interaction_area := %InteractionArea
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"sun_compass") and not event.is_echo():
+		sun_compass.toggle()
+		return
 	super._input(event)
 	if event.is_action(&"interact"):
 		# TODO: HUD
@@ -34,6 +39,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		var mouse_event = event as InputEventMouseMotion
 		_input_yaw = -mouse_event.relative.x * mouse_sensitivity
 		_input_pitch = -mouse_event.relative.y * mouse_sensitivity
+
+func is_inspecting_compass() -> bool:
+	return sun_compass.is_deployed or sun_compass.is_transitioning
 
 #region Movement
 
@@ -85,20 +93,37 @@ var _camera_rotation : Vector3
 @export var mouse_sensitivity : float = 0.5
 
 func _process_camera(delta : float) -> void:
-	_mouse_rotation.x += _input_pitch * delta
-	_mouse_rotation.x = clamp(_mouse_rotation.x, MIN_TILT, MAX_TILT)
+	if sun_compass.is_transitioning:
+		return
 	_mouse_rotation.y += _input_yaw * delta
-	
 	_player_rotation = Vector3(0, _mouse_rotation.y, 0)
-	_camera_rotation = Vector3(_mouse_rotation.x, 0, 0)
-	
-	CAMERA_CONTROLLER.transform.basis = Basis.from_euler(_camera_rotation)
-	CAMERA_CONTROLLER.rotation.z = 0
+	if not sun_compass.is_deployed:
+		_mouse_rotation.x += _input_pitch * delta
+		_mouse_rotation.x = clamp(_mouse_rotation.x, MIN_TILT, MAX_TILT)
+		_camera_rotation = Vector3(_mouse_rotation.x, 0, 0)
+		CAMERA_CONTROLLER.transform.basis = Basis.from_euler(_camera_rotation)
+		CAMERA_CONTROLLER.rotation.z = 0
 	
 	# TODO: revisit
 	transform.basis = Basis.from_euler(_player_rotation)
 	
 	_input_pitch = 0
 	_input_yaw = 0
+
+
+func set_inspection_camera(enabled: bool) -> void:
+	if enabled:
+		_mouse_rotation.x = inspection_pitch()
+		_camera_rotation.x = _mouse_rotation.x
+	else:
+		_mouse_rotation.x = CAMERA_CONTROLLER.rotation.x
+		_camera_rotation.x = _mouse_rotation.x
+
+func inspection_pitch() -> float:
+	return sun_compass.inspection_camera_rotation.x
+
+func sync_camera_rotation() -> void:
+	_mouse_rotation.x = CAMERA_CONTROLLER.rotation.x
+	_camera_rotation = Vector3(_mouse_rotation.x, 0.0, 0.0)
 
 #endregion

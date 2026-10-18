@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://doy4aa11amu11"]
 
 [ext_resource type="Script" uid="uid://dkv0j7gmajunk" path="res://Player3D/viking_character_3d.gd" id="1_4sphi"]
+[ext_resource type="PackedScene" uid="uid://olxl35goqlc8" path="res://Game/SunCompass/SunCompass.tscn" id="3_7b1cn"]
 [ext_resource type="PackedScene" uid="uid://ih3ih8cletjd" path="res://Gameplay3D/Interactions/Detectors/interact_detection_ray_3d.tscn" id="3_rriwd"]
 [ext_resource type="Material" uid="uid://b3dtgg8ikkf3j" path="res://Player3D/dev_player_material.tres" id="4_b52sp"]
 [ext_resource type="PackedScene" uid="uid://c00po80vxeiax" path="res://Gameplay3D/Interactions/Detectors/interact_detection_area_3d.tscn" id="5_ijnvk"]
@@ -20,9 +21,22 @@ size = Vector3(1, 1.7832031, 1)
 collision_layer = 2
 collision_mask = 49
 script = ExtResource("1_4sphi")
+speed = null
+jump_velocity = null
+acceleration = null
+deceleration = null
+mouse_sensitivity = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1613465108]
 shape = SubResource("CapsuleShape3D_d27nr")
+
+[node name="CompassAnchor" type="Node3D" parent="." unique_id=1357530256]
+
+[node name="SunCompass" parent="CompassAnchor" unique_id=397924082 node_paths=PackedStringArray("camera", "camera_controller", "player") instance=ExtResource("3_7b1cn")]
+unique_name_in_owner = true
+camera = NodePath("../../CameraController/Camera")
+camera_controller = NodePath("../../CameraController")
+player = NodePath("../..")
 
 [node name="CameraController" type="Node3D" parent="." unique_id=1857227979]
 unique_name_in_owner = true
