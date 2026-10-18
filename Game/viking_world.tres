@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://d0xgx6qvmr336" path="res://Game/Map/viking_world_resource.gd" id="3_s272b"]
 [ext_resource type="PackedScene" uid="uid://oeluq665wk56" path="res://Game/Level/Islands/LongCockIsland.tscn" id="4_s272b"]
 [ext_resource type="Script" uid="uid://3pom5xueq4xe" path="res://Game/Map/viking_rune_resource.gd" id="5_k7hdp"]
-[ext_resource type="Texture2D" uid="uid://ccn1mwohl6hnl" path="res://Game/Map/Editor/rune-stone.svg" id="6_rb06u"]
+[ext_resource type="Texture2D" uid="uid://ccn1mwohl6hnl" path="res://Game/Map/Editor/2D/rune-stone.svg" id="6_rb06u"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v6u60"]
 size = Vector2(32, 32)

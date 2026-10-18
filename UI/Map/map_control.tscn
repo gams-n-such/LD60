@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bwxsr3grt63ro"]
 
 [ext_resource type="Script" uid="uid://b26et73u1ejra" path="res://UI/Map/map_control.gd" id="1_ekntj"]
-[ext_resource type="Texture2D" uid="uid://dtulblyeev72w" path="res://Game/Map/Editor/world_border.svg" id="2_kq328"]
+[ext_resource type="Texture2D" uid="uid://dtulblyeev72w" path="res://Game/Map/Editor/2D/world_border.svg" id="2_kq328"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tp06f"]
 

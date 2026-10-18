@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buxatjn1afl2m"
-path="res://.godot/imported/island.svg-557899bcd548c9b934b205280695cd6a.ctex"
+path="res://.godot/imported/island.svg-63a3de7025ed41883c4a60c11644701b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Map/Editor/island.svg"
-dest_files=["res://.godot/imported/island.svg-557899bcd548c9b934b205280695cd6a.ctex"]
+source_file="res://Game/Map/Editor/2D/island.svg"
+dest_files=["res://.godot/imported/island.svg-63a3de7025ed41883c4a60c11644701b.ctex"]
 
 [params]
 

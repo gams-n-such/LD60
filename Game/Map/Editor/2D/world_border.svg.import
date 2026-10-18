@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccn1mwohl6hnl"
-path="res://.godot/imported/rune-stone.svg-e5caf9437f042d28b2cdbd475cdf2fa1.ctex"
+uid="uid://dtulblyeev72w"
+path="res://.godot/imported/world_border.svg-f6c055085457fb3239a7e49cc0b7cb3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Map/Editor/rune-stone.svg"
-dest_files=["res://.godot/imported/rune-stone.svg-e5caf9437f042d28b2cdbd475cdf2fa1.ctex"]
+source_file="res://Game/Map/Editor/2D/world_border.svg"
+dest_files=["res://.godot/imported/world_border.svg-f6c055085457fb3239a7e49cc0b7cb3c.ctex"]
 
 [params]
 
@@ -38,6 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=0.125
+svg/scale=1.0
 editor/scale_with_editor_scale=false
 editor/convert_colors_with_editor_theme=false

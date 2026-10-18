@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bc8ogp4b4dmju"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_biaub"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tp06f"]
+material = SubResource("StandardMaterial3D_biaub")
+top_radius = 10.0
+bottom_radius = 0.0
+height = 40.0
+
+[node name="VikingEditorPlayerStart3d" type="Node3D" unique_id=380266561]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=850773194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, 0)
+mesh = SubResource("CylinderMesh_tp06f")
