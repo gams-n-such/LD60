@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://1jnr587qhn2e"]
 
+[ext_resource type="Script" uid="uid://sqer1ykwxtg5" path="res://addons/day_and_night_cycle/scripts/cycle_controller.gd" id="1_1kyln"]
+[ext_resource type="Script" uid="uid://pi5rlinlrssx" path="res://Game/Level/level.gd" id="1_ttel4"]
+[ext_resource type="Resource" uid="uid://kr0ipoip375a" path="res://addons/day_and_night_cycle/presets/default/default_day_cycle.tres" id="2_2pf45"]
+[ext_resource type="Resource" uid="uid://b0mbm2nb4pntn" path="res://addons/day_and_night_cycle/presets/default/default_night_cycle.tres" id="3_2pf45"]
+[ext_resource type="PackedScene" uid="uid://dyh2h8fiesbc2" path="res://Player3D/floating_player_character_3d.tscn" id="4_2pf45"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2gduj"]
+sky_top_color = Color(0.35509998, 0.52829504, 0.67, 1)
+sky_curve = 0.008161413
+ground_bottom_color = Color(0, 0.13521841, 0.22644627, 1)
+ground_curve = 0.019999988
+sun_angle_max = 24.63
+sun_curve = 0.07764472
+energy_multiplier = 1.35
 
 [sub_resource type="Sky" id="Sky_2gduj"]
 sky_material = SubResource("ProceduralSkyMaterial_2gduj")
@@ -11,8 +24,28 @@ sky = SubResource("Sky_2gduj")
 ambient_light_source = 2
 ambient_light_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
 ambient_light_energy = 0.5
+tonemap_mode = 1
+fog_density = 0.0
 
 [node name="Level" type="Node3D" unique_id=1330335551]
+visible = false
+script = ExtResource("1_ttel4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=539254290]
 environment = SubResource("Environment_h10kl")
+
+[node name="FloatingPlayerCharacter3D" parent="." unique_id=428254066 instance=ExtResource("4_2pf45")]
+
+[node name="SunPlaneRoot" type="Node3D" parent="." unique_id=1016193740]
+transform = Transform3D(-4.2146848e-08, 4.2146848e-08, -1, 0.70710677, 0.70710677, 0, 0.70710677, -0.70710677, -5.9604645e-08, 0, 0, 0)
+
+[node name="SunDirection" type="DirectionalLight3D" parent="SunPlaneRoot" unique_id=2112502252]
+
+[node name="CycleController" type="Node3D" parent="." unique_id=1573794407 node_paths=PackedStringArray("world_environment", "sun_light")]
+unique_name_in_owner = true
+script = ExtResource("1_1kyln")
+day_data = ExtResource("2_2pf45")
+night_data = ExtResource("3_2pf45")
+world_environment = NodePath("../WorldEnvironment")
+sun_light = NodePath("../SunPlaneRoot/SunDirection")
+metadata/_custom_type_script = "uid://sqer1ykwxtg5"
