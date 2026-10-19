@@ -113,11 +113,7 @@ func update_nearby_islands(
 			final_offset.z
 		)
 		island_instance.rotation.y = deg_to_rad(place.heading)
-		island_instance.scale = Vector3(
-			place.scale.x,
-			1.0,
-			place.scale.y
-		)
+		island_instance.scale = place.scale
 		_separate_island_from_ship(island_instance)
 		var action := "SPAWNED" if was_spawned else "UPDATED"
 		print(
