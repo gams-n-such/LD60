@@ -3,7 +3,7 @@ extends Node
 
 var quests: Array[VikingQuestResource] = []
 
-var _active_quests: Array[VikingQuestResource] = []
+var active_quests: Array[VikingQuestResource] = []
 var _completed_quests: Array[VikingQuestResource] = []
 
 func _ready() -> void:
@@ -11,7 +11,7 @@ func _ready() -> void:
 	_activate_available_quests()
 
 func check_active_quests_completion() -> VikingQuestResource:
-	for quest: VikingQuestResource in _active_quests.duplicate():
+	for quest: VikingQuestResource in active_quests.duplicate():
 		if _is_target_island_nearby(quest):
 			return _complete_quest(quest)
 	return null
@@ -23,7 +23,7 @@ func _is_target_island_nearby(quest: VikingQuestResource) -> bool:
 	return false
 
 func _complete_quest(quest: VikingQuestResource) -> VikingQuestResource:
-	_active_quests.erase(quest)
+	active_quests.erase(quest)
 	if _completed_quests.has(quest):
 		return null
 	_completed_quests.append(quest)
@@ -32,12 +32,12 @@ func _complete_quest(quest: VikingQuestResource) -> VikingQuestResource:
 
 func _activate_available_quests() -> void:
 	for quest: VikingQuestResource in quests:
-		if _active_quests.has(quest):
+		if active_quests.has(quest):
 			continue
 		if _completed_quests.has(quest):
 			continue
 		if _has_completed_prerequisite(quest):
-			_active_quests.append(quest)
+			active_quests.append(quest)
 
 func _has_completed_prerequisite(quest: VikingQuestResource) -> bool:
 	if quest.prerequisite == null:
