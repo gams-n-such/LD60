@@ -387,7 +387,6 @@ metadata/_custom_type_script = "uid://wnj3puet57uv"
 
 [sub_resource type="Resource" id="Resource_0egv3"]
 script = ExtResource("1_rb06u")
-prerequisite = SubResource("Resource_glihj")
 island_name = "TailIsland"
 description = "You feel the gaze of the gigantic monster upon you. For a moment, an icy terror grips you, leaving you paralyzed. But you summon your courage and take the rune resting on the tip of Jörmungandr's tail. The serpent slowly turns away."
 header = "You arrive to Jörmungandr's tail."
