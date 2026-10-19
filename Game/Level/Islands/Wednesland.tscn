@@ -16,6 +16,9 @@ top_radius = 2.0
 bottom_radius = 5.0
 height = 10.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jln8q"]
+size = Vector3(0.6530762, 0.4465332, 0.40371704)
+
 [node name="Wednesland" type="Node3D" unique_id=174074217]
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1601065334]
@@ -67,3 +70,10 @@ depth = 10.0
 transform = Transform3D(-0.2594614, -0.0151534565, 0.58480954, 0.10950573, 0.35732564, 0.5186001, -0.15222017, 0.28288594, -0.6237401, -21.130411, 162.3489, -35.40725)
 polygon = PackedVector2Array(1.8346558, 183.244, 296.9911, 277.70605, 695.78125, 228.92758, 760.88837, 171.18538, 471.28885, 206.8942, 722.60016, 114.24813, 739.1571, 73.95073, 696.89233, 61.542328, 437.39984, 144.4714, 553.5678, 27.022873, 542.4454, -14.679001, 478.53906, -5.859253, 361.2558, 126.23279, 393.09332, -18.001633, 313.36218, -15.451477, 258.50793, 102.40826, 222.44681, -20.349838, 150.36334, -15.753632, 134.83989, 70.97789, 75.85869, -32.056717, -1.859932, 2.148468)
 depth = 10.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1049983114]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="BoxCollision" type="CollisionShape3D" parent="StaticBody3D" unique_id=339861701]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, -0.4284668, 7.371826, 1.0081787)
+shape = SubResource("BoxShape3D_jln8q")

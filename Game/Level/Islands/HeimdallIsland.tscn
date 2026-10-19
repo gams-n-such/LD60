@@ -1,3 +1,24 @@
 [gd_scene format=3 uid="uid://jhlfilj8pwt2"]
 
+[ext_resource type="PackedScene" uid="uid://no85oopm7hem" path="res://Game/Level/Islands/Meshes/HeimdallColored3.fbx" id="1_468mp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_irbs3"]
+size = Vector3(0.6530762, 0.4465332, 0.40371704)
+
 [node name="HeimdallIsland" type="Node3D" unique_id=787600920]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1442397562]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="BoxCollision" type="CollisionShape3D" parent="StaticBody3D" unique_id=2137211402]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, -0.4284668, 7.371826, 1.0081787)
+shape = SubResource("BoxShape3D_irbs3")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1976480110]
+transform = Transform3D(1, 0, 0, 0, 0.30975047, 0, 0, 0, 1, 0, -1.336518, 0)
+radius = 100.0
+radial_segments = 14
+rings = 10
+
+[node name="HeimdallColored3" parent="." unique_id=745225298 instance=ExtResource("1_468mp")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 15.481483, 0)

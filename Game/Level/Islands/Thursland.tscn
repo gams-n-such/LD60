@@ -5,6 +5,9 @@ top_radius = 0.0
 bottom_radius = 10.0
 height = 50.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8w4q6"]
+size = Vector3(0.6530762, 0.4465332, 0.40371704)
+
 [node name="Thursland" type="Node3D" unique_id=1858998863]
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=516386840]
@@ -32,3 +35,10 @@ mesh = SubResource("CylinderMesh_tp06f")
 [node name="CSGMesh3D3" type="CSGMesh3D" parent="." unique_id=1564830225]
 transform = Transform3D(1.9049416, -0.5527338, 0.37212047, 0.5179217, 1.0207498, 1.2638854, -0.8118834, -0.64572984, 1.6793816, -23.261635, 45.107033, -38.461693)
 mesh = SubResource("CylinderMesh_tp06f")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1708536313]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="BoxCollision" type="CollisionShape3D" parent="StaticBody3D" unique_id=1064676728]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, -0.4284668, 7.371826, 1.0081787)
+shape = SubResource("BoxShape3D_8w4q6")

@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://6y1l611owmbw" path="res://Game/Level/Islands/Meshes/LokiColoured3.fbx" id="1_nblye"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_nblye"]
+size = Vector3(0.6530762, 0.4465332, 0.40371704)
+
 [node name="LokiIsland" type="Node3D" unique_id=1055195790]
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=572607825]
@@ -12,3 +15,10 @@ rings = 10
 
 [node name="LokiColoured3" parent="." unique_id=1531177610 instance=ExtResource("1_nblye")]
 transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, -14.044975, -18.844414, -3.6345825)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1512461417]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="BoxCollision" type="CollisionShape3D" parent="StaticBody3D" unique_id=1015946308]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, -0.4284668, 7.371826, 1.0081787)
+shape = SubResource("BoxShape3D_nblye")
