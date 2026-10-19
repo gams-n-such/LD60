@@ -152,6 +152,24 @@ func update_nearby_islands(
 		"=== Island update complete: %d active island references ===\n"
 		% _spawned_islands.size()
 	)
+	var distance_to_border : float = world.radius - ship_map_position.length()
+	print("Distance to border: ", distance_to_border)
+	if distance_to_border < border_visibility_range:
+		if not _spawned_border:
+			_spawned_border = BORDER.instantiate() as Node3D
+			add_child(_spawned_border)
+		var border_direction := (ship_map_position.angle() + (PI / 2))
+		_spawned_border.rotation.y = -border_direction
+		_spawned_border.position = _spawned_border.transform.basis * Vector3.FORWARD * distance_to_border * level_units_per_map_unit
+	else:
+		if _spawned_border:
+			remove_child(_spawned_border)
+			_spawned_border.queue_free()
+
+const BORDER = preload("uid://cew8qsd0yjn4p")
+var _spawned_border : Node3D
+
+@export var border_visibility_range : float = 2000.0
 
 ## Extra distance between the ship and an island after separation.
 @export var island_collision_margin: float = 0.1

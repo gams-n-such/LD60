@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cew8qsd0yjn4p"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_tp06f"]
+inner_radius = 500.0
+outer_radius = 550.0
+
+[node name="Border" type="Node3D" unique_id=234388438]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2031483338]
+transform = Transform3D(3, 0, 0, 0, 0.9985032, -0.054693326, 0, 0.054693326, 0.9985032, 0, -19.665867, 496.08786)
+mesh = SubResource("TorusMesh_tp06f")
