@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://3pom5xueq4xe" path="res://Game/Map/viking_rune_resource.gd" id="5_k7hdp"]
 [ext_resource type="PackedScene" uid="uid://xsc3cy41lg77" path="res://Game/Level/Islands/Tyrsland.tscn" id="5_oacub"]
 [ext_resource type="Texture2D" uid="uid://ccn1mwohl6hnl" path="res://Game/Map/Editor/2D/rune-stone.svg" id="6_rb06u"]
+[ext_resource type="PackedScene" uid="uid://cir6cjuqara5m" path="res://Game/Level/Islands/Fryland.tscn" id="7_3q5mt"]
 [ext_resource type="PackedScene" uid="uid://jntkorgtbian" path="res://Game/Level/Islands/LokiIsland.tscn" id="8_oacub"]
 [ext_resource type="PackedScene" uid="uid://jhlfilj8pwt2" path="res://Game/Level/Islands/HeimdallIsland.tscn" id="9_ntpek"]
 
@@ -93,7 +94,7 @@ description_header = "Thor slaps his thigh at the sight of you..."
 [sub_resource type="Resource" id="Resource_u5tfx"]
 script = ExtResource("2_icmae")
 name = "FreirIsland"
-scene = ExtResource("2_nq65h")
+scene = ExtResource("7_3q5mt")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
