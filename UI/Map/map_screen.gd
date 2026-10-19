@@ -1,4 +1,4 @@
-class_name VikingMapControl
+class_name VikingMapScreen
 extends Control
 
 @export var slide_in_duration : float = 0.8

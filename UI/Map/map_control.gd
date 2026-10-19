@@ -1,3 +1,4 @@
+class_name VikingMapControl
 extends Control
 
 const MAP_ISLAND_CONTROL = preload("uid://dta16kwj7iqp8")
