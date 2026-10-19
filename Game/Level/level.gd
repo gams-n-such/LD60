@@ -16,5 +16,5 @@ func _on_time_changed(current_hour : float):
 	cycle_controller.set_time(current_time)
 
 func _process(delta: float) -> void:
-	Game.time_system.advance_time(delta)
+	#Game.time_system.advance_time(delta)
 	pass
