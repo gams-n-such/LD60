@@ -1,8 +1,6 @@
 class_name VikingQuestSystem
 extends Node
 
-signal quest_completed(quest: VikingQuestResource)
-
 var quests: Array[VikingQuestResource] = []
 
 var _active_quests: Array[VikingQuestResource] = []
@@ -12,10 +10,11 @@ func _ready() -> void:
 	quests = Game.world_resource.quests.duplicate()
 	_activate_available_quests()
 
-func check_active_quests() -> void:
+func check_active_quests_completion() -> VikingQuestResource:
 	for quest: VikingQuestResource in _active_quests.duplicate():
 		if _is_target_island_nearby(quest):
-			_complete_quest(quest)
+			return _complete_quest(quest)
+	return null
 
 func _is_target_island_nearby(quest: VikingQuestResource) -> bool:
 	for place: VikingPlaceResource in Game.acquisitionable_islands:
@@ -23,13 +22,13 @@ func _is_target_island_nearby(quest: VikingQuestResource) -> bool:
 			return true
 	return false
 
-func _complete_quest(quest: VikingQuestResource) -> void:
+func _complete_quest(quest: VikingQuestResource) -> VikingQuestResource:
 	_active_quests.erase(quest)
 	if _completed_quests.has(quest):
-		return
+		return null
 	_completed_quests.append(quest)
-	quest_completed.emit(quest)
 	_activate_available_quests()
+	return quest
 
 func _activate_available_quests() -> void:
 	for quest: VikingQuestResource in quests:

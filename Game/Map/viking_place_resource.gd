@@ -12,6 +12,8 @@ var scale_2d : Vector2:
 		return Vector2(scale.x, scale.z)
 @export var visibility_range : float = 5.0
 @export var acquisition_range : float = 5.0
+@export_multiline var description : String
+@export_multiline var description_header : String
 
 
 func is_island() -> bool:
