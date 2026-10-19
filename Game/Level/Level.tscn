@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://pi5rlinlrssx" path="res://Game/Level/level.gd" id="1_ttel4"]
 [ext_resource type="Resource" uid="uid://kr0ipoip375a" path="res://addons/day_and_night_cycle/presets/default/default_day_cycle.tres" id="2_2pf45"]
 [ext_resource type="Resource" uid="uid://b0mbm2nb4pntn" path="res://addons/day_and_night_cycle/presets/default/default_night_cycle.tres" id="3_2pf45"]
-[ext_resource type="PackedScene" uid="uid://dyh2h8fiesbc2" path="res://Player3D/floating_player_character_3d.tscn" id="4_2pf45"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2gduj"]
 sky_top_color = Color(0.35509998, 0.52829504, 0.67, 1)
@@ -32,8 +31,6 @@ script = ExtResource("1_ttel4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=539254290]
 environment = SubResource("Environment_h10kl")
-
-[node name="FloatingPlayerCharacter3D" parent="." unique_id=428254066 instance=ExtResource("4_2pf45")]
 
 [node name="SunPlaneRoot" type="Node3D" parent="." unique_id=1016193740]
 transform = Transform3D(-4.2146848e-08, 4.2146848e-08, -1, 0.70710677, 0.70710677, 0, 0.70710677, -0.70710677, -5.9604645e-08, 0, 0, 0)
