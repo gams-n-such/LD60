@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c2rqnmhtpiaek"]
 
 [ext_resource type="Script" uid="uid://cvdo8pu5jl4ry" path="res://Gameplay3D/Compass/arrow_pivot.gd" id="1_31rv8"]
-[ext_resource type="Script" uid="uid://do0ixqvvdf7ca" path="res://Gameplay3D/Compass/arrow_shadow.gd" id="1_dactf"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_06dg7"]
 
@@ -27,12 +26,6 @@ mesh = SubResource("CylinderMesh_06dg7")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.061859697, 0)
 mesh = SubResource("CapsuleMesh_kec1x")
 
-[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=2078930201]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.05, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D" unique_id=311589952]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.7123687, 0)
-
 [node name="ArrowPivot" type="Node3D" parent="." unique_id=1069409958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062238663, 0)
 script = ExtResource("1_31rv8")
@@ -40,8 +33,3 @@ script = ExtResource("1_31rv8")
 [node name="ArrowShadow" type="MeshInstance3D" parent="ArrowPivot" unique_id=720470383]
 transform = Transform3D(0.1, 0, 0, 0, -4.371139e-09, 0.1, 0, -0.1, -4.371139e-09, 0, 0, -0.05)
 mesh = SubResource("PrismMesh_06dg7")
-script = ExtResource("1_dactf")
-
-[node name="LineEdit" type="LineEdit" parent="." unique_id=799597307]
-offset_right = 68.5
-offset_bottom = 31.0

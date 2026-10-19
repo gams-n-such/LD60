@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b2x8n004g3ybj"]
 
-[ext_resource type="Script" uid="uid://cyu1cdek8emj1" path="res://UI/HUD/QuestPopup/quest_popup.gd" id="1_ihix6"]
+[ext_resource type="Script" uid="uid://cyu1cdek8emj1" path="res://UI/HUD/TextPopup/text_popup.gd" id="1_x6xlj"]
 
-[node name="QuestPopup" type="CanvasLayer" unique_id=1808250790]
+[node name="TextPopup" type="CanvasLayer" unique_id=1808250790]
 layer = 10
-script = ExtResource("1_ihix6")
+script = ExtResource("1_x6xlj")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=62928665]
 unique_name_in_owner = true

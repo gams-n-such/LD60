@@ -5,7 +5,6 @@
 [ext_resource type="Resource" uid="uid://8s4nkm8wl3la" path="res://Game/game_config.tres" id="2_v5vu4"]
 [ext_resource type="Resource" uid="uid://bk71h36b42f2y" path="res://Game/viking_world.tres" id="3_rafg2"]
 [ext_resource type="PackedScene" uid="uid://dad2mnghcn17b" path="res://Game/Map/Editor/3D/viking_world_editor_place_3d.tscn" id="5_08q1a"]
-[ext_resource type="Script" uid="uid://dk1cs5806vdnv" path="res://Game/Map/Editor/3D/viking_world_editor_place_3d.gd" id="6_tr0f3"]
 [ext_resource type="PackedScene" uid="uid://bwc8m6ioegbnd" path="res://Game/Level/Islands/SmallBallIsland.tscn" id="7_u8jse"]
 [ext_resource type="PackedScene" uid="uid://oeluq665wk56" path="res://Game/Level/Islands/LongCockIsland.tscn" id="8_624ok"]
 [ext_resource type="Texture2D" uid="uid://ccn1mwohl6hnl" path="res://Game/Map/Editor/2D/rune-stone.svg" id="9_tr0f3"]
@@ -59,177 +58,214 @@ shape = SubResource("WorldBoundaryShape3D_tp06f")
 
 [node name="PlayerStart" parent="." unique_id=380266561 instance=ExtResource("2_cu25f")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.529625, -7.6293945e-06, 94.88829)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1040.1072, -7.6293945e-06, -1410.4788)
 
 [node name="Islands" type="Node3D" parent="." unique_id=2107822290]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="SmallBall" parent="Islands" unique_id=622237465 instance=ExtResource("5_08q1a")]
-transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, 559.3, -1, -1230.2001)
-script = ExtResource("6_tr0f3")
+[node name="ThorIsland" parent="Islands" unique_id=622237465 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, 202.0523, -1, -1338.0366)
 place_scene = ExtResource("7_u8jse")
 map_icon = SubResource("PlaceholderTexture2D_v6u60")
 map_icon_scale = 10.0
 
-[node name="VisibilitySphere" parent="Islands/SmallBall" index="0" unique_id=2094651265]
-unique_name_in_owner = true
+[node name="VisibilitySphere" parent="Islands/ThorIsland" index="0" unique_id=2094651265]
+radius = 803.5423
 material = SubResource("StandardMaterial3D_tp06f")
 
-[node name="SmallBallIsland" parent="Islands/SmallBall" index="1" unique_id=1671935640]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
-[node name="SmallBall2" parent="Islands" unique_id=1156270377 instance=ExtResource("5_08q1a")]
-transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -633.9, -1, -790.00006)
-script = ExtResource("6_tr0f3")
+[node name="TurIsland" parent="Islands" unique_id=1156270377 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, 878.3761, -1, -768.2743)
 place_scene = ExtResource("7_u8jse")
 map_icon = SubResource("PlaceholderTexture2D_v6u60")
 map_icon_scale = 10.0
 
-[node name="VisibilitySphere" parent="Islands/SmallBall2" index="0" unique_id=2094651265]
-unique_name_in_owner = true
+[node name="VisibilitySphere" parent="Islands/TurIsland" index="0" unique_id=2094651265]
+radius = 679.2342
 material = SubResource("StandardMaterial3D_tp06f")
 
-[node name="SmallBallIsland" parent="Islands/SmallBall2" index="1" unique_id=1671935640]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
-[node name="SmallBall3" parent="Islands" unique_id=1272093255 instance=ExtResource("5_08q1a")]
-transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -852.6001, -1, -1737.6)
-script = ExtResource("6_tr0f3")
+[node name="OdinIsland" parent="Islands" unique_id=1272093255 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -571.30725, -1, -766.59)
 place_scene = ExtResource("7_u8jse")
 map_icon = SubResource("PlaceholderTexture2D_v6u60")
 map_icon_scale = 10.0
 
-[node name="VisibilitySphere" parent="Islands/SmallBall3" index="0" unique_id=2094651265]
-unique_name_in_owner = true
+[node name="VisibilitySphere" parent="Islands/OdinIsland" index="0" unique_id=2094651265]
+radius = 876.5664
 material = SubResource("StandardMaterial3D_tp06f")
 
-[node name="SmallBallIsland" parent="Islands/SmallBall3" index="1" unique_id=1671935640]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
-[node name="SmallBall4" parent="Islands" unique_id=1002811511 instance=ExtResource("5_08q1a")]
-transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, 651.5999, -1, -1141.2001)
-script = ExtResource("6_tr0f3")
+[node name="FreirIsland" parent="Islands" unique_id=1002811511 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, 1152.8408, -1, -1190.6233)
 place_scene = ExtResource("7_u8jse")
 map_icon = SubResource("PlaceholderTexture2D_v6u60")
 map_icon_scale = 10.0
 
-[node name="VisibilitySphere" parent="Islands/SmallBall4" index="0" unique_id=2094651265]
-unique_name_in_owner = true
+[node name="VisibilitySphere" parent="Islands/FreirIsland" index="0" unique_id=2094651265]
+radius = 660.74194
 material = SubResource("StandardMaterial3D_tp06f")
 
-[node name="SmallBallIsland" parent="Islands/SmallBall4" index="1" unique_id=1671935640]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
-[node name="SmallBall5" parent="Islands" unique_id=118619167 instance=ExtResource("5_08q1a")]
-transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, 835, -1, 176.90001)
-script = ExtResource("6_tr0f3")
+[node name="LokiIsland" parent="Islands" unique_id=118619167 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -1190.3767, -1, 147.56639)
 place_scene = ExtResource("7_u8jse")
 map_icon = SubResource("PlaceholderTexture2D_v6u60")
 map_icon_scale = 10.0
 
-[node name="VisibilitySphere" parent="Islands/SmallBall5" index="0" unique_id=2094651265]
-unique_name_in_owner = true
+[node name="VisibilitySphere" parent="Islands/LokiIsland" index="0" unique_id=2094651265]
+radius = 791.12256
 material = SubResource("StandardMaterial3D_tp06f")
 
-[node name="SmallBallIsland" parent="Islands/SmallBall5" index="1" unique_id=1671935640]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
-[node name="SmallBall6" parent="Islands" unique_id=1472603677 instance=ExtResource("5_08q1a")]
-transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, 62.8, -1, 1277.7001)
-script = ExtResource("6_tr0f3")
+[node name="HeimdallIsland" parent="Islands" unique_id=1472603677 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, 996.5031, -1, 1135.5938)
 place_scene = ExtResource("7_u8jse")
 map_icon = SubResource("PlaceholderTexture2D_v6u60")
 map_icon_scale = 10.0
 
-[node name="VisibilitySphere" parent="Islands/SmallBall6" index="0" unique_id=2094651265]
-unique_name_in_owner = true
+[node name="VisibilitySphere" parent="Islands/HeimdallIsland" index="0" unique_id=2094651265]
+radius = 695.4499
 material = SubResource("StandardMaterial3D_tp06f")
 
-[node name="SmallBallIsland" parent="Islands/SmallBall6" index="1" unique_id=1671935640]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
-[node name="LongCock" parent="Islands" unique_id=724753272 instance=ExtResource("5_08q1a")]
-transform = Transform3D(0.8459655, 0, 0.5332376, 0, 1, 0, -0.5332376, 0, 0.8459655, -98.5, -1, 156.3)
-script = ExtResource("6_tr0f3")
+[node name="TailIsland" parent="Islands" unique_id=724753272 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.8459655, 0, 0.5332376, 0, 1, 0, -0.5332376, 0, 0.8459655, -302.9286, -1, 1729.3805)
 place_scene = ExtResource("8_624ok")
 map_icon = SubResource("PlaceholderTexture2D_k7hdp")
 map_icon_scale = 10.0
 
-[node name="VisibilitySphere" parent="Islands/LongCock" index="0" unique_id=2094651265]
-unique_name_in_owner = true
-radius = 153.839
+[node name="VisibilitySphere" parent="Islands/TailIsland" index="0" unique_id=2094651265]
+radius = 710.145
 material = SubResource("StandardMaterial3D_tp06f")
 
-[node name="LongCockIsland" parent="Islands/LongCock" index="1" unique_id=1671935640]
-transform = Transform3D(3.052126, 0, -1.1920929e-07, 0, 3.052126, 0, 1.1920929e-07, 0, 3.052126, 0, 0, 0)
-
-[node name="SmallBall7" parent="Islands" unique_id=942712539 instance=ExtResource("5_08q1a")]
-transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -906.5, -1, 439.80002)
-script = ExtResource("6_tr0f3")
+[node name="RidgeIsland" parent="Islands" unique_id=942712539 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -1810.9154, -1, 504.73132)
 place_scene = ExtResource("7_u8jse")
 map_icon = SubResource("PlaceholderTexture2D_v6u60")
 map_icon_scale = 10.0
 
-[node name="VisibilitySphere" parent="Islands/SmallBall7" index="0" unique_id=2094651265]
-unique_name_in_owner = true
+[node name="VisibilitySphere" parent="Islands/RidgeIsland" index="0" unique_id=2094651265]
+radius = 500.19586
 material = SubResource("StandardMaterial3D_tp06f")
 
-[node name="SmallBallIsland" parent="Islands/SmallBall7" index="1" unique_id=1671935640]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+[node name="RidgeIsland7" parent="Islands" unique_id=558367493 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -1219.0948, -1, 925.55786)
+place_scene = ExtResource("7_u8jse")
+map_icon = SubResource("PlaceholderTexture2D_v6u60")
+map_icon_scale = 10.0
+
+[node name="VisibilitySphere" parent="Islands/RidgeIsland7" index="0" unique_id=2094651265]
+radius = 500.19586
+material = SubResource("StandardMaterial3D_tp06f")
+
+[node name="SmallBallIsland" parent="Islands/RidgeIsland7" unique_id=1671935640 instance=ExtResource("7_u8jse")]
+
+[node name="RidgeIsland6" parent="Islands" unique_id=925561023 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -1250.1211, -1, 912.1338)
+place_scene = ExtResource("7_u8jse")
+map_icon = SubResource("PlaceholderTexture2D_v6u60")
+map_icon_scale = 10.0
+
+[node name="VisibilitySphere" parent="Islands/RidgeIsland6" index="0" unique_id=2094651265]
+radius = 500.19586
+material = SubResource("StandardMaterial3D_tp06f")
+
+[node name="SmallBallIsland" parent="Islands/RidgeIsland6" unique_id=411244390 instance=ExtResource("7_u8jse")]
+
+[node name="RidgeIsland5" parent="Islands" unique_id=1005230287 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -1298.1853, -1, 899.41235)
+place_scene = ExtResource("7_u8jse")
+map_icon = SubResource("PlaceholderTexture2D_v6u60")
+map_icon_scale = 10.0
+
+[node name="VisibilitySphere" parent="Islands/RidgeIsland5" index="0" unique_id=2094651265]
+radius = 500.19586
+material = SubResource("StandardMaterial3D_tp06f")
+
+[node name="SmallBallIsland" parent="Islands/RidgeIsland5" unique_id=1204753820 instance=ExtResource("7_u8jse")]
+
+[node name="RidgeIsland4" parent="Islands" unique_id=595031319 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -1422.0342, -1, 862.5766)
+place_scene = ExtResource("7_u8jse")
+map_icon = SubResource("PlaceholderTexture2D_v6u60")
+map_icon_scale = 10.0
+
+[node name="VisibilitySphere" parent="Islands/RidgeIsland4" index="0" unique_id=2094651265]
+radius = 500.19586
+material = SubResource("StandardMaterial3D_tp06f")
+
+[node name="SmallBallIsland" parent="Islands/RidgeIsland4" unique_id=374634987 instance=ExtResource("7_u8jse")]
+
+[node name="RidgeIsland3" parent="Islands" unique_id=1923905201 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -1654.5007, -1, 671.08856)
+place_scene = ExtResource("7_u8jse")
+map_icon = SubResource("PlaceholderTexture2D_v6u60")
+map_icon_scale = 10.0
+
+[node name="VisibilitySphere" parent="Islands/RidgeIsland3" index="0" unique_id=2094651265]
+radius = 500.19586
+material = SubResource("StandardMaterial3D_tp06f")
+
+[node name="SmallBallIsland" parent="Islands/RidgeIsland3" unique_id=138507103 instance=ExtResource("7_u8jse")]
+
+[node name="RidgeIsland2" parent="Islands" unique_id=16127520 instance=ExtResource("5_08q1a")]
+transform = Transform3D(0.73576355, 0, -0.6772385, 0, 1, 0, 0.6772385, 0, 0.73576355, -1748.8804, -1, 551.2718)
+place_scene = ExtResource("7_u8jse")
+map_icon = SubResource("PlaceholderTexture2D_v6u60")
+map_icon_scale = 10.0
+
+[node name="VisibilitySphere" parent="Islands/RidgeIsland2" index="0" unique_id=2094651265]
+radius = 500.19586
+material = SubResource("StandardMaterial3D_tp06f")
+
+[node name="SmallBallIsland" parent="Islands/RidgeIsland2" unique_id=199420740 instance=ExtResource("7_u8jse")]
 
 [node name="Rune" parent="Islands" unique_id=9323714 instance=ExtResource("5_08q1a")]
 transform = Transform3D(0.07959893, 0, -0.06053109, 0, 0.1, 0, 0.06053109, 0, 0.07959893, 558.2, -1, -1281.2001)
-script = ExtResource("6_tr0f3")
 type = 1
 map_icon = ExtResource("9_tr0f3")
 
 [node name="VisibilitySphere" parent="Islands/Rune" index="0" unique_id=2094651265]
-unique_name_in_owner = true
 radius = 4.999999
 material = SubResource("StandardMaterial3D_tp06f")
 
 [node name="Rune2" parent="Islands" unique_id=1520232714 instance=ExtResource("5_08q1a")]
 transform = Transform3D(0.07959893, 0, -0.06053109, 0, 0.1, 0, 0.06053109, 0, 0.07959893, -915.4, -1, 416.5)
-script = ExtResource("6_tr0f3")
 type = 1
 map_icon = ExtResource("9_tr0f3")
 
 [node name="VisibilitySphere" parent="Islands/Rune2" index="0" unique_id=2094651265]
-unique_name_in_owner = true
 radius = 4.999999
 material = SubResource("StandardMaterial3D_tp06f")
 
 [node name="Rune3" parent="Islands" unique_id=1205945735 instance=ExtResource("5_08q1a")]
 transform = Transform3D(0.07959893, 0, -0.06053109, 0, 0.1, 0, 0.06053109, 0, 0.07959893, -835.7, -1, -1719.3)
-script = ExtResource("6_tr0f3")
 type = 1
 map_icon = ExtResource("9_tr0f3")
 
 [node name="VisibilitySphere" parent="Islands/Rune3" index="0" unique_id=2094651265]
-unique_name_in_owner = true
 radius = 4.999999
 material = SubResource("StandardMaterial3D_tp06f")
 
 [node name="Rune4" parent="Islands" unique_id=1896737260 instance=ExtResource("5_08q1a")]
 transform = Transform3D(0.07959893, 0, -0.06053109, 0, 0.1, 0, 0.06053109, 0, 0.07959893, -0.1, -1, 3.8146973e-07)
-script = ExtResource("6_tr0f3")
 type = 1
 map_icon = ExtResource("9_tr0f3")
 
 [node name="VisibilitySphere" parent="Islands/Rune4" index="0" unique_id=2094651265]
-unique_name_in_owner = true
 radius = 4.999999
 material = SubResource("StandardMaterial3D_tp06f")
 
-[editable path="Islands/SmallBall"]
-[editable path="Islands/SmallBall2"]
-[editable path="Islands/SmallBall3"]
-[editable path="Islands/SmallBall4"]
-[editable path="Islands/SmallBall5"]
-[editable path="Islands/SmallBall6"]
-[editable path="Islands/LongCock"]
-[editable path="Islands/SmallBall7"]
+[editable path="Islands/ThorIsland"]
+[editable path="Islands/TurIsland"]
+[editable path="Islands/OdinIsland"]
+[editable path="Islands/FreirIsland"]
+[editable path="Islands/LokiIsland"]
+[editable path="Islands/HeimdallIsland"]
+[editable path="Islands/TailIsland"]
+[editable path="Islands/RidgeIsland"]
+[editable path="Islands/RidgeIsland7"]
+[editable path="Islands/RidgeIsland6"]
+[editable path="Islands/RidgeIsland5"]
+[editable path="Islands/RidgeIsland4"]
+[editable path="Islands/RidgeIsland3"]
+[editable path="Islands/RidgeIsland2"]
 [editable path="Islands/Rune"]
 [editable path="Islands/Rune2"]
 [editable path="Islands/Rune3"]

@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://d1f7binve1rld" path="res://Game/Systems/time_system.gd" id="8_7yjlo"]
 [ext_resource type="Script" uid="uid://cwdl8npmvnl5v" path="res://Game/Systems/quest_system.gd" id="9_6r42o"]
 [ext_resource type="PackedScene" uid="uid://c6uqpxfa40845" path="res://UI/HUD/hud.tscn" id="11_74v2q"]
+[ext_resource type="Script" uid="uid://b61duaq6oia8y" path="res://Game/Systems/visiting_system.gd" id="12_2sf5m"]
 [ext_resource type="AudioStream" uid="uid://dqhf6try6vvi8" path="res://Audio/moongate.mp3" id="18_2sf5m"]
 
 [node name="Game" type="Node" unique_id=736238743]
@@ -47,6 +48,11 @@ unique_name_in_owner = true
 [node name="WebMouseCaptor" type="Node" parent="." unique_id=245208459]
 script = ExtResource("5_gwpo4")
 metadata/_custom_type_script = "uid://cf7i1a3dh3at4"
+
+[node name="VikingVisitingSystem" type="Node" parent="." unique_id=678479755]
+unique_name_in_owner = true
+script = ExtResource("12_2sf5m")
+metadata/_custom_type_script = "uid://b61duaq6oia8y"
 
 [node name="GameStateMachine" type="Node" parent="." unique_id=1842708992]
 unique_name_in_owner = true

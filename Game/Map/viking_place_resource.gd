@@ -12,6 +12,8 @@ var scale_2d : Vector2:
 		return Vector2(scale.x, scale.z)
 @export var visibility_range : float = 5.0
 @export var acquisition_range : float = 5.0
+@export_multiline var description : String
+@export_multiline var description_header : String
 
 
 func is_island() -> bool:
@@ -21,3 +23,10 @@ func is_island() -> bool:
 func is_rune() -> bool:
 	assert((island != null) != (rune != null))
 	return rune != null
+
+func get_place_name() -> String:
+	if island != null:
+		return island.name
+	if rune != null:
+		return rune.name
+	return "Unknown place"

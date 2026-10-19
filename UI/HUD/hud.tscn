@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c5absqcct10fa" path="res://UI/HUD/hud.gd" id="1_ia7gp"]
 [ext_resource type="PackedScene" uid="uid://drnuopnjg1a0p" path="res://UI/HUD/FixedCompass/fixed_compass.tscn" id="2_ing8j"]
 [ext_resource type="PackedScene" uid="uid://bd4kmv23vbk3y" path="res://UI/HUD/SkipHoursSelector/skip_hours_selector.tscn" id="2_te8l2"]
-[ext_resource type="PackedScene" uid="uid://b2x8n004g3ybj" path="res://UI/HUD/QuestPopup/QuestPopup.tscn" id="4_qdh7y"]
+[ext_resource type="PackedScene" uid="uid://b2x8n004g3ybj" path="res://UI/HUD/TextPopup/TextPopup.tscn" id="4_qdh7y"]
 
 [node name="HUD" type="Control" unique_id=407136769]
 layout_mode = 3
@@ -33,4 +33,4 @@ offset_right = 250.0
 offset_bottom = 60.0
 grow_horizontal = 2
 
-[node name="QuestPopup" parent="." unique_id=1808250790 instance=ExtResource("4_qdh7y")]
+[node name="TextPopup" parent="." unique_id=1808250790 instance=ExtResource("4_qdh7y")]
