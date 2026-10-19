@@ -3,10 +3,12 @@ extends GameState
 
 @export var countdown_scene : PackedScene
 @export var mouse_captor : WebMouseCaptor
+@export var BGM : AudioStreamPlayer
 
 func enter(prev_state : State) -> void:
 	super.enter(prev_state)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	BGM.play()
 	
 	_show_hud()
 	
@@ -28,6 +30,7 @@ func exit(next_state : State) -> void:
 	if mouse_captor:
 		mouse_captor.disable()
 	super.exit(next_state)
+	BGM.stop()
 
 func update(delta: float) -> void:
 	super.update(delta)

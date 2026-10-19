@@ -5,6 +5,9 @@
 [ext_resource type="Resource" uid="uid://kr0ipoip375a" path="res://addons/day_and_night_cycle/presets/default/default_day_cycle.tres" id="2_2pf45"]
 [ext_resource type="Resource" uid="uid://b0mbm2nb4pntn" path="res://addons/day_and_night_cycle/presets/default/default_night_cycle.tres" id="3_2pf45"]
 [ext_resource type="PackedScene" uid="uid://dyh2h8fiesbc2" path="res://Player3D/floating_player_character_3d.tscn" id="4_2pf45"]
+[ext_resource type="AudioStream" uid="uid://c0fxasl5hkwlp" path="res://Game/Level/VistulaShort.mp3" id="6_u0wtt"]
+[ext_resource type="AudioStream" uid="uid://clmdpmuvg5m1r" path="res://Game/Level/amb_deck_creaks.mp3" id="7_ekbpf"]
+[ext_resource type="AudioStream" uid="uid://bmane3t4382jt" path="res://Game/Level/Ambient-WindInSales EDIT.mp3" id="8_jwoxe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2gduj"]
 sky_top_color = Color(0.35509998, 0.52829504, 0.67, 1)
@@ -48,3 +51,18 @@ night_data = ExtResource("3_2pf45")
 world_environment = NodePath("../WorldEnvironment")
 sun_light = NodePath("../SunPlaneRoot/SunDirection")
 metadata/_custom_type_script = "uid://sqer1ykwxtg5"
+
+[node name="Waves" type="AudioStreamPlayer" parent="." unique_id=688130022]
+stream = ExtResource("6_u0wtt")
+volume_db = -24.447
+autoplay = true
+
+[node name="Parus" type="AudioStreamPlayer" parent="." unique_id=1345009150]
+stream = ExtResource("8_jwoxe")
+volume_db = -5.821
+autoplay = true
+
+[node name="Creaks" type="AudioStreamPlayer" parent="." unique_id=976135820]
+stream = ExtResource("7_ekbpf")
+volume_db = -17.95
+autoplay = true

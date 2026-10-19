@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://d1f7binve1rld" path="res://Game/Systems/time_system.gd" id="8_7yjlo"]
 [ext_resource type="Script" uid="uid://cwdl8npmvnl5v" path="res://Game/Systems/quest_system.gd" id="9_6r42o"]
 [ext_resource type="PackedScene" uid="uid://c6uqpxfa40845" path="res://UI/HUD/hud.tscn" id="11_74v2q"]
+[ext_resource type="AudioStream" uid="uid://dqhf6try6vvi8" path="res://Audio/moongate.mp3" id="18_2sf5m"]
 
 [node name="Game" type="Node" unique_id=736238743]
 process_mode = 3
@@ -57,8 +58,10 @@ script = ExtResource("6_43kao")
 main_menu_scene = ExtResource("8_4qclw")
 metadata/_custom_type_script = "uid://byxbbtwkua6nq"
 
-[node name="Gameplay" type="Node" parent="GameStateMachine" unique_id=513353638]
+[node name="Gameplay" type="Node" parent="GameStateMachine" unique_id=513353638 node_paths=PackedStringArray("mouse_captor", "BGM")]
 script = ExtResource("7_j36f3")
+mouse_captor = NodePath("../../WebMouseCaptor")
+BGM = NodePath("../../BGM")
 hud_scene = ExtResource("11_74v2q")
 metadata/_custom_type_script = "uid://hm4mr3v1hfai"
 
@@ -76,5 +79,9 @@ layer = 90
 
 [node name="Menu" type="CanvasLayer" parent="CanvasManager" unique_id=254975533]
 layer = 100
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1368519850]
+stream = ExtResource("18_2sf5m")
+volume_db = -9.09
 
 [connection signal="state_changed" from="GameStateMachine" to="." method="_on_game_state_changed"]
