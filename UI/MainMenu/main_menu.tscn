@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://c2h4mrg86dfqc" path="res://UI/Themes/menu.tres" id="1_3jj5y"]
 [ext_resource type="Script" uid="uid://c6v81rd7nylrq" path="res://UI/MainMenu/main_menu.gd" id="1_jld46"]
+[ext_resource type="Texture2D" uid="uid://b7arj77f4sohk" path="res://UI/MainMenu/обложка1.png" id="3_h8rmy"]
 [ext_resource type="Script" uid="uid://ce3qsmnhwei1y" path="res://UI/web_helper_button.gd" id="5_iyy2y"]
 
 [node name="MainMenu" type="Control" unique_id=362125495]
@@ -14,45 +15,70 @@ grow_vertical = 2
 theme = ExtResource("1_3jj5y")
 script = ExtResource("1_jld46")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=487912128]
+[node name="Control" type="Control" parent="." unique_id=762764891]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1853702780]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 32.0
+anchor_bottom = 18.0
+color = Color(0.07450981, 0.03137255, 0.02745098, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1149978469]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 17.875
+anchor_bottom = 18.0
+offset_left = -114.0
+offset_right = 70.67914
+texture = ExtResource("3_h8rmy")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=487912128]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 32.0
+anchor_right = 32.0
+anchor_bottom = 18.0
+offset_left = -609.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ButtonsVBox" type="VBoxContainer" parent="CenterContainer" unique_id=212692656]
+[node name="ButtonsVBox" type="VBoxContainer" parent="Control/CenterContainer" unique_id=212692656]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 
-[node name="PlayButton" type="Button" parent="CenterContainer/ButtonsVBox" unique_id=839759193]
+[node name="PlayButton" type="Button" parent="Control/CenterContainer/ButtonsVBox" unique_id=839759193]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Play"
 
-[node name="SettingsButton" type="Button" parent="CenterContainer/ButtonsVBox" unique_id=1066668781]
+[node name="SettingsButton" type="Button" parent="Control/CenterContainer/ButtonsVBox" unique_id=1066668781]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 disabled = true
 text = "Settings"
 
-[node name="CreditsButton" type="Button" parent="CenterContainer/ButtonsVBox" unique_id=2017876094]
+[node name="CreditsButton" type="Button" parent="Control/CenterContainer/ButtonsVBox" unique_id=2017876094]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 disabled = true
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/ButtonsVBox" unique_id=785415804]
+[node name="QuitButton" type="Button" parent="Control/CenterContainer/ButtonsVBox" unique_id=785415804]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
 script = ExtResource("5_iyy2y")
 hide_in_web_build = true
 
-[connection signal="pressed" from="CenterContainer/ButtonsVBox/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CenterContainer/ButtonsVBox/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="CenterContainer/ButtonsVBox/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="CenterContainer/ButtonsVBox/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonsVBox/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonsVBox/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonsVBox/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/ButtonsVBox/QuitButton" to="." method="_on_quit_button_pressed"]
