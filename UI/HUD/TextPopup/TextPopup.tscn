@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cyu1cdek8emj1" path="res://UI/HUD/TextPopup/text_popup.gd" id="1_x6xlj"]
 [ext_resource type="Theme" uid="uid://bh0mdvqdgrrut" path="res://UI/Themes/game_ui.tres" id="2_i3ngc"]
+[ext_resource type="Texture2D" uid="uid://bfkn2gpl0m3h2" path="res://Game/Assets/icons/rune_1_001.png" id="3_1knn6"]
 
 [node name="TextPopup" type="CanvasLayer" unique_id=1808250790]
 layer = 10
@@ -67,3 +68,50 @@ autowrap_mode = 3
 unique_name_in_owner = true
 layout_mode = 2
 text = "OK"
+
+[node name="RuneContainer" type="PanelContainer" parent="." unique_id=1024599602]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -166.0
+offset_right = 105.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_i3ngc")
+
+[node name="MarginContainer" type="MarginContainer" parent="RuneContainer" unique_id=1441161152]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="RuneContainer/MarginContainer" unique_id=2088768577]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="RuneContainer/MarginContainer/Control" unique_id=1952878283]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RuneContainer/MarginContainer/Control/MarginContainer" unique_id=364511978]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RuneTexture" type="TextureRect" parent="RuneContainer/MarginContainer/Control/MarginContainer/VBoxContainer" unique_id=1528353970]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(156, 156)
+layout_mode = 2
+texture = ExtResource("3_1knn6")
