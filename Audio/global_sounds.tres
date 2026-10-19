@@ -4,8 +4,10 @@
 [ext_resource type="AudioStream" uid="uid://c5m0pudtq22x3" path="res://Audio/churchbell.mp3" id="1_mky4e"]
 [ext_resource type="AudioStream" uid="uid://dvv7rlsgpiky3" path="res://Audio/sfx_map_handle_01.mp3" id="1_mm76g"]
 [ext_resource type="AudioStream" uid="uid://tevb6n3vdij1" path="res://Audio/steps_wood_slow_01.mp3" id="2_mccj2"]
+[ext_resource type="AudioStream" uid="uid://d2drfsqco8vuu" path="res://Audio/Map-PlacePin.mp3" id="2_r12pj"]
 [ext_resource type="AudioStream" uid="uid://dcbo4g8db1xu2" path="res://Audio/134932__ztrees1__monster-breathing.mp3" id="3_ka70t"]
 [ext_resource type="AudioStream" uid="uid://bgaqg7dqmp2tj" path="res://Audio/steps_wood_slow_03.mp3" id="3_mm76g"]
+[ext_resource type="AudioStream" uid="uid://8yay00e21f26" path="res://Audio/Map-RemovePin.mp3" id="4_av7p3"]
 [ext_resource type="AudioStream" uid="uid://dqdddr6xwfn2r" path="res://Audio/540162__schreibsel__snake-hissing.mp3" id="4_r12pj"]
 [ext_resource type="AudioStream" uid="uid://1kfo7nmgl333" path="res://Audio/steps_wood_slow_02.mp3" id="4_rv2mp"]
 [ext_resource type="AudioStream" uid="uid://da0888delnnrc" path="res://Audio/item_stone_02.mp3" id="5_av7p3"]
@@ -35,5 +37,7 @@ bell = ExtResource("1_mky4e")
 monster_breath = ExtResource("3_ka70t")
 monster_hiss = ExtResource("4_r12pj")
 rune_take = ExtResource("5_av7p3")
+map_mark = ExtResource("2_r12pj")
+map_unmark = ExtResource("4_av7p3")
 tiller = SubResource("AudioStreamRandomizer_8qkcs")
 metadata/_custom_type_script = "uid://dmfnl8m8d6lex"
