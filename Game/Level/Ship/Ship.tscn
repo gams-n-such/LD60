@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://di6dhhwojinx8"]
 
 [ext_resource type="Script" uid="uid://ba7feeoknbji5" path="res://Game/Level/Ship/ship.gd" id="1_obob2"]
+[ext_resource type="PackedScene" uid="uid://d117vju08ftlf" path="res://Game/Level/Ship/Ship.glb" id="2_i144h"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_h10kl"]
 
@@ -21,6 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
 
 [node name="PlaceholderMeshInstance3D" type="MeshInstance3D" parent="ShipPivot/ShipVisuals" unique_id=1646944193]
 transform = Transform3D(-1.0927847e-06, 0, 10, 0, 1, 0, -25, 0, -4.371139e-07, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_h10kl")
 surface_material_override/0 = SubResource("StandardMaterial3D_b5f2x")
 
@@ -29,3 +31,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_b5f2x")
 [node name="BoxCollision" type="CollisionShape3D" parent="ShipPivot/ShipVisuals/PlaceholderMeshInstance3D/StaticBody3D" unique_id=915314489]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_w7pfj")
+
+[node name="Ship" parent="ShipPivot/ShipVisuals" unique_id=532546793 instance=ExtResource("2_i144h")]
+transform = Transform3D(2.55, 0, 0, 0, 2.55, 0, 0, 0, 2.55, 0, -1.6311855, 55.721024)

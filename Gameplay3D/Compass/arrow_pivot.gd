@@ -8,7 +8,7 @@ var global_time: float = 0.0
 
 const DEGREES_PER_HOUR: float = 15.0
 const DEGREES_OFFSET: float = 0.0
-const MIN_SCALE: float = 0.13
+const MIN_SCALE: float = 0.16
 const SCALE_DIFF: float = 0.18
 const SCALE_DEGREES_OFFSET: float = -30
 
