@@ -14,8 +14,8 @@ func from_resource(resource : VikingIslandResource, pixels_per_unit : float = 10
 		polygon.polygon = PackedVector2Array()
 	else:
 		sprite.texture = null
-		polygon.polygon = resource.map_polygon
-		polygon.scale = resource.map_polygon_scale * pixels_per_unit
+		#polygon.polygon = resource.map_polygon
+		#polygon.scale = resource.map_polygon_scale * pixels_per_unit
 
 func _ready() -> void:
 	pass # Replace with function body.
