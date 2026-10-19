@@ -13,7 +13,6 @@ func _ready() -> void:
 
 @onready var islands_root: Node3D = %Islands
 
-
 const EDITOR_PLACE_SCENE = preload("uid://dad2mnghcn17b")
 
 @export_tool_button("Save to resource") var save_world := func ():

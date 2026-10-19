@@ -24,3 +24,4 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		var map_screen := MAP_SCREEN.instantiate() as Control
 		Game.canvas_manager.set_layer_content(JamUtils.layer_ui_info, map_screen)
 		#Game.canvas_manager.push_content_to_layer(JamUtils.layer_ui_info, map_screen)
+		AudioManager.play_sound_ui(AudioManager.global_sound.map_unfold, AudioManager.BusType.UI_BUS)

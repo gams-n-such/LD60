@@ -41,6 +41,8 @@ func _ready() -> void:
 		island_control.scale = place.scale_2d * pixels_per_unit
 		for quest in Game.quest_system.active_quests:
 			if quest.island_name == place.get_place_name():
+				if quest.island_name == "TailIsland" and !Game.quest_system.completed_loki_quest:
+					continue
 				_spawn_quest_marker(quest, map_position)
 
 func _spawn_quest_marker(quest: Resource, map_position: Vector2) -> void:
