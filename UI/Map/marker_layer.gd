@@ -54,6 +54,7 @@ func place_mark(world_pos: Vector2) -> void:
 	mark.scale = Vector2(0.5, 0.5)
 	marks.append(mark)
 	add_child(mark)
+	AudioManager.play_sound_ui(AudioManager.global_sound.map_mark, AudioManager.BusType.UI_BUS)
 	
 func is_point_inside_sprite(point: Vector2, sprite: Sprite2D) -> bool:
 	var local_rect = sprite.get_rect()

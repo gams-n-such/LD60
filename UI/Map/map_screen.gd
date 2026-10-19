@@ -9,6 +9,8 @@ func _ready() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position:y", 0.0, slide_in_duration).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
 	grab_focus()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	Game.web_mouse_captor.disable()
 
 
 func _gui_input(event: InputEvent) -> void:
@@ -20,3 +22,5 @@ func _gui_input(event: InputEvent) -> void:
 		tween.tween_callback(queue_free)
 		release_focus()
 		AudioManager.play_sound_ui(AudioManager.global_sound.map_unfold, AudioManager.BusType.UI_BUS, Vector2.ONE)
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		Game.web_mouse_captor.enable()

@@ -46,6 +46,7 @@ metadata/_custom_type_script = "uid://cwdl8npmvnl5v"
 unique_name_in_owner = true
 
 [node name="WebMouseCaptor" type="Node" parent="." unique_id=245208459]
+unique_name_in_owner = true
 script = ExtResource("5_gwpo4")
 metadata/_custom_type_script = "uid://cf7i1a3dh3at4"
 
