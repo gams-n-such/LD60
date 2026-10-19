@@ -6,7 +6,7 @@ extends Node3D
 ## Map coordinates remain unchanged; this only affects 3D placement.
 var level_units_per_map_unit: float:
 	get:
-		return Game.config.miles_per_map_unit
+		return Game.config.metres_per_map_unit
 
 @onready var ship: Node3D = %Ship
 
