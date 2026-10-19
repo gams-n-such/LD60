@@ -4,11 +4,16 @@
 [ext_resource type="Script" uid="uid://wnj3puet57uv" path="res://Game/Quest/viking_quest_resource.gd" id="1_rb06u"]
 [ext_resource type="Script" uid="uid://dw56iobukyh5d" path="res://Game/Map/viking_island_resource.gd" id="2_icmae"]
 [ext_resource type="PackedScene" uid="uid://bwc8m6ioegbnd" path="res://Game/Level/Islands/SmallBallIsland.tscn" id="2_nq65h"]
+[ext_resource type="PackedScene" uid="uid://chopalxyk4hki" path="res://Game/Level/Islands/Wednesland.tscn" id="2_sh1nk"]
 [ext_resource type="Script" uid="uid://d0xgx6qvmr336" path="res://Game/Map/viking_world_resource.gd" id="3_s272b"]
 [ext_resource type="PackedScene" uid="uid://csc67323i53tp" path="res://Game/Level/Islands/SleipnirIsland.tscn" id="4_ax8pg"]
 [ext_resource type="PackedScene" uid="uid://oeluq665wk56" path="res://Game/Level/Islands/LongCockIsland.tscn" id="4_s272b"]
+[ext_resource type="PackedScene" uid="uid://c8hsxens4byr5" path="res://Game/Level/Islands/Thursland.tscn" id="5_7gpj0"]
 [ext_resource type="Script" uid="uid://3pom5xueq4xe" path="res://Game/Map/viking_rune_resource.gd" id="5_k7hdp"]
+[ext_resource type="PackedScene" uid="uid://xsc3cy41lg77" path="res://Game/Level/Islands/Tyrsland.tscn" id="5_oacub"]
 [ext_resource type="Texture2D" uid="uid://ccn1mwohl6hnl" path="res://Game/Map/Editor/2D/rune-stone.svg" id="6_rb06u"]
+[ext_resource type="PackedScene" uid="uid://jntkorgtbian" path="res://Game/Level/Islands/LokiIsland.tscn" id="8_oacub"]
+[ext_resource type="PackedScene" uid="uid://jhlfilj8pwt2" path="res://Game/Level/Islands/HeimdallIsland.tscn" id="9_ntpek"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v6u60"]
 size = Vector2(32, 32)
@@ -16,7 +21,7 @@ size = Vector2(32, 32)
 [sub_resource type="Resource" id="Resource_rb06u"]
 script = ExtResource("2_icmae")
 name = "OdinIsland"
-scene = ExtResource("2_nq65h")
+scene = ExtResource("2_sh1nk")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
@@ -52,7 +57,7 @@ description_header = "You arrive at Sleipnir island."
 [sub_resource type="Resource" id="Resource_7gpj0"]
 script = ExtResource("2_icmae")
 name = "TurIsland"
-scene = ExtResource("2_nq65h")
+scene = ExtResource("5_oacub")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
@@ -70,7 +75,7 @@ description_header = "Tyr gazes thoughtfully at the horizon..."
 [sub_resource type="Resource" id="Resource_ntpek"]
 script = ExtResource("2_icmae")
 name = "ThorIsland"
-scene = ExtResource("2_nq65h")
+scene = ExtResource("5_7gpj0")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
@@ -118,13 +123,11 @@ heading = -0.7440029
 scale = Vector3(10, 10, 10)
 visibility_range = 6607.4194
 acquisition_range = 500.0
-description = "yrsdy"
-description_header = "aiyfgauoif"
 
 [sub_resource type="Resource" id="Resource_7lotx"]
 script = ExtResource("2_icmae")
 name = "LokiIsland"
-scene = ExtResource("2_nq65h")
+scene = ExtResource("8_oacub")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
@@ -144,7 +147,7 @@ description_header = "Loki's face stretches into an unnaturally wide grin..."
 [sub_resource type="Resource" id="Resource_1hv7y"]
 script = ExtResource("2_icmae")
 name = "HeimdallIsland"
-scene = ExtResource("2_nq65h")
+scene = ExtResource("9_ntpek")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
@@ -408,7 +411,7 @@ metadata/_custom_type_script = "uid://wnj3puet57uv"
 [resource]
 script = ExtResource("3_s272b")
 radius = 21500.0
-player_start_coords = Vector2(8900.07, -14104.787)
+player_start_coords = Vector2(8900.071, -14104.787)
 places = Array[ExtResource("1_icmae")]([SubResource("Resource_ax8pg"), SubResource("Resource_sh1nk"), SubResource("Resource_oacub"), SubResource("Resource_3q5mt"), SubResource("Resource_jubqp"), SubResource("Resource_gs1pr"), SubResource("Resource_fussg"), SubResource("Resource_0hpey"), SubResource("Resource_7il8n"), SubResource("Resource_57kkn"), SubResource("Resource_c7t3g"), SubResource("Resource_6lapp"), SubResource("Resource_wnojy"), SubResource("Resource_5nuo5"), SubResource("Resource_353l0"), SubResource("Resource_0c268"), SubResource("Resource_d1fm3"), SubResource("Resource_ddbln"), SubResource("Resource_7m1sl"), SubResource("Resource_kf7r0")])
 quests = Array[ExtResource("1_rb06u")]([SubResource("Resource_x6xlj"), SubResource("Resource_y53pl"), SubResource("Resource_aimvf"), SubResource("Resource_6nnoo"), SubResource("Resource_glihj"), SubResource("Resource_0egv3"), SubResource("Resource_ujv35")])
 metadata/_custom_type_script = "uid://d0xgx6qvmr336"
