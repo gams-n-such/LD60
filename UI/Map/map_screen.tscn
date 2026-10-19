@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cy5lwcplhd74x"]
 
 [ext_resource type="Script" uid="uid://cdn6pe2hw6utt" path="res://UI/Map/map_screen.gd" id="1_wlwya"]
+[ext_resource type="Theme" uid="uid://bh0mdvqdgrrut" path="res://UI/Themes/game_ui.tres" id="1_xc4d7"]
 [ext_resource type="PackedScene" uid="uid://bwxsr3grt63ro" path="res://UI/Map/map_control.tscn" id="2_wlwya"]
 
 [node name="MapScreen" type="Control" unique_id=67232622]
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
+theme = ExtResource("1_xc4d7")
 script = ExtResource("1_wlwya")
 
 [node name="MapRoot" type="Control" parent="." unique_id=558774208]

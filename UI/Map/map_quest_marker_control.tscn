@@ -1,29 +1,30 @@
 [gd_scene format=3 uid="uid://koubi8ipqjib"]
 
-[ext_resource type="Texture2D" uid="uid://b2k6m7xba6ul4" path="res://icon.svg" id="1_p6k74"]
 [ext_resource type="Script" uid="uid://t2ajor8sbj03" path="res://UI/Map/map_quest_marker_control.gd" id="1_t0on2"]
+[ext_resource type="Texture2D" uid="uid://bjjqiltvdlip6" path="res://UI/Map/Icons/Torch.png" id="2_t0on2"]
 
 [node name="MapQuestMarkerControl" type="Control" unique_id=78330838]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_t0on2")
 
-[node name="MarkerIcon" type="TextureRect" parent="." unique_id=1587231297]
-unique_name_in_owner = true
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 128.0
-scale = Vector2(0.125, 0.25)
-texture = ExtResource("1_p6k74")
-
 [node name="MarkerBackground" type="Panel" parent="." unique_id=526723207]
+visible = false
 layout_mode = 0
 offset_right = 17.0
 offset_bottom = 34.0
 
-[node name="QuestNameLabel" type="Label" parent="MarkerBackground" unique_id=488365311]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1285930446]
 layout_mode = 0
-offset_right = 47.0
-offset_bottom = 23.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarkerIcon" type="TextureRect" parent="HBoxContainer" unique_id=1587231297]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_t0on2")
+
+[node name="QuestNameLabel" type="Label" parent="HBoxContainer" unique_id=488365311]
+unique_name_in_owner = true
+layout_mode = 2
 text = "Quest"

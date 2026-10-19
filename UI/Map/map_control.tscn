@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bwxsr3grt63ro"]
 
 [ext_resource type="Script" uid="uid://b26et73u1ejra" path="res://UI/Map/map_control.gd" id="1_ekntj"]
-[ext_resource type="Texture2D" uid="uid://dtulblyeev72w" path="res://Game/Map/Editor/2D/world_border.svg" id="2_kq328"]
+[ext_resource type="Texture2D" uid="uid://gos1s7mju8iu" path="res://UI/Map/Icons/MapBase.png" id="2_jpgfp"]
 [ext_resource type="Script" uid="uid://6o6kcf88c0by" path="res://UI/Map/marker_layer.gd" id="3_moawh"]
+[ext_resource type="Texture2D" uid="uid://btwb5utcapmr0" path="res://UI/Map/Icons/Cross.png" id="3_wrnen"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tp06f"]
 
@@ -53,9 +54,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
-offset_transform_scale = Vector2(1.2, 1.2)
+offset_transform_scale = Vector2(1.1, 1.1)
 mouse_filter = 2
-texture = ExtResource("2_kq328")
+texture = ExtResource("2_jpgfp")
+
+[node name="Start" type="TextureRect" parent="SquareContainer/MapContainer/MarginContainer/ActualMap" unique_id=271915084]
+modulate = Color(0.79, 0.08690001, 0.08690001, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.66400003
+anchor_top = 0.19500001
+anchor_right = 0.72800004
+anchor_bottom = 0.261
+offset_left = 0.1199646
+offset_top = 0.3012085
+offset_right = 0.23995972
+offset_bottom = 0.12998962
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.1, 1.1)
+mouse_filter = 2
+texture = ExtResource("3_wrnen")
 
 [node name="IslandsRoot" type="Control" parent="SquareContainer/MapContainer/MarginContainer/ActualMap" unique_id=1767668827]
 unique_name_in_owner = true

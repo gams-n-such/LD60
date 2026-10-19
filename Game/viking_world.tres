@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://x5ouc5vohp8a" path="res://Game/Map/viking_place_resource.gd" id="1_icmae"]
 [ext_resource type="Script" uid="uid://wnj3puet57uv" path="res://Game/Quest/viking_quest_resource.gd" id="1_rb06u"]
+[ext_resource type="Texture2D" uid="uid://iqf56wxhgmtk" path="res://UI/Map/Icons/odin.png" id="2_7il8n"]
 [ext_resource type="Script" uid="uid://dw56iobukyh5d" path="res://Game/Map/viking_island_resource.gd" id="2_icmae"]
 [ext_resource type="PackedScene" uid="uid://bwc8m6ioegbnd" path="res://Game/Level/Islands/SmallBallIsland.tscn" id="2_nq65h"]
 [ext_resource type="PackedScene" uid="uid://chopalxyk4hki" path="res://Game/Level/Islands/Wednesland.tscn" id="2_sh1nk"]
@@ -9,22 +10,27 @@
 [ext_resource type="PackedScene" uid="uid://csc67323i53tp" path="res://Game/Level/Islands/SleipnirIsland.tscn" id="4_ax8pg"]
 [ext_resource type="PackedScene" uid="uid://oeluq665wk56" path="res://Game/Level/Islands/LongCockIsland.tscn" id="4_s272b"]
 [ext_resource type="PackedScene" uid="uid://c8hsxens4byr5" path="res://Game/Level/Islands/Thursland.tscn" id="5_7gpj0"]
+[ext_resource type="Texture2D" uid="uid://c7jhxfd6t5t8n" path="res://UI/Map/Icons/sleypnir.png" id="5_jqksj"]
 [ext_resource type="Script" uid="uid://3pom5xueq4xe" path="res://Game/Map/viking_rune_resource.gd" id="5_k7hdp"]
 [ext_resource type="PackedScene" uid="uid://xsc3cy41lg77" path="res://Game/Level/Islands/Tyrsland.tscn" id="5_oacub"]
 [ext_resource type="Texture2D" uid="uid://ccn1mwohl6hnl" path="res://Game/Map/Editor/2D/rune-stone.svg" id="6_rb06u"]
 [ext_resource type="PackedScene" uid="uid://cir6cjuqara5m" path="res://Game/Level/Islands/Fryland.tscn" id="7_3q5mt"]
+[ext_resource type="Texture2D" uid="uid://dmsne3rw0rf7j" path="res://UI/Map/Icons/tyr.png" id="7_57kkn"]
 [ext_resource type="PackedScene" uid="uid://jntkorgtbian" path="res://Game/Level/Islands/LokiIsland.tscn" id="8_oacub"]
 [ext_resource type="PackedScene" uid="uid://dqp4heyd7fgn" path="res://Game/Level/Islands/Deadland.tscn" id="8_u5tfx"]
+[ext_resource type="Texture2D" uid="uid://05w32sajlgq6" path="res://UI/Map/Icons/thor.png" id="9_bitc8"]
 [ext_resource type="PackedScene" uid="uid://jhlfilj8pwt2" path="res://Game/Level/Islands/HeimdallIsland.tscn" id="9_ntpek"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v6u60"]
-size = Vector2(32, 32)
+[ext_resource type="Texture2D" uid="uid://cv46cc2rj7wyl" path="res://UI/Map/Icons/freyr.png" id="11_c7t3g"]
+[ext_resource type="Texture2D" uid="uid://nobvasnjhdrm" path="res://UI/Map/Icons/fallen.png" id="13_vl3aq"]
+[ext_resource type="Texture2D" uid="uid://1gq22u7ty5bu" path="res://UI/Map/Icons/loki.png" id="15_6lapp"]
+[ext_resource type="Texture2D" uid="uid://0nlgf55eslhc" path="res://UI/Map/Icons/heimdal.png" id="17_xvheq"]
+[ext_resource type="Texture2D" uid="uid://bctwvph4nr2iw" path="res://UI/Map/Icons/ridge.png" id="21_wnojy"]
 
 [sub_resource type="Resource" id="Resource_rb06u"]
 script = ExtResource("2_icmae")
 name = "OdinIsland"
 scene = ExtResource("2_sh1nk")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+map_sprite = ExtResource("2_7il8n")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_ax8pg"]
@@ -42,7 +48,7 @@ description_header = "Odin's eye gazes at you with stern majesty..."
 script = ExtResource("2_icmae")
 name = "SleipnirIsland"
 scene = ExtResource("4_ax8pg")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+map_sprite = ExtResource("5_jqksj")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_sh1nk"]
@@ -60,7 +66,7 @@ description_header = "You arrive at Sleipnir island."
 script = ExtResource("2_icmae")
 name = "TurIsland"
 scene = ExtResource("5_oacub")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+map_sprite = ExtResource("7_57kkn")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_oacub"]
@@ -78,7 +84,7 @@ description_header = "Tyr gazes thoughtfully at the horizon..."
 script = ExtResource("2_icmae")
 name = "ThorIsland"
 scene = ExtResource("5_7gpj0")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+map_sprite = ExtResource("9_bitc8")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_3q5mt"]
@@ -96,7 +102,7 @@ description_header = "Thor slaps his thigh at the sight of you..."
 script = ExtResource("2_icmae")
 name = "FreirIsland"
 scene = ExtResource("7_3q5mt")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+map_sprite = ExtResource("11_c7t3g")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_jubqp"]
@@ -114,7 +120,7 @@ description_header = "Freyr's thick blond beard hides his smile, but his eyes gi
 script = ExtResource("2_icmae")
 name = "DeadIsland"
 scene = ExtResource("8_u5tfx")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+map_sprite = ExtResource("13_vl3aq")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_gs1pr"]
@@ -130,7 +136,7 @@ acquisition_range = 500.0
 script = ExtResource("2_icmae")
 name = "LokiIsland"
 scene = ExtResource("8_oacub")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+map_sprite = ExtResource("15_6lapp")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_fussg"]
@@ -150,7 +156,7 @@ description_header = "Loki's face stretches into an unnaturally wide grin..."
 script = ExtResource("2_icmae")
 name = "HeimdallIsland"
 scene = ExtResource("9_ntpek")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+map_sprite = ExtResource("17_xvheq")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_0hpey"]
@@ -168,14 +174,10 @@ I'm here because of Loki... It was foretold that he would kill me. Why? Why was 
 He has no place among us gods.\""
 description_header = "Heimdall gives you a gloomy look..."
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k7hdp"]
-size = Vector2(20, 20)
-
 [sub_resource type="Resource" id="Resource_3wlei"]
 script = ExtResource("2_icmae")
 name = "TailIsland"
 scene = ExtResource("4_s272b")
-map_sprite = SubResource("PlaceholderTexture2D_k7hdp")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_7il8n"]
@@ -191,7 +193,6 @@ acquisition_range = 500.0
 script = ExtResource("2_icmae")
 name = "RidgeIsland"
 scene = ExtResource("2_nq65h")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_57kkn"]
@@ -207,7 +208,6 @@ acquisition_range = 500.0
 script = ExtResource("2_icmae")
 name = "RidgeIsland7"
 scene = ExtResource("2_nq65h")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_c7t3g"]
@@ -223,7 +223,6 @@ acquisition_range = 500.0
 script = ExtResource("2_icmae")
 name = "RidgeIsland6"
 scene = ExtResource("2_nq65h")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_6lapp"]
@@ -239,7 +238,6 @@ acquisition_range = 500.0
 script = ExtResource("2_icmae")
 name = "RidgeIsland5"
 scene = ExtResource("2_nq65h")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_wnojy"]
@@ -255,7 +253,8 @@ acquisition_range = 500.0
 script = ExtResource("2_icmae")
 name = "RidgeIsland4"
 scene = ExtResource("2_nq65h")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+map_sprite = ExtResource("21_wnojy")
+map_sprite_rotation = 120.0
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_5nuo5"]
@@ -271,7 +270,6 @@ acquisition_range = 500.0
 script = ExtResource("2_icmae")
 name = "RidgeIsland3"
 scene = ExtResource("2_nq65h")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_353l0"]
@@ -287,7 +285,6 @@ acquisition_range = 500.0
 script = ExtResource("2_icmae")
 name = "RidgeIsland2"
 scene = ExtResource("2_nq65h")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_0c268"]

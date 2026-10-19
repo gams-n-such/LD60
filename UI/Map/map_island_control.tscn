@@ -34,6 +34,7 @@ texture = SubResource("PlaceholderTexture2D_tp06f")
 
 [node name="NameLabel" type="Label" parent="Node/LabelRoot" unique_id=1311903740]
 unique_name_in_owner = true
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 offset_transform_enabled = true
