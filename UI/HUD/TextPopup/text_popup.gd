@@ -15,9 +15,12 @@ func _ready() -> void:
 
 func _on_island_visited(place: VikingPlaceResource, quest: VikingQuestResource) -> void:
 	if quest != null:
+		print("Quest popup with header=%s, desc=%s" % [quest.header, quest.description])
 		title_label.text = quest.header
 		description_label.text = quest.description
 	else:
+		if place.description == null or place.description.is_empty():
+			return
 		if place.description_header == null or place.description_header.is_empty():
 			if place.is_rune():
 				title_label.text = place.rune.name
@@ -25,11 +28,13 @@ func _on_island_visited(place: VikingPlaceResource, quest: VikingQuestResource) 
 				title_label.text = place.island.name
 		else:
 			title_label.text = place.description_header
-			description_label.text = place.description
+		description_label.text = place.description
+	Game.pause()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	panel.show()
 	ok_button.grab_focus()
 
 func _on_ok_pressed() -> void:
+	Game.unpause()
 	panel.hide()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
