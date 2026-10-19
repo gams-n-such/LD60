@@ -34,7 +34,6 @@ func _ready() -> void:
 		var island_control := MAP_ISLAND_CONTROL.instantiate() as MapIslandControl
 		islands_root.add_child(island_control)
 		island_control.from_resource(place.island, pixels_per_unit)
-		print(map_center_px)
 		var map_position: Vector2 = (map_center_px + place.coordinates * pixels_per_unit)
 		island_control.position = map_position
 		island_control.rotation = place.heading
