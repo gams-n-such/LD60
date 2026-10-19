@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dw56iobukyh5d" path="res://Game/Map/viking_island_resource.gd" id="2_icmae"]
 [ext_resource type="PackedScene" uid="uid://bwc8m6ioegbnd" path="res://Game/Level/Islands/SmallBallIsland.tscn" id="2_nq65h"]
 [ext_resource type="Script" uid="uid://d0xgx6qvmr336" path="res://Game/Map/viking_world_resource.gd" id="3_s272b"]
+[ext_resource type="PackedScene" uid="uid://csc67323i53tp" path="res://Game/Level/Islands/SleipnirIsland.tscn" id="4_ax8pg"]
 [ext_resource type="PackedScene" uid="uid://oeluq665wk56" path="res://Game/Level/Islands/LongCockIsland.tscn" id="4_s272b"]
 [ext_resource type="Script" uid="uid://3pom5xueq4xe" path="res://Game/Map/viking_rune_resource.gd" id="5_k7hdp"]
 [ext_resource type="Texture2D" uid="uid://ccn1mwohl6hnl" path="res://Game/Map/Editor/2D/rune-stone.svg" id="6_rb06u"]
@@ -33,7 +34,7 @@ description_header = "Odin's eye gazes at you with stern majesty..."
 [sub_resource type="Resource" id="Resource_n3tos"]
 script = ExtResource("2_icmae")
 name = "SleipnirIsland"
-scene = ExtResource("2_nq65h")
+scene = ExtResource("4_ax8pg")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
@@ -407,7 +408,7 @@ metadata/_custom_type_script = "uid://wnj3puet57uv"
 [resource]
 script = ExtResource("3_s272b")
 radius = 21500.0
-player_start_coords = Vector2(8900.071, -14104.787)
+player_start_coords = Vector2(8900.07, -14104.787)
 places = Array[ExtResource("1_icmae")]([SubResource("Resource_ax8pg"), SubResource("Resource_sh1nk"), SubResource("Resource_oacub"), SubResource("Resource_3q5mt"), SubResource("Resource_jubqp"), SubResource("Resource_gs1pr"), SubResource("Resource_fussg"), SubResource("Resource_0hpey"), SubResource("Resource_7il8n"), SubResource("Resource_57kkn"), SubResource("Resource_c7t3g"), SubResource("Resource_6lapp"), SubResource("Resource_wnojy"), SubResource("Resource_5nuo5"), SubResource("Resource_353l0"), SubResource("Resource_0c268"), SubResource("Resource_d1fm3"), SubResource("Resource_ddbln"), SubResource("Resource_7m1sl"), SubResource("Resource_kf7r0")])
 quests = Array[ExtResource("1_rb06u")]([SubResource("Resource_x6xlj"), SubResource("Resource_y53pl"), SubResource("Resource_aimvf"), SubResource("Resource_6nnoo"), SubResource("Resource_glihj"), SubResource("Resource_0egv3"), SubResource("Resource_ujv35")])
 metadata/_custom_type_script = "uid://d0xgx6qvmr336"
