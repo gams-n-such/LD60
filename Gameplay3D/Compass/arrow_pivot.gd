@@ -18,7 +18,14 @@ func _ready() -> void:
 func _on_world_time_changed(hours: float) -> void:
 	var degrees: float = hours * DEGREES_PER_HOUR
 	var wrapped = fposmod(degrees + 180.0, 360.0) - 180.0
-	global_rotation_degrees.y = - wrapped
+	global_rotation_degrees.y = -wrapped
 	var wrapped2 = fposmod(wrapped + 180.0 + DEGREES_OFFSET, 360.0) - 180.0
 	shadow_mesh.scale.y = MIN_SCALE + SCALE_DIFF * SHADOW_LENGTH_CURVE.sample(wrapped2)
 	shadow_mesh.position.z = -0.5 * shadow_mesh.scale.y
+	print(-shadow_mesh.global_basis.z)
+
+func _process(delta: float) -> void:
+	var hours : float = Game.time_system.hour
+	var degrees: float = hours * DEGREES_PER_HOUR
+	var wrapped = fposmod(degrees + 180.0, 360.0) - 180.0
+	global_rotation_degrees.y = -wrapped

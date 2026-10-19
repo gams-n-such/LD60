@@ -3,21 +3,12 @@
 [ext_resource type="Script" uid="uid://y4aam5yon7cr" path="res://Game/SunCompass/sun_compass.gd" id="1_v3in7"]
 [ext_resource type="PackedScene" uid="uid://c2rqnmhtpiaek" path="res://Gameplay3D/Compass/Compass.tscn" id="2_sp2ik"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_h10kl"]
-top_radius = 0.33
-bottom_radius = 0.33
-height = 0.035
-
 [node name="SunCompass" type="Node3D" unique_id=397924082]
 script = ExtResource("1_v3in7")
 
 [node name="CompassPivot" type="Node3D" parent="." unique_id=1224992984]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, -0.8)
-
-[node name="CompassPlaceholder" type="MeshInstance3D" parent="CompassPivot" unique_id=2054482724]
-visible = false
-mesh = SubResource("CylinderMesh_h10kl")
 
 [node name="Compass" parent="CompassPivot" unique_id=884357760 instance=ExtResource("2_sp2ik")]
 transform = Transform3D(-0.7, 0, -6.119594e-08, 0, 0.7, 0, 6.119594e-08, 0, -0.7, 0, 0, 0)
