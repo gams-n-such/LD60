@@ -7,8 +7,8 @@ const SHADOW_LENGTH_CURVE = preload("uid://dhuvup4jcrldn")
 var global_time: float = 0.0
 
 const DEGREES_PER_HOUR: float = 15.0
-const DEGREES_OFFSET: float = 0.0
-const MIN_SCALE: float = 0.16
+const DEGREES_OFFSET: float = 180
+const MIN_SCALE: float = 0.15
 const SCALE_DIFF: float = 0.18
 const SCALE_DEGREES_OFFSET: float = -30
 
@@ -16,7 +16,7 @@ func _ready() -> void:
 	Game.time_system.time_changed.connect(_on_world_time_changed)
 
 func _on_world_time_changed(hours: float) -> void:
-	var degrees: float = hours * DEGREES_PER_HOUR
+	var degrees: float = hours * DEGREES_PER_HOUR + DEGREES_OFFSET
 	var wrapped = fposmod(degrees + 180.0, 360.0) - 180.0
 	global_rotation_degrees.y = -wrapped
 	var wrapped2 = fposmod(wrapped + 180.0 + DEGREES_OFFSET, 360.0) - 180.0
@@ -26,6 +26,6 @@ func _on_world_time_changed(hours: float) -> void:
 
 func _process(delta: float) -> void:
 	var hours : float = Game.time_system.hour
-	var degrees: float = hours * DEGREES_PER_HOUR
+	var degrees: float = hours * DEGREES_PER_HOUR  + DEGREES_OFFSET
 	var wrapped = fposmod(degrees + 180.0, 360.0) - 180.0
 	global_rotation_degrees.y = -wrapped
