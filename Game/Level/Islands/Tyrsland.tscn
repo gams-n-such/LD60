@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://xsc3cy41lg77"]
+
+[ext_resource type="PackedScene" uid="uid://djq0sroy2xgsn" path="res://Game/Level/Islands/Meshes/TyrColoured2.fbx" id="1_qbjhm"]
+
+[node name="Tyrsland" type="Node3D" unique_id=2020217553]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=436314566]
+transform = Transform3D(1, 0, 0, 0, 0.30975047, 0, 0, 0, 1, 0, -1.336518, 0)
+radius = 100.0
+radial_segments = 14
+rings = 10
+
+[node name="TyrColoured2" parent="." unique_id=1388583754 instance=ExtResource("1_qbjhm")]
+transform = Transform3D(95.02472, 25.623123, 17.713276, -25.85541, 96.59426, -1.024305, -17.372465, -3.6064968, 98.41337, 0, 0, 0)
