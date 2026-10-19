@@ -1,3 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://be6vcobu1aj14"]
 
+[ext_resource type="FontFile" uid="uid://cse4huekuq2h6" path="res://UI/Fonts/Norsebold.otf" id="1_2lxye"]
+
 [resource]
+default_font = ExtResource("1_2lxye")
+default_font_size = 24
+Label/constants/outline_size = 4

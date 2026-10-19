@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2x8n004g3ybj"]
 
 [ext_resource type="Script" uid="uid://cyu1cdek8emj1" path="res://UI/HUD/TextPopup/text_popup.gd" id="1_x6xlj"]
+[ext_resource type="Theme" uid="uid://bh0mdvqdgrrut" path="res://UI/Themes/game_ui.tres" id="2_i3ngc"]
 
 [node name="TextPopup" type="CanvasLayer" unique_id=1808250790]
 layer = 10
@@ -19,26 +20,50 @@ offset_right = 282.0
 offset_bottom = 83.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_i3ngc")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=732855136]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1668823080]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer" unique_id=2136846880]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Control" unique_id=771479631]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Control/MarginContainer" unique_id=732855136]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="TitleLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=784522534]
+[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/Control/MarginContainer/VBoxContainer" unique_id=784522534]
 unique_name_in_owner = true
 layout_mode = 2
 text = "QUEST"
 horizontal_alignment = 1
 
-[node name="DescriptionLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1992081909]
+[node name="DescriptionLabel" type="Label" parent="PanelContainer/MarginContainer/Control/MarginContainer/VBoxContainer" unique_id=1992081909]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 15)
 layout_mode = 2
-text = "You arrived at some island"
+text = "You arrived at some island
+"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="OkButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=616342229]
+[node name="OkButton" type="Button" parent="PanelContainer/MarginContainer/Control/MarginContainer/VBoxContainer" unique_id=616342229]
 unique_name_in_owner = true
 layout_mode = 2
 text = "OK"
