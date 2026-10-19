@@ -72,10 +72,14 @@ func skip_time(hours: float, fade: bool) -> void:
 	ship_state.sail_forward(hours)
 	time_system.advance_time(hours)
 	visiting_system.check_for_new_islands()
+	var had_any_islands : bool = Game.acquisitionable_islands.is_empty()
 	gameplay_level.update_nearby_islands(
 		world_resource,
 		ship_state.map_position
 	)
+	var has_any_islands : bool = Game.acquisitionable_islands.is_empty()
+	if has_any_islands and not had_any_islands:
+		AudioManager.play_sound(AudioManager.global_sound.bell, get_tree().get_first_node_in_group(&"Ship"), AudioManager.BusType.SHIP_BUS)
 	if fade:
 		await _fade_to(0.0)
 		_is_skipping_time = false

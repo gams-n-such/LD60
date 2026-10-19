@@ -57,6 +57,7 @@ folder_colors={
 Player="Player avatar"
 Triggers="Areas that monitor collisions"
 Interactable="Must implement get_activatable() method, which returns an Activatable node"
+Ship=""
 
 [input]
 
