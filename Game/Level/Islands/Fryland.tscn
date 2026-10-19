@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cir6cjuqara5m"]
+
+[ext_resource type="PackedScene" uid="uid://d117vju08ftlf" path="res://Game/Level/Ship/Ship.glb" id="1_n3ovv"]
+
+[node name="Fryland" type="Node3D" unique_id=919532911]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=333692001]
+transform = Transform3D(1, 0, 0, 0, 0.30975047, 0, 0, 0, 1, 0, -1.336518, 0)
+radius = 100.0
+radial_segments = 14
+rings = 10
+
+[node name="Node3D" type="Node3D" parent="." unique_id=542572088]
+transform = Transform3D(1.3, 0, 0, 0, 0.74302876, -1.0667278, 0, 1.0667278, 0.74302876, 2.3602705, 0.20181274, -40.317177)
+
+[node name="Ship" parent="Node3D" unique_id=1037729202 instance=ExtResource("1_n3ovv")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -3.1765065, 12.562546, 436.73755)
