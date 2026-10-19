@@ -6,12 +6,13 @@ extends Node3D
 
 @export_category("Compass")
 @export var stowed_position: Vector3 = Vector3(0.0, -0.35, -0.8)
-@export var deployed_position: Vector3 = Vector3(0.0, 1.37, -0.5)
+@export var deployed_position: Vector3 = Vector3(0.0, 0.25, -1.6)
 
 @export_category("Camera")
 @export var normal_camera_position: Vector3 = Vector3(0.0, 1.5, 0.0)
-@export var inspection_camera_position: Vector3 = Vector3(0.0, 1.5, 0.0)
-@export var inspection_camera_rotation: Vector3 = Vector3(deg_to_rad(-0.0), 0.0, 0.0)
+@export var inspection_camera_position: Vector3 = Vector3(0.0, 1.5, -0.1)
+@export var inspection_camera_rotation: Vector3 = Vector3(
+	deg_to_rad(-60.0),deg_to_rad(-0.0), deg_to_rad(-0.0))
 
 @export var camera: Camera3D
 @export var camera_controller: Node3D
