@@ -14,7 +14,7 @@ size = Vector2(32, 32)
 
 [sub_resource type="Resource" id="Resource_rb06u"]
 script = ExtResource("2_icmae")
-name = "ThorIsland"
+name = "OdinIsland"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -26,10 +26,13 @@ coordinates = Vector2(2020.5231, -13380.366)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
 visibility_range = 8035.4229736328125
+acquisition_range = 500.0
+description = "The Fallen... I knew you would come. And now that you're here, it is you who are destined to lead us all out of Helheim and back into the light. Gather three runes to awaken old Sleipnir. Only he can carry us out of this place."
+description_header = "Odin's eye gazes at you with stern majesty..."
 
 [sub_resource type="Resource" id="Resource_n3tos"]
 script = ExtResource("2_icmae")
-name = "TurIsland"
+name = "SleipnirIsland"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -41,10 +44,13 @@ coordinates = Vector2(8783.761, -7682.7427)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
 visibility_range = 6792.3419189453125
+acquisition_range = 500.0
+description = "You gaze upon the colossal figure of the horse, its iron body ravaged by time. Can this giant be awakened, or will it sleep forever?"
+description_header = "You arrive at Sleipnir island."
 
 [sub_resource type="Resource" id="Resource_7gpj0"]
 script = ExtResource("2_icmae")
-name = "OdinIsland"
+name = "TurIsland"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -52,14 +58,17 @@ map_sprite_scale = 10.0
 [sub_resource type="Resource" id="Resource_oacub"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_7gpj0")
-coordinates = Vector2(-5713.0723, -7665.9004)
+coordinates = Vector2(-18639.227, -10434.898)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
-visibility_range = 8765.664
+visibility_range = 6792.3419189453125
+acquisition_range = 500.0
+description = "The prophecies of Ragnarök never said we'd end up imprisoned in Helheim. Even the giant Jörmungandr is a prisoner here, just like us. But perhaps he's also the key. I've heard he has some important rune."
+description_header = "Tyr gazes thoughtfully at the horizon..."
 
 [sub_resource type="Resource" id="Resource_ntpek"]
 script = ExtResource("2_icmae")
-name = "FreirIsland"
+name = "ThorIsland"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -67,14 +76,17 @@ map_sprite_scale = 10.0
 [sub_resource type="Resource" id="Resource_3q5mt"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_ntpek")
-coordinates = Vector2(11528.408, -11906.232)
+coordinates = Vector2(-5713.0723, -7665.9004)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
-visibility_range = 6607.4194
+visibility_range = 8765.664
+acquisition_range = 500.0
+description = "Thunder strike me! I haven't seen sailors around here in an eternity! How did you manage not to get lost? Ah, a sun compass... Well, I'll be damned! A long-forgotten technology."
+description_header = "Thor slaps his thigh at the sight of you..."
 
 [sub_resource type="Resource" id="Resource_u5tfx"]
 script = ExtResource("2_icmae")
-name = "LokiIsland"
+name = "FreirIsland"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -82,14 +94,17 @@ map_sprite_scale = 10.0
 [sub_resource type="Resource" id="Resource_jubqp"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_u5tfx")
-coordinates = Vector2(-11903.767, 1475.664)
+coordinates = Vector2(-8223.544, -19207.701)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
-visibility_range = 7911.2256
+visibility_range = 6607.4194
+acquisition_range = 500.0
+description = "Is someone really sailing the seas again? I'm almost starting to envy you, Fallen. Until I remember that this sea is made of Jörmungandr's venom. By the way, I think the serpent has one of the runes."
+description_header = "Freyr's thick blond beard hides his smile, but his eyes give it away..."
 
 [sub_resource type="Resource" id="Resource_ant62"]
 script = ExtResource("2_icmae")
-name = "HeimdallIsland"
+name = "DeadIsland"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -97,32 +112,37 @@ map_sprite_scale = 10.0
 [sub_resource type="Resource" id="Resource_gs1pr"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_ant62")
-coordinates = Vector2(9965.031, 11355.9375)
+coordinates = Vector2(8957.86, -12361.89)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
-visibility_range = 6954.4989013671875
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k7hdp"]
-size = Vector2(20, 20)
+visibility_range = 6607.4194
+acquisition_range = 500.0
+description = "yrsdy"
+description_header = "aiyfgauoif"
 
 [sub_resource type="Resource" id="Resource_7lotx"]
 script = ExtResource("2_icmae")
-name = "TailIsland"
-scene = ExtResource("4_s272b")
-map_sprite = SubResource("PlaceholderTexture2D_k7hdp")
+name = "LokiIsland"
+scene = ExtResource("2_nq65h")
+map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_fussg"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_7lotx")
-coordinates = Vector2(-3029.286, 17293.805)
-heading = 0.56242305
+coordinates = Vector2(-11903.767, 1475.664)
+heading = -0.7440029
 scale = Vector3(10, 10, 10)
-visibility_range = 7101.45
+visibility_range = 7911.2256
+acquisition_range = 500.0
+description = "\"Well, well! We have visitors! Let me guess. The Fallen have learned to navigate by the Sun and dared to venture out to sea? How clever! I'm truly impressed. 
+
+By the way, if you happen to meet that fool Heimdall... give him my warmest regards.\""
+description_header = "Loki's face stretches into an unnaturally wide grin..."
 
 [sub_resource type="Resource" id="Resource_1hv7y"]
 script = ExtResource("2_icmae")
-name = "RidgeIsland"
+name = "HeimdallIsland"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -130,29 +150,40 @@ map_sprite_scale = 10.0
 [sub_resource type="Resource" id="Resource_0hpey"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_1hv7y")
-coordinates = Vector2(-18109.154, 5047.313)
+coordinates = Vector2(9965.031, 11355.9375)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
-visibility_range = 5001.9586181640625
+visibility_range = 6954.4989013671875
+acquisition_range = 500.0
+description = "\"The Fallen... You have seen Asgard, just as I have... Its sky was so different from this one. There are no rainbows in Helheim.
+
+I'm here because of Loki... It was foretold that he would kill me. Why? Why was I destined to fall to a scoundrel like him?
+
+He has no place among us gods.\""
+description_header = "Heimdall gives you a gloomy look..."
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k7hdp"]
+size = Vector2(20, 20)
 
 [sub_resource type="Resource" id="Resource_3wlei"]
 script = ExtResource("2_icmae")
-name = "RidgeIsland7"
-scene = ExtResource("2_nq65h")
-map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+name = "TailIsland"
+scene = ExtResource("4_s272b")
+map_sprite = SubResource("PlaceholderTexture2D_k7hdp")
 map_sprite_scale = 10.0
 
 [sub_resource type="Resource" id="Resource_7il8n"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_3wlei")
-coordinates = Vector2(-12190.948, 9255.578)
-heading = -0.7440029
+coordinates = Vector2(-3029.286, 17293.805)
+heading = 0.56242305
 scale = Vector3(10, 10, 10)
-visibility_range = 5001.9586181640625
+visibility_range = 7101.45
+acquisition_range = 500.0
 
 [sub_resource type="Resource" id="Resource_jqksj"]
 script = ExtResource("2_icmae")
-name = "RidgeIsland6"
+name = "RidgeIsland"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -160,14 +191,15 @@ map_sprite_scale = 10.0
 [sub_resource type="Resource" id="Resource_57kkn"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_jqksj")
-coordinates = Vector2(-12501.211, 9121.338)
+coordinates = Vector2(-18109.154, 5047.313)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
 visibility_range = 5001.9586181640625
+acquisition_range = 500.0
 
 [sub_resource type="Resource" id="Resource_bitc8"]
 script = ExtResource("2_icmae")
-name = "RidgeIsland5"
+name = "RidgeIsland7"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -175,14 +207,15 @@ map_sprite_scale = 10.0
 [sub_resource type="Resource" id="Resource_c7t3g"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_bitc8")
-coordinates = Vector2(-12981.853, 8994.123)
+coordinates = Vector2(-12190.948, 9255.578)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
 visibility_range = 5001.9586181640625
+acquisition_range = 500.0
 
 [sub_resource type="Resource" id="Resource_vl3aq"]
 script = ExtResource("2_icmae")
-name = "RidgeIsland4"
+name = "RidgeIsland6"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -190,14 +223,15 @@ map_sprite_scale = 10.0
 [sub_resource type="Resource" id="Resource_6lapp"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_vl3aq")
-coordinates = Vector2(-14220.342, 8625.766)
+coordinates = Vector2(-12501.211, 9121.338)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
 visibility_range = 5001.9586181640625
+acquisition_range = 500.0
 
 [sub_resource type="Resource" id="Resource_xvheq"]
 script = ExtResource("2_icmae")
-name = "RidgeIsland3"
+name = "RidgeIsland5"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -205,14 +239,15 @@ map_sprite_scale = 10.0
 [sub_resource type="Resource" id="Resource_wnojy"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_xvheq")
-coordinates = Vector2(-16545.008, 6710.8857)
+coordinates = Vector2(-12981.853, 8994.123)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
 visibility_range = 5001.9586181640625
+acquisition_range = 500.0
 
 [sub_resource type="Resource" id="Resource_ttvnr"]
 script = ExtResource("2_icmae")
-name = "RidgeIsland2"
+name = "RidgeIsland4"
 scene = ExtResource("2_nq65h")
 map_sprite = SubResource("PlaceholderTexture2D_v6u60")
 map_sprite_scale = 10.0
@@ -220,78 +255,160 @@ map_sprite_scale = 10.0
 [sub_resource type="Resource" id="Resource_5nuo5"]
 script = ExtResource("1_icmae")
 island = SubResource("Resource_ttvnr")
+coordinates = Vector2(-14220.342, 8625.766)
+heading = -0.7440029
+scale = Vector3(10, 10, 10)
+visibility_range = 5001.9586181640625
+acquisition_range = 500.0
+
+[sub_resource type="Resource" id="Resource_ub3jt"]
+script = ExtResource("2_icmae")
+name = "RidgeIsland3"
+scene = ExtResource("2_nq65h")
+map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+map_sprite_scale = 10.0
+
+[sub_resource type="Resource" id="Resource_353l0"]
+script = ExtResource("1_icmae")
+island = SubResource("Resource_ub3jt")
+coordinates = Vector2(-16545.008, 6710.8857)
+heading = -0.7440029
+scale = Vector3(10, 10, 10)
+visibility_range = 5001.9586181640625
+acquisition_range = 500.0
+
+[sub_resource type="Resource" id="Resource_xdipu"]
+script = ExtResource("2_icmae")
+name = "RidgeIsland2"
+scene = ExtResource("2_nq65h")
+map_sprite = SubResource("PlaceholderTexture2D_v6u60")
+map_sprite_scale = 10.0
+
+[sub_resource type="Resource" id="Resource_0c268"]
+script = ExtResource("1_icmae")
+island = SubResource("Resource_xdipu")
 coordinates = Vector2(-17488.803, 5512.718)
 heading = -0.7440029
 scale = Vector3(10, 10, 10)
 visibility_range = 5001.9586181640625
-
-[sub_resource type="Resource" id="Resource_ub3jt"]
-script = ExtResource("5_k7hdp")
-name = "Rune"
-sprite = ExtResource("6_rb06u")
-
-[sub_resource type="Resource" id="Resource_353l0"]
-script = ExtResource("1_icmae")
-rune = SubResource("Resource_ub3jt")
-coordinates = Vector2(5582, -12812.001)
-heading = -0.65015626
-scale = Vector3(1.0000001, 1, 1.0000001)
-visibility_range = 4.999999865889393
-
-[sub_resource type="Resource" id="Resource_xdipu"]
-script = ExtResource("5_k7hdp")
-name = "Rune2"
-sprite = ExtResource("6_rb06u")
-
-[sub_resource type="Resource" id="Resource_0c268"]
-script = ExtResource("1_icmae")
-rune = SubResource("Resource_xdipu")
-coordinates = Vector2(-9154, 4165)
-heading = -0.65015626
-scale = Vector3(1.0000001, 1, 1.0000001)
-visibility_range = 4.999999865889393
+acquisition_range = 500.0
 
 [sub_resource type="Resource" id="Resource_ty183"]
 script = ExtResource("5_k7hdp")
-name = "Rune3"
+name = "Rune"
 sprite = ExtResource("6_rb06u")
 
 [sub_resource type="Resource" id="Resource_d1fm3"]
 script = ExtResource("1_icmae")
 rune = SubResource("Resource_ty183")
-coordinates = Vector2(-8357, -17193)
+coordinates = Vector2(5582, -12812.001)
 heading = -0.65015626
 scale = Vector3(1.0000001, 1, 1.0000001)
 visibility_range = 4.999999865889393
+acquisition_range = 500.0
 
 [sub_resource type="Resource" id="Resource_el4cg"]
 script = ExtResource("5_k7hdp")
-name = "Rune4"
+name = "Rune2"
 sprite = ExtResource("6_rb06u")
 
 [sub_resource type="Resource" id="Resource_ddbln"]
 script = ExtResource("1_icmae")
 rune = SubResource("Resource_el4cg")
+coordinates = Vector2(-9154, 4165)
+heading = -0.65015626
+scale = Vector3(1.0000001, 1, 1.0000001)
+visibility_range = 4.999999865889393
+
+[sub_resource type="Resource" id="Resource_t2jrp"]
+script = ExtResource("5_k7hdp")
+name = "Rune3"
+sprite = ExtResource("6_rb06u")
+
+[sub_resource type="Resource" id="Resource_7m1sl"]
+script = ExtResource("1_icmae")
+rune = SubResource("Resource_t2jrp")
+coordinates = Vector2(-8357, -17193)
+heading = -0.65015626
+scale = Vector3(1.0000001, 1, 1.0000001)
+visibility_range = 4.999999865889393
+
+[sub_resource type="Resource" id="Resource_xmbjq"]
+script = ExtResource("5_k7hdp")
+name = "Rune4"
+sprite = ExtResource("6_rb06u")
+
+[sub_resource type="Resource" id="Resource_kf7r0"]
+script = ExtResource("1_icmae")
+rune = SubResource("Resource_xmbjq")
 coordinates = Vector2(-1, 3.8146973e-06)
 heading = -0.65015626
 scale = Vector3(1.0000001, 1, 1.0000001)
 visibility_range = 4.999999865889393
 
-[sub_resource type="Resource" id="Resource_e3tp2"]
-script = ExtResource("1_rb06u")
-island_name = "LongCock"
-description = "You arrived at LONG COCK!!!!vakvjnalkbmal;dmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmmdmbkmmmmmmmmmmmm"
-header = "LONG HEADER (COCK)"
-metadata/_custom_type_script = "uid://wnj3puet57uv"
-
 [sub_resource type="Resource" id="Resource_x6xlj"]
 script = ExtResource("1_rb06u")
+island_name = "OdinIsland"
+description = "The Fallen... I knew you would come. And now that you're here, it is you who are destined to lead us all out of Helheim and back into the light. Gather three runes to awaken old Sleipnir. Only he can carry us out of this place. I'll give you the first rune. Thor has the second."
+header = "Odin's eye gazes at you with stern majesty..."
+metadata/_custom_type_script = "uid://wnj3puet57uv"
+
+[sub_resource type="Resource" id="Resource_y53pl"]
+script = ExtResource("1_rb06u")
+prerequisite = SubResource("Resource_x6xlj")
+island_name = "ThorIsland"
+description = "Thunder strike me! I haven't seen sailors around here in an eternity! How did you manage not to get lost? Ah, a sun compass... Well, I'll be damned! A long-forgotten technology. Here, take this rune. But the third one... Loki has it. And he won't give it up so easily."
+header = "Thor slaps his thigh at the sight of you..."
+metadata/_custom_type_script = "uid://wnj3puet57uv"
+
+[sub_resource type="Resource" id="Resource_aimvf"]
+script = ExtResource("1_rb06u")
+prerequisite = SubResource("Resource_y53pl")
+island_name = "LokiIsland"
+description = "Well, well! We have visitors! Let me guess. The Fallen have come for the rune? I'm not giving it to you. As long as the gods are trapped here, there can be no more Ragnarök. And I'm perfectly happy with that. Still, you could do me a favor, and I might reconsider. Deliver a gift to Heimdall for me."
+header = "Loki's face stretches into an unnaturally wide grin..."
+metadata/_custom_type_script = "uid://wnj3puet57uv"
+
+[sub_resource type="Resource" id="Resource_6nnoo"]
+script = ExtResource("1_rb06u")
+prerequisite = SubResource("Resource_aimvf")
+island_name = "HeimdallIsland"
+description = "The Fallen... You have a package from Loki? I won't accept anything from him! Wait... Is that my sword? Is that scoundrel trying to make peace? No, to hell with him! I don't trust him. And yet... Give him this."
+header = "Heimdall gives you a gloomy look..."
+metadata/_custom_type_script = "uid://wnj3puet57uv"
+
+[sub_resource type="Resource" id="Resource_glihj"]
+script = ExtResource("1_rb06u")
+prerequisite = SubResource("Resource_6nnoo")
+island_name = "LokiIsland"
+description = "Aha! My fire is finally back where it belongs! It's so cold on this island. So Heimdall does remember how we killed each other. He broke his sword, and I lost my fire. But now... Oh, right, the rune! Jormungandr has it. He would've given it to you anyway. But thanks for your help!"
+header = "Loki's face stretches into an unnaturally wide grin..."
+metadata/_custom_type_script = "uid://wnj3puet57uv"
+
+[sub_resource type="Resource" id="Resource_0egv3"]
+script = ExtResource("1_rb06u")
+prerequisite = SubResource("Resource_glihj")
+island_name = "TailIsland"
+description = "You feel the gaze of the gigantic monster upon you. For a moment, an icy terror grips you, leaving you paralyzed. But you summon your courage and take the rune resting on the tip of Jörmungandr's tail. The serpent slowly turns away."
+header = "You arrive to Jörmungandr's tail."
+metadata/_custom_type_script = "uid://wnj3puet57uv"
+
+[sub_resource type="Resource" id="Resource_ujv35"]
+script = ExtResource("1_rb06u")
+prerequisite = SubResource("Resource_0egv3")
+island_name = "SleipnirIsland"
+description = "\"You place the runestones into the iron sockets on the horse's neck, and the ancient mechanisms inside begin to grind and creak. The air trembles, filled with magic. A thousand years of dust and rust fall from its mighty body, churning the sea around it into foam.
+
+Odin's steel steed has awakened.
+
+Now you, along with all the fallen mortals and gods, can finally return to Midgard, the world of the living, and see with your own eyes how it has changed since Ragnarök.\""
+header = "You arrived to Sleipnir."
 metadata/_custom_type_script = "uid://wnj3puet57uv"
 
 [resource]
 script = ExtResource("3_s272b")
 radius = 21500.0
-player_start_coords = Vector2(10401.071, -14104.787)
-places = Array[ExtResource("1_icmae")]([SubResource("Resource_ax8pg"), SubResource("Resource_sh1nk"), SubResource("Resource_oacub"), SubResource("Resource_3q5mt"), SubResource("Resource_jubqp"), SubResource("Resource_gs1pr"), SubResource("Resource_fussg"), SubResource("Resource_0hpey"), SubResource("Resource_7il8n"), SubResource("Resource_57kkn"), SubResource("Resource_c7t3g"), SubResource("Resource_6lapp"), SubResource("Resource_wnojy"), SubResource("Resource_5nuo5"), SubResource("Resource_353l0"), SubResource("Resource_0c268"), SubResource("Resource_d1fm3"), SubResource("Resource_ddbln")])
-quests = Array[ExtResource("1_rb06u")]([SubResource("Resource_e3tp2"), SubResource("Resource_x6xlj")])
+player_start_coords = Vector2(8900.071, -14104.787)
+places = Array[ExtResource("1_icmae")]([SubResource("Resource_ax8pg"), SubResource("Resource_sh1nk"), SubResource("Resource_oacub"), SubResource("Resource_3q5mt"), SubResource("Resource_jubqp"), SubResource("Resource_gs1pr"), SubResource("Resource_fussg"), SubResource("Resource_0hpey"), SubResource("Resource_7il8n"), SubResource("Resource_57kkn"), SubResource("Resource_c7t3g"), SubResource("Resource_6lapp"), SubResource("Resource_wnojy"), SubResource("Resource_5nuo5"), SubResource("Resource_353l0"), SubResource("Resource_0c268"), SubResource("Resource_d1fm3"), SubResource("Resource_ddbln"), SubResource("Resource_7m1sl"), SubResource("Resource_kf7r0")])
+quests = Array[ExtResource("1_rb06u")]([SubResource("Resource_x6xlj"), SubResource("Resource_y53pl"), SubResource("Resource_aimvf"), SubResource("Resource_6nnoo"), SubResource("Resource_glihj"), SubResource("Resource_0egv3"), SubResource("Resource_ujv35")])
 metadata/_custom_type_script = "uid://d0xgx6qvmr336"
