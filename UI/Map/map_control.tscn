@@ -68,6 +68,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="MarkerLayer" type="Control" parent="SquareContainer/MapContainer/MarginContainer" unique_id=1720372523]
+unique_name_in_owner = true
 z_index = 100
 layout_mode = 2
 script = ExtResource("3_moawh")

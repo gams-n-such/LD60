@@ -1,10 +1,11 @@
+class_name VikingMarkerLayer
 extends Control
 
 const MARK_TEXTURE = preload("uid://cadtuvjiw4ub1")
 @onready var distance_label: Label = $DistanceLabel
 @onready var direction_label: Label = $DirectionLabel
 
-const PX_TO_HOURS: float = 0.24
+var PX_TO_HOURS: float = 0.24
 var marks: Array[Sprite2D] = []
 var lines: Array[Line2D] = []
 

@@ -23,11 +23,16 @@ var world_resource : VikingWorldResource:
 	get:
 		return Game.world_resource
 
+@onready var marker_layer: VikingMarkerLayer = %MarkerLayer
+
 func _ready() -> void:
 	if not world_resource:
 		return
 	
 	await get_tree().create_timer(.01).timeout
+	
+	print(pixels_per_unit)
+	marker_layer.PX_TO_HOURS = 1.0 / (Game.config.ship_speed * pixels_per_unit)
 	
 	for place in world_resource.places:
 		if not place.is_island():
