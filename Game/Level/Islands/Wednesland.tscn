@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://chopalxyk4hki"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tp06f"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_jln8q"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_332h2"]
+top_radius = 0.0
+bottom_radius = 1.0
+height = 5.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tp06f"]
+top_radius = 2.0
+bottom_radius = 5.0
+height = 10.0
+
+[node name="Wednesland" type="Node3D" unique_id=174074217]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1601065334]
+transform = Transform3D(1, 0, 0, 0, 0.30975047, 0, 0, 0, 1, 0, -1.336518, 0)
+radius = 100.0
+radial_segments = 14
+rings = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=824590216]
+transform = Transform3D(0.7827068, 0.27686206, 0, -0.66443795, 0.18022458, -0.79469246, -0.5978643, 0.1621669, 0.8831836, 3.8937788, 15.115696, 0.9896374)
+size = Vector3(87.84302, 273.85248, 89.07172)
+
+[node name="Raven" type="Node3D" parent="." unique_id=338933395]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Raven" unique_id=1789313036]
+transform = Transform3D(0.78270674, 0.27686203, -1.8301698e-08, -0.2947932, 0.07996082, -1.121609, -0.84381044, 0.22887826, 0.391845, -14.9236965, 101.061485, -9.945797)
+size = Vector3(10.321625, 39.59445, 46.805878)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Raven" unique_id=1404233730]
+transform = Transform3D(0.78270674, 0.27686203, -1.8301698e-08, -0.2947932, 0.07996082, -1.121609, -0.84381044, 0.22887826, 0.391845, 28.47685, 101.061485, -9.945797)
+size = Vector3(10.321625, 39.59445, 46.805878)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Raven" unique_id=1707794873]
+transform = Transform3D(0.83782786, 0.26092565, -2.0539625e-08, -0.675653, 0.20815447, -0.7095412, -0.503077, 0.15498742, 0.9529431, 8.164744, 127.17401, -60.254265)
+size = Vector3(58.98562, 192.7287, 11.246487)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Raven" unique_id=257605143]
+transform = Transform3D(56.295494, -4.4304357, -50.31211, -21.442175, 66.117004, -29.814384, 45.729324, 36.455925, 47.95742, 3.8937788, 177.97011, 7.4354534)
+mesh = SubResource("CapsuleMesh_tp06f")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Raven" unique_id=228323267]
+transform = Transform3D(3.991154, -0.3141024, -3.566953, -1.5201753, 4.6874647, -2.1137357, 3.2420492, 2.5845978, 3.4000134, 3.8937788, 263.04486, 64.04374)
+mesh = SubResource("SphereMesh_jln8q")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="Raven" unique_id=2012133264]
+transform = Transform3D(10.675541, -0.67526615, -9.54089, -9.561007, -1.431195, -10.541246, -0.5670642, 11.418247, -1.8855128, 3.8937788, 258.6425, 108.09665)
+mesh = SubResource("CylinderMesh_332h2")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Raven" unique_id=1676301271]
+transform = Transform3D(5.0911136, -0.30992672, -4.550003, -1.9391346, 4.625149, -2.69628, 4.135556, 2.5502374, 4.337055, -0.71649647, 246.77075, 43.10482)
+mesh = SubResource("CylinderMesh_tp06f")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Raven" unique_id=467270139]
+transform = Transform3D(0.23782882, -0.07606104, 0.6482705, 0.14113624, 0.3879022, -0.2863618, -0.16124739, 0.22733739, 0.70550853, 43.34819, 160.37877, -22.484917)
+polygon = PackedVector2Array(1.8346558, 183.244, 296.9911, 277.70605, 695.78125, 228.92758, 760.88837, 171.18538, 471.28885, 206.8942, 722.60016, 114.24813, 739.1571, 73.95073, 696.89233, 61.542328, 437.39984, 144.4714, 553.5678, 27.022873, 542.4454, -14.679001, 478.53906, -5.859253, 361.2558, 126.23279, 393.09332, -18.001633, 313.36218, -15.451477, 258.50793, 102.40826, 222.44681, -20.349838, 150.36334, -15.753632, 134.83989, 70.97789, 75.85869, -32.056717, -1.859932, 2.148468)
+depth = 10.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Raven" unique_id=1991398268]
+transform = Transform3D(-0.2594614, -0.0151534565, 0.58480954, 0.10950573, 0.35732564, 0.5186001, -0.15222017, 0.28288594, -0.6237401, -21.130411, 162.3489, -35.40725)
+polygon = PackedVector2Array(1.8346558, 183.244, 296.9911, 277.70605, 695.78125, 228.92758, 760.88837, 171.18538, 471.28885, 206.8942, 722.60016, 114.24813, 739.1571, 73.95073, 696.89233, 61.542328, 437.39984, 144.4714, 553.5678, 27.022873, 542.4454, -14.679001, 478.53906, -5.859253, 361.2558, 126.23279, 393.09332, -18.001633, 313.36218, -15.451477, 258.50793, 102.40826, 222.44681, -20.349838, 150.36334, -15.753632, 134.83989, 70.97789, 75.85869, -32.056717, -1.859932, 2.148468)
+depth = 10.0

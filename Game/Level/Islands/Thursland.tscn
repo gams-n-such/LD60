@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c8hsxens4byr5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tp06f"]
+top_radius = 0.0
+bottom_radius = 10.0
+height = 50.0
+
+[node name="Thursland" type="Node3D" unique_id=1858998863]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=516386840]
+transform = Transform3D(1, 0, 0, 0, 0.30975047, 0, 0, 0, 1, 0, -1.336518, 0)
+radius = 100.0
+radial_segments = 14
+rings = 10
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=180097404]
+transform = Transform3D(3.579561, 0, 0, 0, 2.2079532, -0.47381708, 0, 0.29485542, 3.5480635, 0, 77.233505, 23.709122)
+mesh = SubResource("CylinderMesh_tp06f")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=261012576]
+transform = Transform3D(2.5898695, 0.31669217, -0.82363683, 0, 1.463736, 1.4533404, 0.9681756, -0.84715134, 2.203228, 29.418121, 49.60633, -36.291985)
+mesh = SubResource("CylinderMesh_tp06f")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="." unique_id=1550412630]
+transform = Transform3D(1.081491, -0.26103795, 0.3488995, 2.0217913e-08, 1.1914663, 0.6079735, -0.41012746, -0.68834746, 0.92003524, -8.476403, 123.2801, 3.429863)
+mesh = SubResource("CylinderMesh_tp06f")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="." unique_id=363549187]
+transform = Transform3D(0.19300374, 0.23570797, 0.14103681, -0.11494657, 0.60185313, 0.013845197, -0.12084053, -0.19603042, 0.2120909, -5.9059286, 155.56299, -11.861543)
+mesh = SubResource("CylinderMesh_tp06f")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="." unique_id=1564830225]
+transform = Transform3D(1.9049416, -0.5527338, 0.37212047, 0.5179217, 1.0207498, 1.2638854, -0.8118834, -0.64572984, 1.6793816, -23.261635, 45.107033, -38.461693)
+mesh = SubResource("CylinderMesh_tp06f")
