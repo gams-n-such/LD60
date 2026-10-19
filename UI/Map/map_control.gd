@@ -1,6 +1,7 @@
 extends Control
 
 const MAP_ISLAND_CONTROL = preload("uid://dta16kwj7iqp8")
+const QUEST_MARKER_CONTROL = preload("uid://koubi8ipqjib")
 
 @onready var actual_map: Control = %ActualMap
 @onready var islands_root: Control = %IslandsRoot
@@ -34,11 +35,21 @@ func _ready() -> void:
 		islands_root.add_child(island_control)
 		island_control.from_resource(place.island, pixels_per_unit)
 		print(map_center_px)
-		island_control.position = map_center_px + place.coordinates * pixels_per_unit
+		var map_position: Vector2 = (map_center_px + place.coordinates * pixels_per_unit)
+		island_control.position = map_position
 		island_control.rotation = place.heading
 		island_control.scale = place.scale_2d * pixels_per_unit
+		for quest in Game.quest_system.active_quests:
+			if quest.island_name == place.get_place_name():
+				_spawn_quest_marker(quest, map_position)
 
-
+func _spawn_quest_marker(quest: Resource, map_position: Vector2) -> void:
+	var marker : MapQuestMarkerControl = (QUEST_MARKER_CONTROL.instantiate() as MapQuestMarkerControl)
+	islands_root.add_child(marker)
+	marker.from_quest(quest)
+	marker.size = Vector2(32, 32)
+	marker.position = map_position + Vector2(0, -30)
+	marker.z_index = 10
 
 func _process(delta: float) -> void:
 	pass
