@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://jntkorgtbian"]
+
+[ext_resource type="PackedScene" uid="uid://6y1l611owmbw" path="res://Game/Level/Islands/Meshes/LokiColoured3.fbx" id="1_nblye"]
+
+[node name="LokiIsland" type="Node3D" unique_id=1055195790]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=572607825]
+transform = Transform3D(1, 0, 0, 0, 0.30975047, 0, 0, 0, 1, 0, -1.336518, 0)
+radius = 100.0
+radial_segments = 14
+rings = 10
+
+[node name="LokiColoured3" parent="." unique_id=1531177610 instance=ExtResource("1_nblye")]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, -14.044975, -18.844414, -3.6345825)
