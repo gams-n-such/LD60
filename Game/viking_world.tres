@@ -32,7 +32,7 @@ coordinates = Vector2(2020.5231, -13380.366)
 heading = -0.7440029
 scale = Vector3(7, 7, 7)
 visibility_range = 8035.4229736328125
-acquisition_range = 500.0
+acquisition_range = 1500.0
 description = "The Fallen... I knew you would come. And now that you're here, it is you who are destined to lead us all out of Helheim and back into the light. Gather three runes to awaken old Sleipnir. Only he can carry us out of this place."
 description_header = "Odin's eye gazes at you with stern majesty..."
 
@@ -411,7 +411,7 @@ metadata/_custom_type_script = "uid://wnj3puet57uv"
 [resource]
 script = ExtResource("3_s272b")
 radius = 21500.0
-player_start_coords = Vector2(8957.86, -12361.89)
+player_start_coords = Vector2(8957.85, -12361.89)
 places = Array[ExtResource("1_icmae")]([SubResource("Resource_ax8pg"), SubResource("Resource_sh1nk"), SubResource("Resource_oacub"), SubResource("Resource_3q5mt"), SubResource("Resource_jubqp"), SubResource("Resource_gs1pr"), SubResource("Resource_fussg"), SubResource("Resource_0hpey"), SubResource("Resource_7il8n"), SubResource("Resource_57kkn"), SubResource("Resource_c7t3g"), SubResource("Resource_6lapp"), SubResource("Resource_wnojy"), SubResource("Resource_5nuo5"), SubResource("Resource_353l0"), SubResource("Resource_0c268"), SubResource("Resource_d1fm3"), SubResource("Resource_ddbln"), SubResource("Resource_7m1sl"), SubResource("Resource_kf7r0")])
 quests = Array[ExtResource("1_rb06u")]([SubResource("Resource_x6xlj"), SubResource("Resource_y53pl"), SubResource("Resource_aimvf"), SubResource("Resource_6nnoo"), SubResource("Resource_glihj"), SubResource("Resource_0egv3"), SubResource("Resource_ujv35")])
 metadata/_custom_type_script = "uid://d0xgx6qvmr336"

@@ -2,13 +2,20 @@ class_name TextPopup
 extends CanvasLayer
 
 @onready var panel: PanelContainer = %PanelContainer
+@onready var rune_panel: PanelContainer = %RuneContainer
 @onready var title_label: Label = %TitleLabel
 @onready var description_label: Label = %DescriptionLabel
 @onready var ok_button: Button = %OkButton
+@onready var rune_texture: TextureRect = %RuneTexture
+
+const FIRST_RUNE_ICON: Texture2D = preload("res://Game/Assets/icons/rune_1_001.png")
+const SECOND_RUNE_ICON: Texture2D = preload("res://Game/Assets/icons/rune_2_001.png")
+const THIRD_RUNE_ICON: Texture2D = preload("res://Game/Assets/icons/rune_3_001.png")
 
 func _ready() -> void:
 	layer = 100
 	panel.hide()
+	rune_panel.hide()
 	ok_button.pressed.connect(_on_ok_pressed)
 	if not Game.visiting_system.island_visited.is_connected(_on_island_visited):
 		Game.visiting_system.island_visited.connect(_on_island_visited)
@@ -27,6 +34,15 @@ The god of lies will never return to the world of the living.\""
 		else:
 			description_label.text = quest.description
 		title_label.text = quest.header
+		if quest.description.contains("I'll give you the first rune."):
+			rune_texture.texture = FIRST_RUNE_ICON
+			rune_panel.show()
+		if quest.description.contains("Here, take this rune."):
+			rune_texture.texture = SECOND_RUNE_ICON
+			rune_panel.show()
+		if quest.description.contains("take the rune resting on the tip"):
+			rune_texture.texture = THIRD_RUNE_ICON
+			rune_panel.show()
 	else:
 		if place.description == null or place.description.is_empty():
 			return
@@ -45,5 +61,6 @@ The god of lies will never return to the world of the living.\""
 
 func _on_ok_pressed() -> void:
 	Game.unpause()
+	rune_panel.hide()
 	panel.hide()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
