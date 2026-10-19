@@ -14,4 +14,5 @@ func _on_time_passed(hours_delta : float):
 	cycle_controller.advance_time(hours_delta)
 
 func _process(delta: float) -> void:
-	cycle_controller.advance_time(delta)
+	#cycle_controller.advance_time(delta)
+	pass

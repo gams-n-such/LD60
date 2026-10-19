@@ -11,13 +11,39 @@ metadata/_snap_enabled = true
 gradient = SubResource("Gradient_u4ray")
 metadata/_snap_enabled = true
 
+[sub_resource type="Gradient" id="Gradient_kl7xp"]
+colors = PackedColorArray(0, 0.13333334, 0.22745098, 1, 0, 0.13333334, 0.22745098, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qeeqm"]
+gradient = SubResource("Gradient_kl7xp")
+
+[sub_resource type="Gradient" id="Gradient_grh2p"]
+offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
+colors = PackedColorArray(0.21176471, 0.4509804, 0.6392157, 1, 0.69803923, 0.8666667, 1, 1, 0.7019608, 0.87058824, 1, 0, 0.69803923, 0.8666667, 1, 1, 0.21239093, 0.4529057, 0.63820547, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u0wtt"]
+gradient = SubResource("Gradient_grh2p")
+
 [sub_resource type="Curve" id="Curve_u4ray"]
 _data = [Vector2(0, 0.4982751), 0.0, 0.0, 0, 0, Vector2(0.49746194, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.503881), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Gradient" id="Gradient_4hdyn"]
+offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
+colors = PackedColorArray(1, 0.34901962, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0.35000002, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ttel4"]
+gradient = SubResource("Gradient_4hdyn")
+
 [resource]
 script = ExtResource("1_b2ovo")
 colors = SubResource("GradientTexture2D_d15nv")
+sky_horizon_colors = SubResource("GradientTexture2D_ttel4")
+ground_horizon_colors = SubResource("GradientTexture2D_u0wtt")
+ground_colors = SubResource("GradientTexture2D_qeeqm")
 length = 12.0
 light_energy = SubResource("Curve_u4ray")
 metadata/_custom_type_script = "uid://kolqah11th63"

@@ -74,22 +74,16 @@ func set_time(new_value):
 	
 	#sun_light.light_energy = day_light_energy if _is_day else night_light_energy
 	
-	var sky_color: Color
-	if _is_day:
-		sky_color = day_data.colors.gradient.sample(progress)
-	else:
-		sky_color = night_data.colors.gradient.sample(progress)
-	
 	if world_environment.environment and world_environment.environment.sky:
 		var sky_material = world_environment.environment.sky.sky_material
 		if sky_material:
-			sky_material.sky_top_color = sky_color
 			# Apply curve-based color variations
 			var current_data = day_data if _is_day else night_data
 			
-			sky_material.sky_horizon_color = sky_color.darkened(current_data.horizon_darkening_multiplier)
-			sky_material.ground_horizon_color = sky_color.darkened(current_data.ground_horizon_darkening_multiplier)
-			sky_material.ground_bottom_color = sky_color.darkened(current_data.ground_bottom_darkening_multiplier)
+			sky_material.sky_top_color = current_data.colors.gradient.sample(progress)
+			sky_material.sky_horizon_color = current_data.sky_horizon_colors.gradient.sample(progress)
+			sky_material.ground_horizon_color = current_data.ground_horizon_colors.gradient.sample(progress)
+			sky_material.ground_bottom_color = current_data.ground_colors.gradient.sample(progress)
 			
 			if _is_day and day_data.sky_cover:
 				sky_material.sky_cover = day_data.sky_cover

@@ -6,6 +6,9 @@ class_name CycleData
 ## Colors aligned on the left are the morning-light.
 ## Colors on the right are the end-of-day light.
 @export var colors: GradientTexture2D
+@export var sky_horizon_colors: GradientTexture2D
+@export var ground_horizon_colors: GradientTexture2D
+@export var ground_colors: GradientTexture2D
 
 ## Length of the day in seconds.
 @export var length: float

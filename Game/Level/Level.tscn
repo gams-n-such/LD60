@@ -9,7 +9,7 @@
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2gduj"]
 sky_top_color = Color(0.35509998, 0.52829504, 0.67, 1)
 sky_curve = 0.008161413
-ground_bottom_color = Color(0, 0.13521841, 0.22644627, 1)
+ground_bottom_color = Color(0, 0.13333334, 0.22745098, 1)
 ground_curve = 0.019999988
 sun_angle_max = 24.63
 sun_curve = 0.07764472
@@ -28,7 +28,6 @@ tonemap_mode = 1
 fog_density = 0.0
 
 [node name="Level" type="Node3D" unique_id=1330335551]
-visible = false
 script = ExtResource("1_ttel4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=539254290]
