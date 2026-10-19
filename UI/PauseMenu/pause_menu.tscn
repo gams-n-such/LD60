@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://uij46cficj03"]
 
+[ext_resource type="Theme" uid="uid://c2h4mrg86dfqc" path="res://UI/Themes/menu.tres" id="1_jesmc"]
 [ext_resource type="Script" uid="uid://kx5ljt6n2eab" path="res://UI/PauseMenu/pause_menu.gd" id="1_t3iro"]
 [ext_resource type="Script" uid="uid://ce3qsmnhwei1y" path="res://UI/web_helper_button.gd" id="2_w5vkt"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_jesmc")
 script = ExtResource("1_t3iro")
 
 [node name="BG" type="PanelContainer" parent="." unique_id=1065690763]
@@ -25,7 +27,7 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="ButtonsVBox" type="VBoxContainer" parent="BG/CenterContainer" unique_id=723976466]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
 [node name="ResumeButton" type="Button" parent="BG/CenterContainer/ButtonsVBox" unique_id=1676492337]
