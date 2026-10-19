@@ -2,10 +2,20 @@
 
 [ext_resource type="ArrayMesh" uid="uid://cewfiwgqge0ft" path="res://Game/Level/Islands/Meshes/skull.obj" id="1_u25rs"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_u25rs"]
+size = Vector3(0.6530762, 0.4465332, 0.40371704)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17lnl"]
 albedo_color = Color(0.71, 0.60491997, 0.4473, 1)
 
 [node name="Deadland" type="Node3D" unique_id=1297097859]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1022856868]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="BoxCollision" type="CollisionShape3D" parent="StaticBody3D" unique_id=1089791400]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, -0.4284668, 7.371826, 1.0081787)
+shape = SubResource("BoxShape3D_u25rs")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=761435096]
 transform = Transform3D(1, 0, 0, 0, 0.30975047, 0, 0, 0, 1, 0, -1.336518, 0)
@@ -14,6 +24,6 @@ radial_segments = 14
 rings = 10
 
 [node name="Skull" type="MeshInstance3D" parent="." unique_id=585442036]
-transform = Transform3D(20, 0, 0, 0, 18.625702, 7.2858214, 0, -7.2858214, 18.625702, 0, 53.649574, -5.247986)
+transform = Transform3D(-15.945722, -4.3977327, 11.242504, 1.3926291e-07, 18.625702, 7.2858214, -12.072036, 5.8088846, -14.850015, 0, 53.649574, -5.247986)
 mesh = ExtResource("1_u25rs")
 surface_material_override/0 = SubResource("StandardMaterial3D_17lnl")
